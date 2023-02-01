@@ -1,0 +1,295 @@
+﻿
+{
+    "technologies": [
+        {
+            "techName": "Apps",
+            "x": 4,
+            "y": 3.5,
+            "description": "Apps er software designet til smartphones, tablets, PC'er og anden computerenhed, som kan hentes fra distributionsplatforme (fx. App Store). De kan hjælpe brugeren med specifikke opgaver og skal normalt have en internetforbindelse, men der er flere og flere apps, der kan bruges offline. Vejle Kommune bruger en lang række apps, og der vil i fremtiden se endnu flere.",
+            "administrations": {
+                "tm": true,
+                "ks": true,
+                "komstab": true,
+                "velfaerd": true,
+                "oea": true,
+                "bu": true
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "Videoløsninger",
+            "x": 2.5,
+            "y": 11,
+            "description": "Videoløsninger er teknologier, der gør det muligt for medarbejdere at kommunikere og dele informationer og data via videokameraer, selv når de involverede parter er adskilt.\nDet giver mulighed for at holde møder og samarbejde på afstand og har mange andre anvendelsesmuligheder, herunder skærmbesøg på seniorområdet, digitale møder med borgerne i jobcentret, virtuel undervisning, borgermøder på Teams fra Sundhedscenteret, virtuelle og hybride arrangementer på bibliotekerne. Der findes også såkaldte 'asynkrone' løsninger, hvor videoerne er optaget på forhånd.",
+            "pictogram": "media/meeting-monitor-webcam.png",
+            "administrations": {
+                "tm": true,
+                "ks": true,
+                "komstab": true,
+                "velfaerd": true,
+                "oea": true,
+                "bu": true
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "Sociale teknologier",
+            "x": 1.5,
+            "y": 7,
+            "description": "Test",
+            "administrations": {
+                "tm": true,
+                "ks": true,
+                "komstab": true,
+                "velfaerd": true,
+                "oea": true,
+                "bu": true
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "Skærme og Selvbetjening",
+            "x": 6,
+            "y": 0,
+            "description": "Test",
+            "administrations": {
+                "tm": true,
+                "ks": true,
+                "komstab": true,
+                "velfaerd": true,
+                "oea": true,
+                "bu": true
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "Edge Computing",
+            "x": -16,
+            "y": 0,
+            "description": "Test",
+            "administrations": {
+                "tm": true,
+                "ks": false,
+                "komstab": false,
+                "velfaerd": false,
+                "oea": false,
+                "bu": false
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "Natural Language Processing",
+            "x": -15,
+            "y": 5,
+            "description": "Test",
+            "administrations": {
+                "tm": false,
+                "ks": false,
+                "komstab": true,
+                "velfaerd": false,
+                "oea": true,
+                "bu": true
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "AI / Machine Learning",
+            "x": -14,
+            "y": 10,
+            "description": "Test",
+            "administrations": {
+                "tm": false,
+                "ks": false,
+                "komstab": true,
+                "velfaerd": false,
+                "oea": true,
+                "bu": false
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "Digital Twin",
+            "x": -10,
+            "y": 15,
+            "description": "Test",
+            "administrations": {
+                "tm": true,
+                "ks": false,
+                "komstab": true,
+                "velfaerd": false,
+                "oea": false,
+                "bu": false
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "IoT / Sensorer",
+            "x": -10,
+            "y": 22,
+            "description": "Test",
+            "administrations": {
+                "tm": true,
+                "ks": true,
+                "komstab": true,
+                "velfaerd": true,
+                "oea": false,
+                "bu": false
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "VR",
+            "x": 4,
+            "y": 17,
+            "description": "Test",
+            "administrations": {
+                "tm": true,
+                "ks": false,
+                "komstab": false,
+                "velfaerd": true,
+                "oea": false,
+                "bu": true
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "Virtuelle Digitale Assistenter",
+            "x": 10,
+            "y": 17,
+            "description": "Test",
+            "administrations": {
+                "tm": false,
+                "ks": false,
+                "komstab": true,
+                "velfaerd": false,
+                "oea": true,
+                "bu": false
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "Cloud",
+            "x": -2,
+            "y": 0,
+            "description": "Test",
+            "administrations": {
+                "tm": true,
+                "ks": true,
+                "komstab": true,
+                "velfaerd": true,
+                "oea": true,
+                "bu": true
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "Cloud",
+            "x": 16,
+            "y": 0,
+            "description": "Test",
+            "administrations": {
+                "tm": true,
+                "ks": true,
+                "komstab": true,
+                "velfaerd": true,
+                "oea": true,
+                "bu": true
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "RPA",
+            "x": -1.5,
+            "y": 4,
+            "description": "Test",
+            "administrations": {
+                "tm": true,
+                "ks": true,
+                "komstab": true,
+                "velfaerd": true,
+                "oea": true,
+                "bu": true
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "Augmented Reality",
+            "x": 1,
+            "y": 27,
+            "description": "Test",
+            "administrations": {
+                "tm": false,
+                "ks": false,
+                "komstab": false,
+                "velfaerd": false,
+                "oea": false,
+                "bu": true
+            },
+            "link": "",
+            "maturity": 3
+        },
+        {
+            "techName": "Proces-mining",
+            "x": -17,
+            "y": 40,
+            "description": "Test",
+            "administrations": {
+                "tm": false,
+                "ks": false,
+                "komstab": false,
+                "velfaerd": false,
+                "oea": true,
+                "bu": false
+            },
+            "link": "",
+            "maturity": 2
+        },
+        {
+            "techName": "Blockchain",
+            "x": -40,
+            "y": 30,
+            "description": "Test",
+            "administrations": {
+                "tm": true,
+                "ks": true,
+                "komstab": true,
+                "velfaerd": true,
+                "oea": true,
+                "bu": true
+            },
+            "link": "",
+            "maturity": 0,
+            "inverted-text": true
+        },
+        {
+            "techName": "Chatbot",
+            "x": 0.5,
+            "y": 21,
+            "description": "Test",
+            "administrations": {
+                "tm": false,
+                "ks": false,
+                "komstab": true,
+                "velfaerd": false,
+                "oea": true,
+                "bu": false
+            },
+            "link": "",
+            "maturity": 3
+        }
+    ]  
+}
