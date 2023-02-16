@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teknologiradar Add Entry Form</title>
+    <script>
+        function previewXandY(){
+            // create a dummy event when X and Y values are changed
+            var x = document.getElementById("xInput").value;
+            var y = document.getElementById("yInput").value;
+            console.log("X: " + x + " Y: " + y);
+        }
+    </script>
+</head>
+<body>
+    <h1>Teknologiradar Add Entry Form</h1>
+    <form action="form_submission.php" method="post">
+        <label for="techNameInput">Teknologinavn:</label><br>
+        <input type="text" id="techNameInput" name="techName"><br>
+        
+        <label for="xInput">X:</label><br>
+        <input type="number" id="xInput" name="x" onchange="previewXandY()"><br>
+        
+        <label for="yInput">Y:</label><br>
+        <input type="number" id="yInput" name="y" step="0.1" onchange="previewXandY()"><br>
+        
+        <label for="descInput">Beskrivelse:</label><br>
+        <textarea id="descInput" name="description" rows="4" cols="50"></textarea><br>
+        
+        <label>Administrationer:</label><br>
+        <input type="checkbox" id="tmInput" name="tm" value="True">T&M<br>
+        <input type="checkbox" id="ksInput" name="ks" value="True">K&S<br>
+        <input type="checkbox" id="komstabInput" name="komstab" value="True">Kom.stab.<br>
+        <input type="checkbox" id="velfaerdInput" name="velfaerd" value="True">Velfærd<br>
+        <input type="checkbox" id="oeaInput" name="oea" value="True">Ø&A<br>
+        <input type="checkbox" id="buInput" name="bu" value="True">B&U<br>
+        
+        <label for="linkInput">Link:</label><br>
+        <input type="text" id="linkInput" name="link" value="https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/"><br>
+        
+        <label for="maturityInput">Modenhed:</label><br>
+        <select id="maturityInput" name="maturity">
+            <option value="0">Afvent</option>
+            <option value="1">Hold øje</option>
+            <option value="2">Afprøv</option>
+            <option value="3">Klar</option>
+        </select><br>
+        
+        <input type="submit" value="Tilføj">
+    </form>
+</body>
+</html>

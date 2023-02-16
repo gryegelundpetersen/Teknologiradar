@@ -148,8 +148,8 @@
         },
         {
             "techName": "VR",
-            "x": 4,
-            "y": 17,
+            "x": 2,
+            "y": 15,
             "description": "Test",
             "administrations": {
                 "tm": true,
@@ -181,22 +181,6 @@
         {
             "techName": "Cloud",
             "x": -2,
-            "y": 0,
-            "description": "Test",
-            "administrations": {
-                "tm": true,
-                "ks": true,
-                "komstab": true,
-                "velfaerd": true,
-                "oea": true,
-                "bu": true
-            },
-            "link": "",
-            "maturity": 3
-        },
-        {
-            "techName": "Cloud",
-            "x": 16,
             "y": 0,
             "description": "Test",
             "administrations": {
@@ -260,7 +244,7 @@
         },
         {
             "techName": "Blockchain",
-            "x": -40,
+            "x": -33,
             "y": 30,
             "description": "Test",
             "administrations": {

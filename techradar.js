@@ -7,10 +7,15 @@ const xOffset = 50;
 const yOffset = 10;
 
 // Define the minimum width for the radar infographic
-const RadarMinWidth = 330
+const RadarMinWidth = 667;
 
 // Define a variable for the JSON data to be fetched later.
 let TechnologiesData;
+
+// Recording of the width of the infographic last time the lazyResize function was called.
+// If the user resizes the window quickly, the loading wheel is shown until the lazyResize function is called.
+// If the user just resizes the window a little bit, the loader won't be shown.
+let LastResizeWidth;
 
 // Set colors for each administration
 const AdministrationColors = {
@@ -22,93 +27,173 @@ const AdministrationColors = {
   "komstab": "komstab-color"
 };
 
-let SVG;
-let SVGOverlay;
+// This code initializes variables and sets up an event listener for when the document is ready.
 
-let ExistingDots = [];
+let SVG;                // A variable to store a reference to the element with the ID "radar-svg".
+let SVGOverlay;         // A variable to store a reference to the element with the ID "svg-overlay".
 
-// Add a listener to adjust the page when the window width changes.
-$(window).on("resize", resizeWindow);
+let ExistingDots = [];  // An array to store references to existing dots on the radar.
 
+let Zoomed = false;     // A boolean flag to store the state of whether the radar is zoomed in or not.
+
+let dynamicStyles = null;  // A variable to store dynamic styles, if any.
+
+// When the document is ready, do the following:
 $(document).ready(function(){
 
+  // Get references to the elements with the ID "radar-svg" and "svg-overlay".
   SVG = document.getElementById('radar-svg');
   SVGOverlay = document.getElementById('svg-overlay');
 
+  // Call the function to adjust the overlay to match the size of the SVG.
   adjustOverlayToSVGSize();
-  setGId();
 
-  // Do a GET call to technologies.json 
+  // Store the width of the window in the variable "LastResizeWidth".
+  LastResizeWidth = window.innerWidth;
+
+  // Call the function to get the technologies. Initiates an ajax request and parses the JSON file technologies.json
+  // Given the success of this, the drawDots is drawn
   getTechnologies();
-// Sets ID on the G elements in the SVG
+
+  // Show the SVG overlay. This is the container for the dots and anything else that is aligned to the SVG.
   $(SVGOverlay).show();
  
-})
+});
 
-function setGId() {
-  let gElements = SVG.getElementsByTagName("g");
-  for (let i = 0; i < gElements.length; i++) {
-    let gElement = gElements[i];
-    console.log("doing the " +i+ "th");
-    let titleElement = gElement.getElementsByTagName("title")[0];
-    if (titleElement) {
-      gElement.id = titleElement.textContent;
-    }
-  }
-}
 
-// Function for sending a GET request for technologies.json
+
+
+/**
+ * Function for sending a GET request for technologies.json
+ */
 function getTechnologies(){
-  // Send a GET request to the technologies.json file
+  /**
+   * Send a GET request to the technologies.json file
+   */
   $.ajax({
     url: "technologies.json",
     dataType: 'json',
     success: function(data) {
-      // Store the data
+      /**
+       * Store the data
+       */
       TechnologiesData = data;
-      // Make sure the radar is wide enough. Prompt user action if not.
-      // Once the radar is wide enough, this function will call drawDots
-      resizeWindow(0);
+      /**
+       * Make sure the radar is wide enough. Prompt user action if not.
+       * Once the radar is wide enough, this function will call drawDots
+       */
+      lazyResize();
+      eagerResize();
     },
     error: function(xhr, status, error) {
+      /**
+       * Log the status and status text of the request
+       */
       console.log(xhr.status + ": " + xhr.statusText);
     }
   });
 }
 
-function resizeWindow(TimeOut){
 
-  // If TimeOut is not specified, make it 3000 ms.
-  if(TimeOut == null) {
-    TimeOut = 3000;
+// Add a listener to adjust the page when the window width changes. Only repeat max every 300 ms.
+$(window).on("resize", _.debounce(lazyResize, 300));
+
+// If the window size has changed by more than 20px since last time the lazyResize function was called, the loader will be shown to spare the user having to look at a badly aligned infographic.
+// The condition of 20px ensures that the loader doesn't appear when small adjustments are made to the window that don't interfere too much with usability.
+$(window).on("resize", eagerResize);
+
+// The function for the listener above. It is not affected by the 300 ms limit, but runs every time the window is resized.
+// Loader is shown if the window size has changed by more than 20px since the last time lazyResize was called
+function eagerResize() {
+
+  // Check if the new window size is supported and give user feedback accordingly.
+  // This function will disable the #loader element if it is visible
+  checkIfWindowSizeSupported();
+
+  if (Math.abs(LastResizeWidth - window.innerWidth) > 20) {
+    $('#loader').show();
   }
-
-  setTimeout(function(){
-    checkIfWindowSizeSupported();
-    adjustOverlayToSVGSize();
-    drawDots();
-  }, TimeOut)
 }
 
+// This performs several actions in response to the change in window size
+function lazyResize() {
+
+  // Adjust the size of the overlay to match the SVG element.
+  adjustOverlayToSVGSize();
+
+  // Redraw the dots on the technology radar to match the new size.
+  drawDots();
+
+  // Update the last known window width.
+  LastResizeWidth = window.innerWidth;
+}
+
+/**
+ * adjustOverlayToSVGSize - adjusts the size of the overlay to match the size of the svg
+ * the SVG is always either taking up the full height or height of its container.
+ * We compare the viewport's aspect ratio to the SVG's ratio to find out which one of these applies and adjust the overlay's size accordingly.
+ */
 function adjustOverlayToSVGSize() {
+  // Store the aspect ratio of the svg
   var SVGAspectRatio = 1360.161 / 773.057;
 
+  // Get the window inner width and height
   var WindowInnerWidth = window.innerWidth;
   var WindowInnerHeight = window.innerHeight;
 
+  // Calculate the aspect ratio of the window
   var WindowAspectRatio = WindowInnerWidth / WindowInnerHeight;
+
+  // If the window aspect ratio is greater than the svg aspect ratio
   if (WindowAspectRatio > SVGAspectRatio) {
-    console.log(window.innerHeight);
+    // Set the height of the overlay to the window inner height
     SVGOverlay.style.height = WindowInnerHeight + 'px';
-    SVGOverlay.style.width = WindowInnerHeight*SVGAspectRatio + 'px';
+    // Set the width of the overlay to the calculated value
+    SVGOverlay.style.width = WindowInnerHeight * SVGAspectRatio + 'px';
   }
+  // If the window aspect ratio is less than the svg aspect ratio
   else {
+    // Set the width of the overlay to the window inner width
     SVGOverlay.style.width = WindowInnerWidth + 'px';
-    SVGOverlay.style.height = WindowInnerWidth/SVGAspectRatio + 'px';
+    // Set the height of the overlay to the calculated value
+    SVGOverlay.style.height = WindowInnerWidth / SVGAspectRatio + 'px';
   }
 }
 
+/**
+ * changeFeedback - Function to hide all fullscreen info elements and show the specified one
+ *
+ * @param {string} [WindowID] - The ID of the fullscreen info element to show
+ */
+function changeFeedback(WindowID) {
+
+  // Select all fullscreen info elements
+  let FullscreenInfo = document.querySelectorAll(".fullscreen-info");
+
+  let ShowTouch = false;
+  if (document.getElementById('touch').style.display="block") {
+    ShowTouch = true;
+  }
+  // Hide them all
+  $(FullscreenInfo).hide();
+
+  if (ShowTouch) {
+    $('#touch').show();
+  }
+
+  // If a WindowID is not present, make it visible
+  if (WindowID) {
+    $(WindowID).show();
+  }
+}
+
+/**
+ * Checks if the window size is supported, giving user feedback
+ * 
+ * @return {void}
+ */
 function checkIfWindowSizeSupported() {
+  console.log("test");
   var RadarWidth = $("#radar-infographic").width();
     
     if (screen.width < screen.height && RadarWidth < 1000 && screen.height/screen.width > 1.25) {
@@ -116,34 +201,48 @@ function checkIfWindowSizeSupported() {
       // If the radar has less than 1000 px of space;
       // and flipping the screen would give more than a 25% increase in size:
       // hide the other messages and show the element with the ID "turn-screen"
-      $("#expand-window, #unsupported-media, #loader").hide();
-      $("#turn-screen").show();
+      changeFeedback("#turn-screen");
     } 
-    else if (RadarWidth > RadarMinWidth) {
+    else if (RadarWidth >= RadarMinWidth) {
       // If the width of the element is already over minimum, hide all messages and do nothing
-      $("#turn-screen, #expand-window, #unsupported-media").hide();
+      console.log("test");
+      changeFeedback();
     }
     else if (screen.width < RadarMinWidth && screen.height < RadarMinWidth) {
       // If neither the width or height of the screen is more than 660 pixels,
       // hide the other messages and show the element with the ID "unsupported-media"
-      $("#turn-screen, #expand-window, #loader").hide();
-      $("#unsupported-media").show();
+      changeFeedback('#unsupported-media');
     }
     else if(RadarWidth < RadarMinWidth && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
       // If the radar is less than 660 wide and the site is not running on mobile,
       // tell the user to expand their browser window
-      $("#turn-screen, #unsupported-media, #loader").hide();
-      $("#expand-window").show();
+      changeFeedback('#expand-window');
     }
     else {
       // If none of the above conditions are met, hide the other messages and show the element with the ID "unsupported-media"
+      changeFeedback('#unsupported-media');
     }
+
+    setTimeout(function() {
+      $("#touch").hide();
+    }, 2400);
 }
 
+/**
+ * drawDots()
+ * 
+ * This function is responsible for drawing the dots on the graph. It gets the data from the TechnologiesData object and uses it to create the dots.
+ * It also re-applys the zoom if relevant
+ *
+ * @param {Object} TechnologiesData - The data used to create the dots.
+ * @param {HTMLElement} Loader - The loader element used to show the loading animation.
+ * @param {HTMLElement} Dots - The element that holds the dots.
+ * @param {Boolean} Zoomed - Flag to indicate if the graph is zoomed in or not.
+ */
 function drawDots(){
 
-  const loader = document.getElementById("loader");
-  $(loader).show();
+  const Loader = document.getElementById("loader");
+  $(Loader).show();
   $(Dots).hide();
 
   // Delete any existing dots
@@ -152,50 +251,64 @@ function drawDots(){
   }
 
   // Loop through the data
-  for (var i=0; i < TechnologiesData.technologies.length; i++) {
+  TechnologiesData.technologies.forEach((technology, index) => {
     // Call the createDot function with the technology name, x-position, y-position, and administrations
-    createDot(TechnologiesData.technologies[i].techName, TechnologiesData.technologies[i].x, TechnologiesData.technologies[i].y, TechnologiesData.technologies[i].administrations, i);
+    createDot(technology.techName, technology.x, technology.y, technology.administrations, index);
+  });
+
+  if(Zoomed){
+    zoomOut();
   }
 
-  document.getElementById("radar-infographic").classList.add('transition');
-  $(loader).hide();
+  $(Loader).hide();
   $(Dots).show();
 }
 
+/**
+ * Function to create a dot
+ * @param {string} dotTextInput - The text to display by the dot
+ * @param {number} x - The x position of the dot
+ * @param {number} y - The y position of the dot
+ * @param {object} administrations - An object containing the administrations and their values
+ * @param {number} id - The id of the dot
+ */
 // Function to create a dot
 function createDot(dotTextInput, x, y, administrations, id) {
   // Create a dot div and set the x and y positions
-  var dot = createDiv('dot', Dots);
+  const dot = createDiv('dot', Dots);
 
-  dot.style.bottom = y + yOffset + '%';
-
-  if (x<0 && !TechnologiesData.technologies[id]["inverted-text"]){
-    dot.style.right = xOffset - x - 1.5 + '%';
-    dot.classList.add("reverse-text");
+  dot.style.bottom = `${y + yOffset}%`;
+  if (x<0){
+    dot.style.right = `${xOffset - x -1.5}%`
+    dot.style.left = 'auto';
   }
   else {
-    dot.style.left = x + xOffset + 0.7 + '%';
+    dot.style.left = `${x + xOffset + 0.7}%`;
   }
 
-  dot.id = "dot-" + id.toString();
+  if(TechnologiesData.technologies[id]["inverted-text"] && x > 0 || !TechnologiesData.technologies[id]["inverted-text"] && x < 0) {
+    dot.classList.add("reverse-text");
+  }
+
+  dot.id = `dot-${id.toString()}`;
 
   // Create a container for the squares
-  squareContainer = createDiv('square-container', dot);
+  const squareContainer = createDiv('square-container', dot);
     
   // Loop through the administrations in the data
-  for (var i=0; i < Object.keys(administrations).length; i++) {
+  Object.keys(administrations).forEach(administration => {
     // Create a square div
-    var square = createDiv('square', squareContainer);
+    const square = createDiv('square', squareContainer);
     // If the administration is true, add the color class to the square
-    if (administrations[Object.keys(administrations)[i]] == true){
-    square.classList.add(AdministrationColors[Object.keys(administrations)[i]]);
+    if (administrations[administration] == true){
+    square.classList.add(AdministrationColors[administration]);
     }
-  }
+  });
 
-  var maturity = TechnologiesData.technologies[id]["maturity"]
-  dot.classList.add("maturity-" +maturity);
+  const maturity = TechnologiesData.technologies[id]["maturity"]
+  dot.classList.add(`maturity-${maturity}`);
 
-  var dotText = createDiv('dot-text', dot);
+  const dotText = createDiv('dot-text', dot);
   dotText.innerHTML = dotTextInput;
 
 }
@@ -217,8 +330,7 @@ Dots.addEventListener('click', openInfo);
 
 // Function to open the info box
 function openInfo(e) {
-  // Check if the element is a dot
-  console.log(e);
+
   if (!e.target.closest('.dot')) {
     return;
   }
@@ -226,16 +338,18 @@ function openInfo(e) {
   // Get the dot
   var dot = e.target.closest('.dot');
 
-  if (dot.classList.contains('maturity-3') && e.pointerType == "touch"){
-    console.log("ZOOOOOMIN IN");
+  if (dot.classList.contains('maturity-3') && (e.pointerType == "touch" || SVGOverlay.offsetWidth < 750) && !Zoomed){
     zoomIn();
     return;
   }
 
   // Get the ID of the dot
   var techId = dot.id
+  console.log(document.getElementById(techId).offsetWidth);
   // Split it up by the - and get the second part of the ID (the number itself)
   techId = (techId.split('-'))[1];
+
+
 
   // Change infographic-name to the technology name
 
@@ -257,66 +371,174 @@ function openInfo(e) {
   var pictogram = TechnologiesData.technologies[techId].pictogram;
 
   if (pictogram) {
+  // If there is a pictogram, show it on the pictogram img element
     document.getElementById('pictogram').src = pictogram;
   }
   else {
+  // Otherwise, show the default pictogram
     document.getElementById('pictogram').src = "media/digital-transformation.png";
   }
-  document.getElementById('pictogram')
+
+  var link = TechnologiesData.technologies[techId].link;
+  console.log(`link: ${link}`);
+
+
+  
+  if(link && link != '') {
+  // If the link exists and isn't blank, show the 'read more' button and insert the link.
+    $('#read-more').show();
+    document.getElementById('read-more').href = link;
+  }
+  else {
+  // Otherwise, hide the 'read more' button.
+    $('#read-more').hide();
+  }
 
   // Animate the info box in
   InfoBox.style.display = "block";
 
 }
 
+/**
+* @function zoomIn
+* The zoomIn function changes the position of the dots with a maturity of 3 and adds the zoom-field class to the klar-field element.
+* @returns {undefined}
+*/
 function zoomIn() {
-  console.log("Zooming in");
-  for (let i = 0; i < Dots.children.length; i++) {
-    let Dot = Dots.children[i];
+  Zoomed = true;
+  for (var i=0; i < TechnologiesData.technologies.length; i++) {
+    let Dot = document.getElementById('dot-' +i);
     if (Dot.className.includes("maturity-3")) {
-      let left = Dots.children[i].style.left;
-      let right = Dots.children[i].style.right;
-      let bottom = Dots.children[i].style.bottom;
+      let OldX = TechnologiesData.technologies[i].x;
+      let widthFactor = SVGOverlay.offsetWidth / Dot.offsetWidth * 1.25;
+      let NewX = OldX * widthFactor;
 
+      let OldY = TechnologiesData.technologies[i].y;
+      let heightFactor = SVGOverlay.offsetHeight / Dot.offsetHeight * 2;
+      let NewY = -OldY * heightFactor;
 
-      /*if (x<0 && !TechnologiesData.technologies[id]["inverted-text"]){
-        dot.style.right = xOffset - x - 1.5 + '%';
-        dot.classList.add("reverse-text");
-      }
-      else {
-        dot.style.left = x + xOffset + '%';
-      }*/
+      DotText = Dot.getElementsByClassName('dot-text')[0];
 
-      if (right != "") {
-        right = parseFloat(right.replace("%", ""));
-        right = (-right/xOffset)+1.5;
-        console.log(right);
-        var newRight = (right*(47/20));
-        console.log(newRight);
-        Dots.children[i].style.right = newRight + "%";
+      if (Dot.classList.contains('reverse-text') && OldX < -9) {
+        Dot.classList.remove('reverse-text');
+        NewX += 50;
       }
-      else if (left != "") {
-        left = parseFloat(left.replace("%", ""));
-        Dots.children[i].style.left = left*(47/20)+ "%";
-      }
-      else {
-        console.error("Uncaught exception: No value entered for either 'right' or 'left' at dot-" +i);
+      else if (!Dot.classList.contains('reverse-text') && OldX > 9) {
+        Dot.classList.add('reverse-text');
+        NewX -= 50;
       }
 
-      //console.log("Dot nr " +i+ " left: " +left+ " right: " +right);
+      Dot.style.transform = `translate(${NewX}%, ${NewY}%)`;
 
-      //bottom = parseFloat(bottom.replace("%", ""));
-      //Dots.children[i].style.bottom = bottom*(82/28)+ "%";
-      
     } else {
-      Dots.children[i].classList.add("disappear");
+      Dot.classList.add("disappear");
     }
   }
-  document.getElementById('klar-field').classList.add('zoom-field');
+  var LabelBoxes = document.getElementsByClassName("label-box");
+  for (var i = 0; i < LabelBoxes.length; i++) {
+    if (LabelBoxes[i].id != "klar-label-box") {
+      LabelBoxes[i].style.opacity = 0;
+    }
+  }
+
+  var LabelBoxes = document.getElementsByClassName("label-text");
+  for (var i = 0; i < LabelBoxes.length; i++) {
+    if (LabelBoxes[i].id != "klar-text") {
+      LabelBoxes[i].style.opacity = 0;
+    }
+  }
+  document.getElementById('klar-label-box').style = 'transform: scaleX(2.76);';
+  document.getElementById('klar-label-box').setAttribute('d', 'M 451.25 697.46 L 693.89 697.46 L 693.89 766.06 L 451.25 766.06 L 451.25 756.8 L 451.25 731.8 L 451.25 706.8 L 451.25 697.46 Z');
+  document.getElementById('klar-field').style = 'transform: scale(2.73);';
+  document.getElementById('shrink').style = "display:block;";
+
+  var Fields = document.getElementsByClassName("field");
+  for (var i = 0; i < Fields.length; i++) {
+    if(Fields[i].id != 'klar-field'){
+      Fields[i].style.opacity = 0;
+    }
+  }
+
+}
+
+// Add a click event listener to the document
+document.getElementById('shrink').addEventListener('click', zoomOut);
+
+/**
+* @function zoomOut
+* The zoomOut function changes the position of the dots with a maturity of 3 and removes the zoom-field class from the klar-field element.
+* @returns {undefined}
+*/
+function zoomOut() {
+
+  Zoomed = false;
+
+  for (var i=0; i < TechnologiesData.technologies.length; i++) {
+  // Cycle through all of the technologies, undoing what was done to them in the zoom process.
+  // We do it like this instead of just calling drawDots() so the dots animate back in place instead of teleporting
+
+    let Dot = document.getElementById('dot-' +i); // Find each technology's dot by ID
+    let OldX = TechnologiesData.technologies[i].x; // Take note of the normal X value
+
+    // As part of zooming in, dot-text was reversed for dots in the outer extremities of klar so it wouldn't run off the edges of the viewport
+    // Now, we reverse this:
+    if (!Dot.classList.contains('reverse-text') && OldX < -9) {
+      Dot.classList.add('reverse-text');
+    }
+
+    else if (Dot.classList.contains('reverse-text') && OldX > 9) {
+      Dot.classList.remove('reverse-text');
+    }
+
+    if (Dot.className.includes("maturity-3")) {
+    // Reset the transform of maturity-3 (klar) dots.
+      Dot.style.transform = '';
+    } else {
+    // Make the other dots visible again.
+      Dot.classList.remove("disappear");
+    }
+  }
+  
+
+  // Find all of the label-text elements
+  var LabelBoxes = document.getElementsByClassName("label-text");
+
+  for (var i = 0; i < LabelBoxes.length; i++) {
+  // Cycle through all of them
+
+    if (LabelBoxes[i].id != "klar-text") {
+    // Giving all of them, except for the klar-text an opacity of 1, making them visible again.
+      LabelBoxes[i].style.opacity = 1;
+    }
+  }
+
+  // Make the klar label box pointy again instead of a rectangle
+  document.getElementById('klar-label-box').setAttribute('d', 'M 451.25 697.46 L 693.89 697.46 L 693.89 766.06 L 451.25 766.06 L 451.25 756.8 L 471.249 731.8 L 451.25 706.8 Z');
+  
+  // Remove the transform (scaling) from the klar field and its respective label box.
+  document.getElementById('klar-field').style.transform = '';
+  document.getElementById('klar-label-box').style = '';
+
+  // Hide the button for shrinking the 'klar' field down again
+  document.getElementById('shrink').style = "display:none;";
+
+  // Set the opacity of the various fields and label boxes back to normal
+  document.getElementById('afproev-field').style="opacity:0.6;"
+  document.getElementById('afproev-label-box').style="opacity:0.6;"
+  document.getElementById('hold-oeje-field').style="opacity:0.4;"
+  document.getElementById('hold-oeje-label-box').style="opacity:0.4;"
+  document.getElementById('afvent-field').style="opacity:0.2;"
+  document.getElementById('afvent-label-box').style="opacity:0.2;"
 }
 
 
-// Function to create a div
+/**
+* @function createDiv
+* The createDiv function creates a new div element and sets its class name. The created div is then appended to the specified parent element.
+* @param {string} className - The class name to be set for the div element.
+* @param {Element} parent - The parent element where the div will be appended to.
+* @returns {Element} - The created div element.
+*/
 function createDiv(className, parent) {
   // Create the div
   var div = document.createElement('div');
