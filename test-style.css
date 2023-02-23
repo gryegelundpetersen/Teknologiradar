@@ -1,7 +1,7 @@
 * {
     font-family: 'Noto Sans JP';
     margin: 0;
-    padding: 0;  
+    padding: 0;
 }
 
 .hero { 
@@ -43,14 +43,6 @@ h2 {
     position: relative;
     font-size: 18px;
     font-weight: 400;
-}
-
-h3 {
-
-}
-
-h4 {
-
 }
 
 .black { 

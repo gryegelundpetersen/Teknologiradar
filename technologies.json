@@ -132,7 +132,7 @@
         },
         {
             "techName": "IoT / Sensorer",
-            "x": -10,
+            "x": -9,
             "y": 22,
             "description": "Test",
             "administrations": {
@@ -244,9 +244,9 @@
         },
         {
             "techName": "Blockchain",
-            "x": -33,
+            "x": -31,
             "y": 30,
-            "description": "Test",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget condimentum leo. Nulla euismod tellus at odio placerat, sit amet congue ante auctor. Mauris gravida ultricies felis, in finibus enim efficitur at. Integer pharetra varius quam, vel sagittis magna euismod eu. Nunc sit amet aliquet leo, nec vehicula ex. Sed ac ex in tortor accumsan tempus. Pellentesque velit nunc, mollis sed ex eget, luctus tempor tellus. Phasellus lorem tellus, dapibus ut ex eget, feugiat aliquam nisi. Maecenas quis aliquam sem, vitae lacinia orci. Aenean dignissim feugiat risus pellentesque mattis. Duis dapibus elit dui, vel laoreet libero tincidunt vel. Nunc quis tempor elit, quis ultrices lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla semper massa nec urna dictum, ac fermentum nibh laoreet. Nulla facilisi.\nQuisque fringilla nunc at interdum aliquam. Morbi luctus quam ut vestibulum suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla dignissim convallis nunc. Sed sed nisl non risus bibendum tempus. Vivamus molestie egestas enim, at rutrum quam ultrices in. Vivamus nec lectus ut augue pulvinar eleifend vel sit amet metus. Aenean id purus viverra urna porttitor fringilla maximus nec odio. Donec id gravida lacus. Nullam porta sapien ac mi laoreet blandit. Nulla ultricies, mi vitae semper varius, dolor tortor tincidunt elit, id vestibulum nisi nisi sed tortor. Nam vitae scelerisque nisi, a blandit velit.",
             "administrations": {
                 "tm": true,
                 "ks": true,
@@ -255,7 +255,7 @@
                 "oea": true,
                 "bu": true
             },
-            "link": "",
+            "link": "https://www.google.dk",
             "maturity": 0,
             "inverted-text": true
         },

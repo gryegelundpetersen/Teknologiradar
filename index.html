@@ -1,11 +1,12 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="da">
     <head>
         <script src="techradar.js" defer></script>
         <link rel="stylesheet" href="stylesheet.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.19/lodash.min.js"></script>
+        <title>Vejle Kommunes Teknologiradar</title>
     </head>
     <body>
         <div class="radar-infographic" id="radar-infographic">
@@ -69,73 +70,77 @@
                   </g>
               </svg>
               <div id="svg-overlay" style="display: none;">
-                  <div class="fill-out no-select" id="dots" style="display:none;"></div>
-                  <div class="color-key no-select">
-                      <div class="administration">
-                          <div class="big-square tm-color"></div>
-                          <h1>T&M</h1>
-                      </div>
-                      <div class="administration">
-                          <div class="big-square ks-color"></div>
-                          <h1>K&S</h1>
-                      </div>
-                      <div class="administration">
-                          <div class="big-square komstab-color"></div>
-                          <h1>Kom.stab</h1>
-                      </div>
-                      <div class="administration">
-                          <div class="big-square velfaerd-color"></div>
-                          <h1>Velfærd</h1>
-                      </div>
-                      <div class="administration">
-                          <div class="big-square oea-color"></div>
-                          <h1>Ø&A</h1>
-                      </div>
-                      <div class="administration">
-                          <div class="big-square bu-color"></div>
-                          <h1>B&U</h1>
-                      </div>
+                <div class="fill-out no-select" id="dots" style="display:none;"></div>
+                <div class="color-key no-select">
+                    <div class="administration">
+                        <div class="big-square tm-color"></div>
+                        <h1>T&M</h1>
+                    </div>
+                    <div class="administration">
+                        <div class="big-square ks-color"></div>
+                        <h1>K&S</h1>
+                    </div>
+                    <div class="administration">
+                        <div class="big-square komstab-color"></div>
+                        <h1>Kom.stab</h1>
+                    </div>
+                    <div class="administration">
+                        <div class="big-square velfaerd-color"></div>
+                        <h1>Velfærd</h1>
+                    </div>
+                    <div class="administration">
+                        <div class="big-square oea-color"></div>
+                        <h1>Ø&A</h1>
+                    </div>
+                    <div class="administration">
+                        <div class="big-square bu-color"></div>
+                        <h1>B&U</h1>
+                    </div>
+                </div>
+            </div>
+                <img class="top-right-button no-select" id="shrink" alt="Klik for at minimere radaren" style="display: none;" src="media/resize-shrink.png" draggable="false">
+                <div id="touch" class="fullscreen-info info-box-container click-out" style="transform: translateY(0);">
+                  <div class="center-all horizontal-center info-box">
+                      <img src="#" class="pictogram" id="finger" alt="">
+                      <p style="margin-top: 4px;">Tryk på en teknologi for at få mere at vide</p>
                   </div>
-                  <img class="top-right-button no-select" id="shrink" style="display: none;"src="media/resize-shrink.png" draggable="false"/>
-                  <div id="touch" class="fullscreen-info" style="display:auto; background-color: rgba(255,255,255,0.5); position: absolute;">
-                    <div class="vertical-center">
-                        <img src="media/touch-finger.png" class="pictogram" id="finger"/>
-                        <p style="margin-top: 4px;">Tryk på en teknologi for at læse mere</p>
+                </div>
+
+                <div class="fullscreen-info info-box-container click-out" id="infographic-info-box">
+                  <div class="info-box">
+                    <button class="top-right-button no-select" id="close-infographic-info">X</button>
+                    <div class="horizontal-center">
+                      <img src="#" alt="" class="pictogram" id="pictogram" style="margin-top: 10px;">
+                      <h2 id="infographic-name">Test</h2>
+                      <p id="infographic-description" style="overflow:auto;"></p>
+                      <button class="read-more" id="read-more" href="" target="_blank" style="margin-bottom: 10px;">Læs mere</button>
                     </div>
                   </div>
               </div>
             </div>
 
-            <div class="info-box" id="infographic-info-box" style="display:none;">
-                <button class="top-right-button no-select" id="close-infographic-info">X</button>
-                <div class="vertical-center">
-                  <img src="" class="pictogram" id="pictogram"/>
-                  <h2 id="infographic-name">Test</h2>
-                  <p id="infographic-description" style="overflow:auto;">Lorem ipsum dolor amet</p>
-                  <a id="read-more" href="" target="_blank"><button class="read-more">Læs mere</button></a>
-                </div>
-                
-            </div>
-            <div id="turn-screen" class="fullscreen-info" style="display:none; z-index: 10000;" >
-                <div class="vertical-center">
-                    <img src="media/phone-rotate.png" class="pictogram"/>
+            
+
+            <div id="turn-screen" class="fullscreen-info feedback" style="display:none; z-index: 10000;" >
+                <div class="center-all">
+                    <img src="media/phone-rotate.png" alt="" class="pictogram">
                     <p>Roter din skærm for at se infografikken.</p>
                 </div>
             </div>
-            <div id="expand-window" class="fullscreen-info" style="display:none; z-index: 10000;">
-                <div class="vertical-center">
-                    <img src="media/expand-horizontal.png" class="pictogram"/>
+            <div id="expand-window" class="fullscreen-info feedback" style="display:none; z-index: 10000;">
+                <div class="center-all">
+                    <img src="media/expand-horizontal.png" alt="" class="pictogram">
                     <p>Udvid dit browser-vindue for at se infografikken.</p>
                 </div>
             </div>
-            <div id="unsupported-media" class="fullscreen-info" style="display:none; z-index: 10001;">
-                <div class="vertical-center">
-                    <img src="media/on-error-sad.png" class="pictogram"/>
+            <div id="unsupported-media" class="fullscreen-info feedback" style="display:none; z-index: 10001;">
+                <div class="center-all">
+                    <img src="media/on-error-sad.png" alt="" class="pictogram">
                     <p>Infografikken understøttes desværre ikke på denne enhed.</p>
                 </div>
             </div>
-            <div id="loader" class="fullscreen-info loader">
-                <div class="vertical-center">
+            <div id="loader" class="fullscreen-info feedback loader">
+                <div class="center-all">
                     <div class="lds-dual-ring"></div>
                 </div>
             </div>

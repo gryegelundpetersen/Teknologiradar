@@ -12,6 +12,9 @@ const RadarMinWidth = 667;
 // Define a variable for the JSON data to be fetched later.
 let TechnologiesData;
 
+// Boolean indicating if the current window size is supported or not.
+let WindowSizeSupported;
+
 // Recording of the width of the infographic last time the lazyResize function was called.
 // If the user resizes the window quickly, the loading wheel is shown until the lazyResize function is called.
 // If the user just resizes the window a little bit, the loader won't be shown.
@@ -38,8 +41,34 @@ let Zoomed = false;     // A boolean flag to store the state of whether the rada
 
 let dynamicStyles = null;  // A variable to store dynamic styles, if any.
 
-// When the document is ready, do the following:
+let Finger = document.getElementById('finger'); // The pictogram for the user indication suggesting to click on a technology
+
+if (/Mobi/.test(navigator.userAgent)) {
+  window.addEventListener("resize", function() {
+    window.scrollTo(0, 1);
+  });
+}
+
+function isTouchDevice() {
+  return (('ontouchstart' in window) ||
+     (navigator.maxTouchPoints > 0) ||
+     (navigator.msMaxTouchPoints > 0));
+}
+
+// Changes the icon for the Finger element based on the current input type (touch == true/false)
+function changeClickIcon() {
+  if (isTouchDevice()) {
+    Finger.src = "media/touch-finger.png"
+  }
+  else {
+    Finger.src = "media/cursor-double-click-3.png"
+  }
+}
+
 $(document).ready(function(){
+
+  changeClickIcon();
+  
 
   // Get references to the elements with the ID "radar-svg" and "svg-overlay".
   SVG = document.getElementById('radar-svg');
@@ -60,6 +89,19 @@ $(document).ready(function(){
  
 });
 
+let TouchMessageShown = false; // Keep track if we have suggested to the user to click a technology to see more info yet.
+
+function showTouchMessage() {
+  if (!TouchMessageShown) {
+    $("#touch").show();
+    TouchMessageShown = true;
+
+    setTimeout(function() {
+      $("#touch").hide();
+    }, 2400);
+  }
+  
+}
 
 
 
@@ -82,8 +124,8 @@ function getTechnologies(){
        * Make sure the radar is wide enough. Prompt user action if not.
        * Once the radar is wide enough, this function will call drawDots
        */
-      lazyResize();
       eagerResize();
+      lazyResize();  
     },
     error: function(xhr, status, error) {
       /**
@@ -108,7 +150,12 @@ function eagerResize() {
 
   // Check if the new window size is supported and give user feedback accordingly.
   // This function will disable the #loader element if it is visible
-  checkIfWindowSizeSupported();
+  WindowSizeSupported = checkIfWindowSizeSupported();
+
+  // Adjust the size of the overlay to match the SVG element.
+  adjustOverlayToSVGSize();
+
+  changeClickIcon();
 
   if (Math.abs(LastResizeWidth - window.innerWidth) > 20) {
     $('#loader').show();
@@ -117,9 +164,6 @@ function eagerResize() {
 
 // This performs several actions in response to the change in window size
 function lazyResize() {
-
-  // Adjust the size of the overlay to match the SVG element.
-  adjustOverlayToSVGSize();
 
   // Redraw the dots on the technology radar to match the new size.
   drawDots();
@@ -138,27 +182,35 @@ function adjustOverlayToSVGSize() {
   var SVGAspectRatio = 1360.161 / 773.057;
 
   // Get the window inner width and height
-  var WindowInnerWidth = window.innerWidth;
-  var WindowInnerHeight = window.innerHeight;
+  var ScreenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  var ScreenHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
 
   // Calculate the aspect ratio of the window
-  var WindowAspectRatio = WindowInnerWidth / WindowInnerHeight;
+  var ScreenAspectRatio = ScreenWidth / ScreenHeight;
 
   // If the window aspect ratio is greater than the svg aspect ratio
-  if (WindowAspectRatio > SVGAspectRatio) {
-    // Set the height of the overlay to the window inner height
-    SVGOverlay.style.height = WindowInnerHeight + 'px';
-    // Set the width of the overlay to the calculated value
-    SVGOverlay.style.width = WindowInnerHeight * SVGAspectRatio + 'px';
+  if (ScreenAspectRatio > SVGAspectRatio) {
+    // Set the max-width of the overlay to what it should be acording to the aspect ratio of the SVG.
+    SVGOverlay.style.maxWidth = ScreenHeight * SVGAspectRatio + 'px';
   }
   // If the window aspect ratio is less than the svg aspect ratio
   else {
-    // Set the width of the overlay to the window inner width
-    SVGOverlay.style.width = WindowInnerWidth + 'px';
-    // Set the height of the overlay to the calculated value
-    SVGOverlay.style.height = WindowInnerWidth / SVGAspectRatio + 'px';
+    SVGOverlay.style.removeProperty('max-width');
   }
+
+  // Position svg-overlay at the same location as radar-svg,
+  // taking into account any CSS transforms
+  var rect = SVG.getBoundingClientRect();
+  var computedStyle = window.getComputedStyle(SVG);
+  var transform = computedStyle.transform || computedStyle.webkitTransform;
+  var transformMatrix = new DOMMatrix(transform);
+  var translateX = transformMatrix.m41;
+  var translateY = transformMatrix.m42;
+  SVGOverlay.style.top = (rect.top + translateY) + "px";
+  SVGOverlay.style.left = (rect.left + translateX) + "px";
 }
+
 
 /**
  * changeFeedback - Function to hide all fullscreen info elements and show the specified one
@@ -167,66 +219,62 @@ function adjustOverlayToSVGSize() {
  */
 function changeFeedback(WindowID) {
 
-  // Select all fullscreen info elements
-  let FullscreenInfo = document.querySelectorAll(".fullscreen-info");
-
-  let ShowTouch = false;
-  if (document.getElementById('touch').style.display="block") {
-    ShowTouch = true;
-  }
-  // Hide them all
+  // Select all fullscreen info elements and hide them all
+  let FullscreenInfo = document.querySelectorAll(".feedback");
   $(FullscreenInfo).hide();
 
-  if (ShowTouch) {
-    $('#touch').show();
-  }
-
-  // If a WindowID is not present, make it visible
+  // If a WindowID is present, make it visible
   if (WindowID) {
     $(WindowID).show();
   }
 }
 
 /**
- * Checks if the window size is supported, giving user feedback
- * 
- * @return {void}
- */
+* Checks if the window size is supported, giving user feedback
+* @return {void}
+*/
 function checkIfWindowSizeSupported() {
-  console.log("test");
   var RadarWidth = $("#radar-infographic").width();
-    
-    if (screen.width < screen.height && RadarWidth < 1000 && screen.height/screen.width > 1.25) {
-      // If the screen width is less than the height, it's in portrait mode;
-      // If the radar has less than 1000 px of space;
-      // and flipping the screen would give more than a 25% increase in size:
-      // hide the other messages and show the element with the ID "turn-screen"
-      changeFeedback("#turn-screen");
-    } 
-    else if (RadarWidth >= RadarMinWidth) {
-      // If the width of the element is already over minimum, hide all messages and do nothing
-      console.log("test");
-      changeFeedback();
-    }
-    else if (screen.width < RadarMinWidth && screen.height < RadarMinWidth) {
-      // If neither the width or height of the screen is more than 660 pixels,
-      // hide the other messages and show the element with the ID "unsupported-media"
-      changeFeedback('#unsupported-media');
-    }
-    else if(RadarWidth < RadarMinWidth && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-      // If the radar is less than 660 wide and the site is not running on mobile,
-      // tell the user to expand their browser window
-      changeFeedback('#expand-window');
-    }
-    else {
-      // If none of the above conditions are met, hide the other messages and show the element with the ID "unsupported-media"
-      changeFeedback('#unsupported-media');
-    }
+  var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  if (RadarWidth >= RadarMinWidth) {
+    // If the width of the element is already over minimum, hide all messages and do nothing
+    changeFeedback();
+    showTouchMessage();
+    return true;
+  }
 
-    setTimeout(function() {
-      $("#touch").hide();
-    }, 2400);
-}
+  else if (isMobile && !(window.orientation === 90 || window.orientation === -90) && RadarWidth < RadarMinWidth && screen.height >= RadarMinWidth) {
+    /**
+    * If the screen width is less than the height, it's in portrait mode;
+    * If the radar has less than 1000 px of space;
+    * and flipping the screen would give more than a 25% increase in size:
+    * hide the other messages and show the element with the ID "turn-screen"
+    */
+    changeFeedback("#turn-screen");
+    return false;
+  }
+  
+  else if(RadarWidth < RadarMinWidth && !isMobile){
+    /**
+    * If the radar is less than RadarMinWidth and the site is running on mobile,
+    * tell the user to expand their browser window
+    */
+    changeFeedback('#expand-window');
+    return false;
+  }
+
+  
+  else {
+  /**
+  * If neither the width or height of the screen is more than 660 pixels,
+  * hide the other messages and show the element with the ID "unsupported-media"
+  */
+  changeFeedback('#unsupported-media');
+  console.log("Unsupported 1");
+  return false;
+  }
+  }
 
 /**
  * drawDots()
@@ -240,7 +288,7 @@ function checkIfWindowSizeSupported() {
  * @param {Boolean} Zoomed - Flag to indicate if the graph is zoomed in or not.
  */
 function drawDots(){
-
+if (WindowSizeSupported) {
   const Loader = document.getElementById("loader");
   $(Loader).show();
   $(Dots).hide();
@@ -262,6 +310,7 @@ function drawDots(){
 
   $(Loader).hide();
   $(Dots).show();
+}
 }
 
 /**
@@ -314,16 +363,32 @@ function createDot(dotTextInput, x, y, administrations, id) {
 }
 
 // Add a click event listener to the document
-document.addEventListener('click', closeInfo);
+document.getElementById('close-infographic-info').addEventListener('click', closeInfo);
 
 // Function to close the info box
-function closeInfo(e) {
-  // Check if the target is the info box
-  if ((!e.target.closest('#infographic-info-box') || e.target.id == 'close-infographic-info') && !e.target.closest('.dot')) {
-    // If it isn't, close the info box
-    InfoBox.style.display = "none"
-  }
+function closeInfo() {
+  InfoBox.style.transform = "translateY(-100%)";
 }
+
+document.addEventListener('click', function(event) {
+  let target = event.target;
+  let clickOutElements = document.getElementsByClassName('click-out');
+
+  for (let i = 0; i < clickOutElements.length; i++) {  
+    
+    if (clickOutElements[i].contains(target)) {
+      if (target === clickOutElements[i]) {
+        if (clickOutElements[i].id !== 'infographic-info-box') {
+          clickOutElements[i].style.display = 'none';
+        } else {
+          closeInfo();
+        }
+      }
+      break;
+    }
+  }
+});
+
 
 // Add a click event listener to the Dots div
 Dots.addEventListener('click', openInfo);
@@ -345,7 +410,6 @@ function openInfo(e) {
 
   // Get the ID of the dot
   var techId = dot.id
-  console.log(document.getElementById(techId).offsetWidth);
   // Split it up by the - and get the second part of the ID (the number itself)
   techId = (techId.split('-'))[1];
 
@@ -380,7 +444,6 @@ function openInfo(e) {
   }
 
   var link = TechnologiesData.technologies[techId].link;
-  console.log(`link: ${link}`);
 
 
   
@@ -395,7 +458,7 @@ function openInfo(e) {
   }
 
   // Animate the info box in
-  InfoBox.style.display = "block";
+  InfoBox.style.transform = "translateY(0)";
 
 }
 
@@ -427,8 +490,6 @@ function zoomIn() {
         Dot.classList.add('reverse-text');
         NewX -= 50;
       }
-
-      Dot.style.transform = `translate(${NewX}%, ${NewY}%)`;
 
     } else {
       Dot.classList.add("disappear");
@@ -540,12 +601,8 @@ function zoomOut() {
 * @returns {Element} - The created div element.
 */
 function createDiv(className, parent) {
-  // Create the div
   var div = document.createElement('div');
-  // Set the class name
   div.className = className;
-  // Append to the parent element
   parent.appendChild(div);
-  // Return the div
   return div;
 }

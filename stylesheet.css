@@ -1,53 +1,37 @@
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
-    background-color:rgba(0,170,0,0)
-
 }
 
+/* BODY */
+
 body {
-    overflow-y: scroll;
-    overflow: hidden;
+    width: auto;
     max-width: 100vw;
     max-height: 100vh;
 }
 
+/* COMMON CLASSES */
 
+.no-select {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.disappear {
+    opacity: 0;
+}
+
+/* RADAR INFOGRAPHIC */
 
 .radar-infographic {
     position: relative;
     font-family: "K2D", "Raleway", "Helvetica", "Arial", sans-serif;
-}
-
-button {
-    cursor: pointer;
-}
-
-#svg-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
-svg {
-    max-width: 100vw;
-    max-height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
-}
-
-.fill-out {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.no-select {
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+    width: auto;
 }
 
 .dot-text {
@@ -55,7 +39,8 @@ svg {
     color: #000;
     padding-left: 4px;
     padding-right: 4px;
-    font-weight: 500;
+    font-weight: inherit;
+    font-size: inherit;
     position: relative;
     -ms-transform: translate(0,-50%);
     transform: translate(0,-50%);
@@ -69,11 +54,41 @@ svg {
     font-weight: bold;
     bottom: -13%;
     left: 50%;
+    font-weight: 500;
     will-change: transform;
-    font-size: 12px;
     transform-box: view-box;
     transition: transform 0.5s ease-out;
 }
+
+/* Small screens (less than 768 px) */
+@media (max-width: 768px) {
+    .dot {
+        font-size: 10px;
+        font-weight: 600;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .dot {
+        font-size: 12px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .dot {
+        font-size: 14px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .dot {
+        font-size: 18px;
+    }
+}
+
 
 .reverse-text {
     flex-direction: row-reverse;
@@ -82,14 +97,24 @@ svg {
 }
 
 .square {
-    width: 33%;
-    height: 50%;
+    height: 0.5rem;
     border-radius: 2px;
+    margin: 2%;
+    flex-basis: 29%; /* distribute squares into two rows */
 }
-
-.disappear {
-    opacity: 0;
+  
+.square-container {
+    display: flex;
+    flex-direction: row;
+    width: 1.5rem;
+    flex-wrap: wrap; /* wrap squares into two rows */
+    position: relative;
+    font-size: inherit;
+    align-content: flex-start;
+    -ms-transform: translate(0,-50%);
+    transform: translate(0,-50%);
 }
+  
 
 .label-box, .label-text {
     transition: opacity 0.5s ease-out;
@@ -118,7 +143,6 @@ svg {
 
 .klar, #klar-label-box {
     transition: transform 0.5s ease-out;
-    
     transform-box: fill-box;
 }
 
@@ -130,7 +154,47 @@ svg {
     transform-origin: right;
 }
 
-/* START Style for the color key at the bottom right */
+.maturity-3 {
+    z-index: 12;
+}
+
+.maturity-2, .maturity-1, .maturity-0 {
+    z-index: 10;
+    transition: opacity .25s ease-out;
+}
+
+/* SVG */
+
+#svg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+svg {
+    max-width: 100%;
+    max-height: 100vh;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+.fill-out {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* BUTTON */
+
+button {
+    cursor: pointer;
+}
+
+/* COLOR KEY */
 
 .color-key {
     height: 9%;
@@ -146,17 +210,17 @@ svg {
 
 .administration {
     height: 100%;
-    width: 16.66%
+    width: 16.66%;
 }
 
 .big-square {
     margin-left: 25%;
-    margin-right: 25%;
+    margin-right:25%;
     height: 60%;
     border-radius: 4px;
 }
 
-/* END Style for the color key at the bottom right */
+/* SCREEN SIZE FLEXBOX */
 
 .screen-size-flexbox {
     display: flex;
@@ -166,65 +230,86 @@ svg {
     height: 100%;
 }
 
-.square-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-    width: 0.9rem;
-    height: 0.6rem;
-    align-content: flex-start;
-    -ms-transform: translate(0,-50%);
-    transform: translate(0,-50%);
+
+/* HEADINGS */
+
+h1 {
+    font-size: 18px;
 }
 
-h2 {
-    font-size: 18px;
+@media (max-width: 869px) {
+    .administration h1 {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 870px) and (max-width: 1399px) {
+    .administration h1 {
+        font-size: 18px;
+    }
+}
     
+@media (min-width: 1400px) {
+    .administration h1 {
+        font-size: 24px;
+    }
 }
 
 .administration h1 {
     text-align: center;
-    font-size: 3vh;
 }
 
-.dot-text {
-    font-size: 14px;
-}
+/* ANIMATIONS */
 
 .dot:hover {
     transform: scale(1.05);
-    transform-origin:center;
+    transform-origin: center;
 }
 
-.maturity-3 {
-    z-index: 12
+@keyframes tap {
+0% {
+    transform: scale(1);
+}
+20% {
+    transform: scale(1.1);
+}
+50% {
+    transform: scale(1.2);
+}
 }
 
-.maturity-2, .maturity-1, .maturity-0 {
-    z-index: 10;
-    transition: opacity .25s ease-out;
+.zoom-field {
+    transform-origin: bottom;
+    transform-box: fill-box;
+    animation: zoom-field 1.2s ease-out forwards;
+    z-index: 11;
 }
 
-#finger {
-    animation: tap 1.2s ease-out alternate-reverse infinite;
+@keyframes zoom-field {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(2.73);
+    }
 }
 
-/* START Style for info box */
+/* INFO BOX */
 
 .info-box {
     position: fixed;
     background-color: #FFFAD6;
     z-index: 10000;
-    color: #004139;
     text-align: center;
-    display: none;
-    height: 100%;
-    width: 100%;
     top: 0;
-} 
+    
+}
 
-.vertical-center {
+p {
+    margin-bottom: 12px;
+}
+
+.center-all {
     position: absolute;
     height: 100%;
     top: 50%;
@@ -235,10 +320,6 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-h2 {
-    margin: 4px;
 }
 
 .top-right-button {
@@ -253,11 +334,10 @@ h2 {
     background: none;
 }
 
-.close:hover {
+.close:hover .button:hover {
     color: #27665e;
     transition: color .2s;
 }
-
 
 .fullscreen-info {
     display: block;
@@ -269,6 +349,28 @@ h2 {
     right: 0;
     background-color: rgba(255,255,255);
     text-align: center;
+}
+
+.info-box-container {
+    background-color:rgba(0, 0, 0, 0);
+    transform: translateY(-100%);
+    transition: transform 1s;
+    position: fixed;
+    display: flex;
+    top: -8px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-box {
+    background-color: rgba(255,255,255);
+    height: auto;
+    width: 65vw;
+    max-height: 90vh;
+    padding: 10%;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .loader {
@@ -284,23 +386,30 @@ h2 {
 .read-more {
     border-radius: 0;
     border: none;
-    background-color:#004139;
-    padding: 10px;
+    background-color: #000;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    padding-left: 4%;
+    padding-right: 4%;
     margin-top: 10px;
-    color: #FFFAD6;
+    font-size: 18px;
+    color: #FFF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+    transition: color 1s, background-color 0.5s, box-shadow 0.5s;
 }
 
 .read-more:hover {
+    box-shadow: inset 0px 0px 0px 4px #000;
     box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    color: #004139;
+
+    color: #000;
     box-sizing: border-box;
-    background-color: #FFFAD6;
-    outline: solid;
-    border-color:#004139;
-    
+    background-color: #FFF;
+    border-color: #FFF;
 }
+
+/* PICTOGRAM */
 
 .pictogram {
     max-width: 8vmax;
@@ -311,8 +420,7 @@ h2 {
     -ms-interpolation-mode: nearest-neighbor;
 }
 
-/* END Style for info box */
-
+/* COLOR CLASSES */
 
 .bu-color {
     background-color: #eb2f2c;
@@ -338,42 +446,16 @@ h2 {
     background-color: #f2eb51;
 }
 
-@keyframes tap {
-    0% {
-        transform: scale(1);
-    }
-    20% {
-        transform: scale(1.1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-}
-
-.zoom-field {
-    transform-origin: bottom;
-    transform-box: fill-box;
-    animation: zoom-field 1.2s ease-out forwards;
-    z-index: 11
-}
-
-@keyframes zoom-field {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(2.73);
-    }
-}
-
 /* LOADER */
+
 /* From https://loading.io/css/ */
 
 .lds-dual-ring {
     display: inline-block;
     width: 80px;
     height: 80px;
-    }
+}
+
 .lds-dual-ring:after {
     content: " ";
     display: block;
@@ -385,6 +467,7 @@ h2 {
     border-color: #000 transparent #000 transparent;
     animation: lds-dual-ring 1.2s linear infinite;
 }
+
 @keyframes lds-dual-ring {
     0% {
         transform: rotate(0deg);
