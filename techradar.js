@@ -477,7 +477,7 @@ function zoomIn() {
       let NewX = OldX * widthFactor;
 
       let OldY = TechnologiesData.technologies[i].y;
-      let heightFactor = SVGOverlay.offsetHeight / Dot.offsetHeight * 2;
+      let heightFactor = SVGOverlay.offsetHeight / Dot.offsetHeight * 0.35;
       let NewY = -OldY * heightFactor;
 
       DotText = Dot.getElementsByClassName('dot-text')[0];
@@ -490,6 +490,9 @@ function zoomIn() {
         Dot.classList.add('reverse-text');
         NewX -= 50;
       }
+
+      Dot.style.transform = `translate(${NewX}px, ${NewY}px)`
+      console.log(`translate(${NewX}, ${NewY})`);
 
     } else {
       Dot.classList.add("disappear");
