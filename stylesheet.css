@@ -81,17 +81,32 @@ body {
     }
 }
 
-/* Large devices (desktops, 992px and up) */
+/* Medium devices (tablets, 992px and up) */
 @media (min-width: 992px) {
     .dot {
         font-size: 14px;
     }
 }
 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+/* Large devices (desktops, 1300px and up) */
+@media (min-width: 1300px) {
     .dot {
         font-size: 18px;
+    }
+    .dot:hover {
+        transform: scale(1.05);
+        transform-origin: center;
+    }
+}
+
+/* Extra large devices (large desktops, 1500px and up) */
+@media (min-width: 1500px) {
+    .dot {
+        font-size: 22px;
+    }
+    .dot:hover {
+        transform: scale(1.05);
+        transform-origin: center;
     }
 }
 
@@ -103,7 +118,7 @@ body {
 }
 
 .square {
-    height: 0.5rem;
+    height: 0.67em;
     border-radius: 2px;
     margin: 2%;
     flex-basis: 29%; /* distribute squares into two rows */
@@ -112,7 +127,7 @@ body {
 .square-container {
     display: flex;
     flex-direction: row;
-    width: 1.5rem;
+    width: 2em;
     flex-wrap: wrap; /* wrap squares into two rows */
     position: relative;
     font-size: inherit;
@@ -268,11 +283,6 @@ h1 {
 
 /* ANIMATIONS */
 
-.dot:hover {
-    transform: scale(1.05);
-    transform-origin: center;
-}
-
 @keyframes tap {
 0% {
     transform: scale(1);
@@ -304,7 +314,7 @@ h1 {
 /* INFO BOX */
 
 .info-box {
-    position: fixed;
+    position: absolute;
     background-color: #FFFAD6;
     z-index: 10000;
     text-align: center;
@@ -348,23 +358,28 @@ p {
 .fullscreen-info {
     display: block;
     z-index: 1000;
-    position: absolute;
+    position: fixed;
     min-height: 100%;
     width: 100%;
-    background-color: rgba(255,255,255);
+    top: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
     text-align: center;
 }
 
 .info-box-container {
     background-color:rgba(0, 0, 0, 0);
-    transform: translateY(-100%);
     transition: transform 1s;
-    position: fixed;
+    position: absolute;
     display: flex;
     top: -8px;
     width: 100%;
     flex-direction: column;
     align-items: center;
+}
+
+.translate-y-100 {
+    transform: translateY(-100%);
 }
 
 .info-box {
@@ -396,6 +411,7 @@ p {
     padding-bottom: 2.5%;
     padding-left: 4%;
     padding-right: 4%;
+    display: inline-block;
     font-size: 18px;
     color: #FFF;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);

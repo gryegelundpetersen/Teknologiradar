@@ -3,7 +3,7 @@
     "technologies": [
         {
             "techName": "Apps",
-            "x": 4,
+            "x": 7,
             "y": 3.5,
             "description": "Apps er software designet til smartphones, tablets, PC'er og anden computerenhed, som kan hentes fra distributionsplatforme (fx. App Store). De kan hjælpe brugeren med specifikke opgaver og skal normalt have en internetforbindelse, men der er flere og flere apps, der kan bruges offline. Vejle Kommune bruger en lang række apps, og der vil i fremtiden se endnu flere.",
             "administrations": {
@@ -19,7 +19,7 @@
         },
         {
             "techName": "Videoløsninger",
-            "x": 2.5,
+            "x": 5.5,
             "y": 11,
             "description": "Videoløsninger er teknologier, der gør det muligt for medarbejdere at kommunikere og dele informationer og data via videokameraer, selv når de involverede parter er adskilt.\nDet giver mulighed for at holde møder og samarbejde på afstand og har mange andre anvendelsesmuligheder, herunder skærmbesøg på seniorområdet, digitale møder med borgerne i jobcentret, virtuel undervisning, borgermøder på Teams fra Sundhedscenteret, virtuelle og hybride arrangementer på bibliotekerne. Der findes også såkaldte 'asynkrone' løsninger, hvor videoerne er optaget på forhånd.",
             "pictogram": "media/meeting-monitor-webcam.png",
@@ -36,7 +36,7 @@
         },
         {
             "techName": "Sociale teknologier",
-            "x": 1.5,
+            "x": 4.5,
             "y": 7,
             "description": "Test",
             "administrations": {
@@ -52,7 +52,7 @@
         },
         {
             "techName": "Skærme og Selvbetjening",
-            "x": 6,
+            "x": 9,
             "y": 0,
             "description": "Test",
             "administrations": {
@@ -68,7 +68,7 @@
         },
         {
             "techName": "Edge Computing",
-            "x": -16,
+            "x": -15,
             "y": 0,
             "description": "Test",
             "administrations": {
@@ -132,7 +132,7 @@
         },
         {
             "techName": "IoT / Sensorer",
-            "x": -9,
+            "x": -7,
             "y": 22,
             "description": "Test",
             "administrations": {
@@ -148,7 +148,7 @@
         },
         {
             "techName": "VR",
-            "x": 2,
+            "x": 5,
             "y": 15,
             "description": "Test",
             "administrations": {
@@ -164,7 +164,7 @@
         },
         {
             "techName": "Virtuelle Digitale Assistenter",
-            "x": 10,
+            "x": 12,
             "y": 17,
             "description": "Test",
             "administrations": {
@@ -212,7 +212,7 @@
         },
         {
             "techName": "Augmented Reality",
-            "x": 1,
+            "x": 4,
             "y": 27,
             "description": "Test",
             "administrations": {
@@ -228,7 +228,7 @@
         },
         {
             "techName": "Proces-mining",
-            "x": -17,
+            "x": -15,
             "y": 40,
             "description": "Test",
             "administrations": {
@@ -244,7 +244,7 @@
         },
         {
             "techName": "Blockchain",
-            "x": -31,
+            "x": -32,
             "y": 30,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget condimentum leo. Nulla euismod tellus at odio placerat, sit amet congue ante auctor. Mauris gravida ultricies felis, in finibus enim efficitur at. Integer pharetra varius quam, vel sagittis magna euismod eu. Nunc sit amet aliquet leo, nec vehicula ex. Sed ac ex in tortor accumsan tempus. Pellentesque velit nunc, mollis sed ex eget, luctus tempor tellus. Phasellus lorem tellus, dapibus ut ex eget, feugiat aliquam nisi. Maecenas quis aliquam sem, vitae lacinia orci. Aenean dignissim feugiat risus pellentesque mattis. Duis dapibus elit dui, vel laoreet libero tincidunt vel. Nunc quis tempor elit, quis ultrices lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla semper massa nec urna dictum, ac fermentum nibh laoreet. Nulla facilisi.\nQuisque fringilla nunc at interdum aliquam. Morbi luctus quam ut vestibulum suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla dignissim convallis nunc. Sed sed nisl non risus bibendum tempus. Vivamus molestie egestas enim, at rutrum quam ultrices in. Vivamus nec lectus ut augue pulvinar eleifend vel sit amet metus. Aenean id purus viverra urna porttitor fringilla maximus nec odio. Donec id gravida lacus. Nullam porta sapien ac mi laoreet blandit. Nulla ultricies, mi vitae semper varius, dolor tortor tincidunt elit, id vestibulum nisi nisi sed tortor. Nam vitae scelerisque nisi, a blandit velit.",
             "administrations": {
@@ -261,7 +261,7 @@
         },
         {
             "techName": "Chatbot",
-            "x": 0.5,
+            "x": 3,
             "y": 21,
             "description": "Test",
             "administrations": {
