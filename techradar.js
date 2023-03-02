@@ -35,8 +35,6 @@ const AdministrationColors = {
 let SVG;                // A variable to store a reference to the element with the ID "radar-svg".
 let SVGOverlay;         // A variable to store a reference to the element with the ID "svg-overlay".
 
-let ExistingDots = [];  // An array to store references to existing dots on the radar.
-
 let Zoomed = false;     // A boolean flag to store the state of whether the radar is zoomed in or not.
 
 let dynamicStyles = null;  // A variable to store dynamic styles, if any.
@@ -185,6 +183,8 @@ function adjustOverlayToSVGSize() {
   var ScreenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   var ScreenHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 
+  // Check if the client is Safari
+  var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
   // Calculate the aspect ratio of the window
   var ScreenAspectRatio = ScreenWidth / ScreenHeight;
@@ -193,10 +193,18 @@ function adjustOverlayToSVGSize() {
   if (ScreenAspectRatio > SVGAspectRatio) {
     // Set the max-width of the overlay to what it should be acording to the aspect ratio of the SVG.
     SVGOverlay.style.maxWidth = ScreenHeight * SVGAspectRatio + 'px';
+    if(isSafari) {
+      SVG.setAttribute("width", ScreenHeight * SVGAspectRatio + 'px');
+      SVG.setAttribute("height", ScreenHeight + 'px');
+    }
   }
   // If the window aspect ratio is less than the svg aspect ratio
   else {
     SVGOverlay.style.removeProperty('max-width');
+    if(isSafari) {
+      SVG.setAttribute("width", ScreenWidth + 'px');
+      SVG.setAttribute("height", ScreenWidth / SVGAspectRatio + 'px');
+    }
   }
 
   // Position svg-overlay at the same location as radar-svg,
@@ -367,7 +375,12 @@ document.getElementById('close-infographic-info').addEventListener('click', clos
 
 // Function to close the info box
 function closeInfo() {
-  InfoBox.style.transform = "translateY(-100%)";
+  InfoBox.style.transform = `translateY(-${InfoBox.offsetHeight}px)`;
+
+  /*var infographicDescription = document.getElementById('infographic-description');
+  while (infographicDescription.firstChild) {
+    infographicDescription.removeChild(infographicDescription.firstChild);
+  }*/
 }
 
 document.addEventListener('click', function(event) {
@@ -492,7 +505,6 @@ function zoomIn() {
       }
 
       Dot.style.transform = `translate(${NewX}px, ${NewY}px)`
-      console.log(`translate(${NewX}, ${NewY})`);
 
     } else {
       Dot.classList.add("disappear");
@@ -546,11 +558,11 @@ function zoomOut() {
 
     // As part of zooming in, dot-text was reversed for dots in the outer extremities of klar so it wouldn't run off the edges of the viewport
     // Now, we reverse this:
-    if (!Dot.classList.contains('reverse-text') && OldX < -9) {
+    if (!Dot.classList.contains('reverse-text') && OldX < -9 && !TechnologiesData.technologies[i]["inverted-text"]) {
       Dot.classList.add('reverse-text');
     }
 
-    else if (Dot.classList.contains('reverse-text') && OldX > 9) {
+    else if (Dot.classList.contains('reverse-text') && OldX > 9 && !TechnologiesData.technologies[i]["inverted-text"]) {
       Dot.classList.remove('reverse-text');
     }
 
