@@ -1,4 +1,4 @@
-import { IsWindowSizeSupported, isMobile } from './responsive-design.js';
+import { IsWindowSizeSupported } from './responsive-design.js';
 import { TechnologiesData } from './data.js';
 import { SVGOverlay } from './main.js';
 
@@ -111,12 +111,13 @@ function zoomIn() {
     let Dot = document.getElementById('dot-' +i);
     if (Dot.className.includes("maturity-3")) {
       let OldX = TechnologiesData.technologies[i].x;
-      let widthFactor = SVGOverlay.offsetWidth / Dot.offsetWidth * 1.25;
+      let widthFactor = 7;
       let NewX = OldX * widthFactor;
 
       let OldY = TechnologiesData.technologies[i].y;
-      let heightFactor = SVGOverlay.offsetHeight / Dot.offsetHeight * 0.35;
+      let heightFactor = 7;
       let NewY = -OldY * heightFactor;
+      console.log(heightFactor);
 
       if (Dot.classList.contains('reverse-text') && OldX < -9) {
         Dot.classList.remove('reverse-text');

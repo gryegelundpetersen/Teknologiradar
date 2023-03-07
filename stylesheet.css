@@ -64,6 +64,7 @@ body {
     will-change: transform;
     transform-box: view-box;
     transition: transform 0.5s ease-out;
+    box-shadow: 5px, 10px, rgba(0, 0, 0, 0.5)
 }
 
 /* Small screens (less than 768 px) */
