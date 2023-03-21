@@ -9,3 +9,11 @@ The technologies featured in this radar are listed in the technologies.json file
 
 ##Icon Media
 The following icons in this project use low-resolution versions from [Streamline](https://www.streamlinehq.com/icons). Employees at Vejle can find information about how to license the full resolution versions by searching 'piktogrammer' on the Intranet.
+* Expand Horizontal 4
+* Meeting Monitor Webcam
+* On Error Sad
+* Phone Rotate 1
+* Vr User Play
+* Resize Shrink
+* Touch Finger
+* Cursor Double Click 3
