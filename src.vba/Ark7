@@ -1,4 +1,42 @@
+Dim startRow As Integer
+Dim description As String
+    
 Sub ConvertExcelToJSON()
+
+'''''''''''''''' SETTINGS ''''''''''''''''
+
+' Hvilken række starter teknologierne ved?
+ startRow = 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''''''''''''''' SETTINGS END - PROCEED WITH CAUTION UNLESS YOU KNOW WHAT YOU'RE DOING ''''''''''''''''
+
     Dim jsonOutput As String
     Dim lastRow As Long
     Dim techName As String
@@ -14,38 +52,51 @@ Sub ConvertExcelToJSON()
     Dim outputFileName As String
     Dim outputFilePath As String
     Dim isFirstTech As Boolean
+    Dim technologies As String
+    Dim response As VbMsgBoxResult
+    Dim isFirstDataEntry As Boolean
+    
+    isFirstDataEntry = True
     
     ' Set the output file name and path
     desktopPath = Environ("USERPROFILE") & "\Desktop\"
     outputFileName = "technologies.json"
     outputFilePath = desktopPath & outputFileName
     
-    ' Clear any existing content in the output file
-    Open outputFilePath For Output As #1
-    Close #1
-    
     ' Initialize the JSON output string
     jsonOutput = "{""technologies"": ["
     
-    ' Find the last row of data in the "Overordnet" worksheet
-    lastRow = Sheets("Overordnet").Cells(Rows.Count, "B").End(xlUp).row
+    ' Find the last row of data in the 1 worksheet
+    lastRow = Sheets(1).Cells(Rows.Count, "B").End(xlUp).row
     
     ' Loop through each row of data starting from row 9
-    For i = 9 To lastRow
-        ' Read the values of each column for the current row
-        MsgBox techName
-        techName = Sheets("Overordnet").Cells(i, "B").Value
-        oea = Sheets("Overordnet").Cells(i, "E").Value
-        tm = Sheets("Overordnet").Cells(i, "F").Value
-        bu = Sheets("Overordnet").Cells(i, "G").Value
-        velfaerd = Sheets("Overordnet").Cells(i, "H").Value
-        ks = Sheets("Overordnet").Cells(i, "I").Value
-        komstab = Sheets("Overordnet").Cells(i, "J").Value
+    For i = startRow To lastRow
+        
+        techName = Sheets(1).Cells(i, "B").Value
         
         ' Skip the row if the techName is empty
         If techName = "" Then
             GoTo NextI
         End If
+
+        technologies = technologies + vbNewLine + "- " + techName
+
+        ' Read the values of each column for the current row
+        oea = Sheets(1).Cells(i, "E").Value
+        tm = Sheets(1).Cells(i, "F").Value
+        bu = Sheets(1).Cells(i, "G").Value
+        velfaerd = Sheets(1).Cells(i, "H").Value
+        ks = Sheets(1).Cells(i, "I").Value
+        komstab = Sheets(1).Cells(i, "J").Value
+        
+        description = EscapeJSONString(Sheets(1).Cells(i, "K").Value)
+        
+        If description <> "" Then
+        MsgBox description
+        End If
+
+        link = Sheets(1).Cells(i, "L").Value
+        
         
         ' Find the maximum value among the administrative categories
         maxAdminValue = WorksheetFunction.Max(oea, tm, bu, velfaerd, ks, komstab)
@@ -54,10 +105,12 @@ Sub ConvertExcelToJSON()
         maturity = maxAdminValue - 1
         
         ' Initialize the JSON object for the current technology
-        If i <> 9 Then
+        If isFirstDataEntry = False Then
+        ' There needs to be a comma separating each
             jsonOutput = jsonOutput & ","
         End If
-        jsonOutput = jsonOutput & "{""techName"": """ & techName & """, ""x"": 0, ""y"": 0, ""description"": """", ""administrations"": {"
+        isFirstDataEntry = False
+        jsonOutput = jsonOutput & "{""techName"": """ & techName & """, ""x"": 0, ""y"": 0, ""description"": """ & description & """, ""administrations"": {"
         
         ' Add the administrative categories to the JSON object
         jsonOutput = jsonOutput & """oea"": " & IIf(oea = maxAdminValue, "true", "false") & ","
@@ -66,19 +119,61 @@ Sub ConvertExcelToJSON()
         jsonOutput = jsonOutput & """velfaerd"": " & IIf(velfaerd = maxAdminValue, "true", "false") & ","
         jsonOutput = jsonOutput & """ks"": " & IIf(ks = maxAdminValue, "true", "false") & ","
         jsonOutput = jsonOutput & """komstab"": " & IIf(komstab = maxAdminValue, "true", "false") & "},"
+        
         ' Add the link and maturity fields to the JSON object
-        jsonOutput = jsonOutput & """link"": """", ""maturity"": " & maturity & "}"
+        jsonOutput = jsonOutput & """link"": """ & link & """, ""maturity"": " & maturity & "}"
 NextI:
     Next i
     
     ' Complete the JSON output string
     jsonOutput = jsonOutput & "]}"
     
+    response = MsgBox("Følgende teknologier blev fundet. Klar til at generere JSON-fil?" + vbNewLine + technologies, vbYesNo)
+
+    If response = vbYes Then
     ' Write the JSON output to the output file
-    Open outputFilePath For Output As #1
-    Print #1, jsonOutput
-    Close #1
+    ' Clear any existing content in the output file
+        Dim stream As Object
+        Set stream = CreateObject("ADODB.Stream")
+        stream.Type = 2 'Text
+        stream.Charset = "utf-8"
+        stream.Open
+        stream.WriteText jsonOutput
+        stream.SaveToFile outputFilePath, 2 'Create or overwrite the file
+        stream.Close
+
+    End If
     
-    MsgBox "Created JSON file at" + outputFilePath
 End Sub
+
+Function EscapeJSONString(ByVal inputText As String) As String
+    Dim escapedText As String
+    Dim i As Long
+    
+    escapedText = ""
+    
+    For i = 1 To Len(inputText)
+        Select Case Mid(inputText, i, 1)
+            Case "\"
+                escapedText = escapedText & "\\"
+            Case """"
+                escapedText = escapedText & "\" & """"
+            Case "/"
+                escapedText = escapedText & "\/"
+            Case vbBack
+                escapedText = escapedText & "\b"
+            Case vbFormFeed
+                escapedText = escapedText & "\f"
+            Case vbNewLine, vbLf, vbCr
+                escapedText = escapedText & "\n"
+            Case vbTab
+                escapedText = escapedText & "\t"
+            Case Else
+                escapedText = escapedText & Mid(inputText, i, 1)
+        End Select
+    Next i
+    
+    EscapeJSONString = escapedText
+End Function
+
 
