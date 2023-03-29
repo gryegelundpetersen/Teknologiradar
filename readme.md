@@ -2,7 +2,7 @@
 This technology radar is a tool created in HTML/CSS/JS with a bit of jQuery for Vejle Municipality. It is used to communicate the maturity of emerging technologies within the context of the six administrations of the municipality.
 
 ## Technologies
-The technologies featured in this radar are listed in the technologies.json file. To update the list of technologies, an Excel spreadsheet (`GenerateJSON.xslm`) is included in the project that can automatically generate a new JSON file with different technologies. Note that the coordinates for the technologies cannot currently be assigned automatically, so this process involves 
+The technologies featured in this radar are listed in the technologies.json file. To update the list of technologies, an Excel spreadsheet (`GenerateJSON.xslm`) is included in the project that can automatically generate a new JSON file with different technologies. Note that the coordinates for the technologies cannot currently be assigned automatically, so this process involves some manual trial and error.
 
 ### Generating technologies.json
 This package includes an Excel file that can help you generate a JSON file for future technology radars. Here's a step-by-step guide on how to use it:
