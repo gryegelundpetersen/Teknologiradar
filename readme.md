@@ -37,3 +37,14 @@ The generated JSON file will not be formatted terribly prettily. If you wish, yo
 | Values for Komstab                            | J      |
 | Descriptions of the technologies              | K      |
 | Links to read more (FULL LINKS! https://...)  | L      |
+
+## Development Environment
+This section describes the setup for the development environment of the project.
+### Live Server Extension
+Install the Live Server extension for Visual Studio Code. This is used to run a local web server while making changes to the project.
+### Python
+Make sure Python is installed on your machine.
+### Oletools
+Install `oletools` package via pip, Python's package manager, using the following command:
+´pip install -U oletool´
+This package is used for a hook that extracts VBA scripts from Excel workbooks pre-commit to ensure proper version control on these files.
