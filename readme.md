@@ -32,7 +32,7 @@ Install the Live Server extension for Visual Studio Code. This is used to run a 
 Make sure Python is installed on your machine.
 ### Oletools
 Install `oletools` package via pip, Python's package manager, using the following command:
-´pip install -U oletool´
+`pip install -U oletools`
 This package is used for a hook that extracts VBA scripts from Excel workbooks pre-commit to ensure proper version control on these files.
 
 ## Icon Media
