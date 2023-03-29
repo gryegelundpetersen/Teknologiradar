@@ -19,12 +19,12 @@ The following icons in this project use low-resolution versions from [Streamline
 * Cursor Double Click 3
 
 ## Generating technologies.json
-In this package, there is included an Excel file to help generate a JSON file for future technology radars. Here, I will explain how to use it.
-1. Prepare the data. Here, we will be using the "Overordnet" sheet from the technology radar sheet. Make sure the rows of each technology line up with the same rows in the sheets for each of the administrations. If there, for example, are extra blank rows in the other sheets, the data could be incorrect!
-2. IMPORTANT: When opening GenerateJSON.xlsm, make sure to trust macros, otherwise it will be unable to generate the file for you!
-3. Paste the data from "Overordnet" sheet (named above) into the "Generer JSON" sheet included in GenerateJSON.xslm. Below, you can find a table over what data should go in which columns.
-4. Click on the button near the top left, "Konverter til JSON". A JSON file called "technologies.json" will be generated on your desktop. Open it with your favorite code editor.
-5. As you will see, the JSON file generated is all on one line.
+This package includes an Excel file that can help you generate a JSON file for future technology radars. Here's a step-by-step guide on how to use it:
+1. Prepare the data: We'll be using the "Overordnet" sheet from the technology radar sheet. Make sure that the rows of each technology line up with the same rows in the sheets for each of the administrations. If there are extra blank rows in the other sheets, the data could be incorrect.
+2. Important note: When opening GenerateJSON.xlsm, make sure to trust macros; otherwise, the file won't be able to generate the JSON file for you.
+3. Paste the data from the "Overordnet" sheet into the "Generer JSON" sheet included in GenerateJSON.xslm. Refer to the table below for guidance on which data should go in which columns.
+4. Click on the button labeled "Konverter til JSON" (located near the top left). This will generate a JSON file called "technologies.json" on your desktop. Open it with your favorite code editor.
+The generated JSON file will not be formatted terribly prettily. If you wish, you can use the extension "Beutify JSON" for Visual Studio Code to make it more human-friendly.
 
 | Data Type                                     | Column |
 |-----------------------------------------------|--------|
