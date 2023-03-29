@@ -9,7 +9,8 @@ This package includes an Excel file that can help you generate a JSON file for f
 1. Prepare the data: We'll be using the "Overordnet" sheet from the technology radar sheet. Make sure that the rows of each technology line up with the same rows in the sheets for each of the administrations. If there are extra blank rows in the other sheets, the data could be incorrect.
 2. Important note: When opening GenerateJSON.xlsm, make sure to trust macros; otherwise, the file won't be able to generate the JSON file for you.
 3. Paste the data from the "Overordnet" sheet into the "Generer JSON" sheet included in GenerateJSON.xslm. Refer to the table below for guidance on which data should go in which columns.
-4. Click on the button labeled "Konverter til JSON" (located near the top left). This will generate a JSON file called "technologies.json" on your desktop. Open it with your favorite code editor.
+4. Click on the button labeled "Konverter til JSON" (located near the top left). This will generate a JSON file called "technologies.json". Open it with your favorite code editor.
+
 The generated JSON file will not be formatted terribly prettily. If you wish, you can use the extension "Beutify JSON" for Visual Studio Code to make it more human-friendly.
 
 | Data Type                                     | Column |
