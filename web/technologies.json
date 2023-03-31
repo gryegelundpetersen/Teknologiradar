@@ -147,8 +147,8 @@
     },
     {
       "techName": "Augmented Reality",
-      "x": 3,
-      "y": 18,
+      "x": 13,
+      "y": 16,
       "description": "Augmented Reality (AR) er et digitalt virtuelt lag på virkeligheden (modsat VR, der udelukkende beskæftiger sig med den virtuelle verden), som opnås gennem et display, eksempelvis via din mobiltelefons kamera. I Augmented Reality kombineres data fra den fysiske verden med det virtuelle. På denne måde kan, eksempelvis grafik eller lyd, opleves som et ekstra lag af information der findes ovenpå det virkelige. ",
       "administrations": {
         "oea": false,
@@ -179,8 +179,8 @@
     },
     {
       "techName": "Chatbot",
-      "x": 11,
-      "y": 15,
+      "x": 9,
+      "y": 9.5,
       "description": "Chatbots er baseret på AI, og svarer på spørgsmål stillet i talesprog. Chatbots benytter sig dog også af en række andre teknologiområder, som eksempelvis Natural Language Processing og Machine Learning. ",
       "administrations": {
         "oea": true,
@@ -292,7 +292,7 @@
     {
       "techName": "Sociale teknologier",
       "x": 3,
-      "y": 12,
+      "y": 13,
       "description": "Sociale teknologier er online platforme, som sociale medier og AULA, der giver brugerne mulighed for at kommunikere og samarbejde på tværs af geografiske grænser og skabe virtuelle fællesskaber. Disse teknologier kan bruges til at engagere og kommunikere med borgerne, drive online dialog og debat, samt sprede information om kommunens tjenester og kampagner.",
       "administrations": {
         "oea": true,
@@ -307,7 +307,7 @@
     },
     {
       "techName": "Apps",
-      "x": 0,
+      "x": 7,
       "y": 0,
       "description": "Apps er en forkortelse for \"applikation\" og betegner software, som er specielt designet til at kommunikere med en bruger eller hjælpe en bruger med at udføre en specifik opgave. Den pågældende app er desuden designet til at virke på smartphones, tablets, PC'er eller en anden form for computerenhed, hvor app'en hentes fra en distributionsplatform, eksempelvis App Store, Google Play Store eller Microsoft Store. Typisk skal brugeren have adgang til internettet på sin enhed før en app virker, men i dag ses flere og flere tilfælde af, at der godt kan udføres arbejde i app'en, mens brugeren er offline. Når brugeren igen får internet på sin enhed vil alt det udførte arbejde, der skete mens enheden var offline, automatisk opdateres.\\nI Vejle Kommune bruger vi langt række af apps i vores opgaveløsning, og vi vil i fremtiden formentlig se endnu flere i takt med at leverandørerne benytter sig af mere cloudbaseret IT-infrastruktur til deres fagsystemer.",
       "administrations": {
@@ -323,8 +323,8 @@
     },
     {
       "techName": "Metaverset",
-      "x": 0,
-      "y": 0,
+      "x": 8,
+      "y": 60,
       "description": "Metaverset er en virtuel verden, der kan sammenlignes med en udvidet version af den virkelige verden. Det er en simuleret, 3D-verden, hvor brugere kan skabe deres egne avatarer og interagere med andre brugere og digitale objekter i realtid. Metaverset kan anvendes til forskellige formål, såsom gaming, virtuelle møder, online handel og sociale interaktioner. Det kan give mulighed for en mere interaktiv og realistisk oplevelse end traditionelle onlineplatforme, og det kan have anvendelser i en lang række industrier.",
       "administrations": {
         "oea": true,
@@ -339,8 +339,8 @@
     },
     {
       "techName": "Low code / zero code",
-      "x": 0,
-      "y": 0,
+      "x": 3,
+      "y": 19,
       "description": "Low-code/zero-code er en teknologi, der gør det muligt at udvikle applikationer og software med minimal eller ingen kodning. Med low-code/zero-code-platforme kan brugere bygge og implementere applikationer ved hjælp af visuelle interface og trække-og-slip-funktioner i stedet for traditionel kodeudvikling.\nLow-code/zero-code-platforme er designet til at være mere brugervenlige og effektive end traditionelle kodningsmetoder, da de giver brugerne mulighed for at oprette applikationer hurtigere og med mindre teknisk ekspertise. Dette gør det muligt for organisationer at opnå digital transformation og innovation hurtigere og mere omkostningseffektivt.Low-code/zero-code-teknologier kan anvendes i en række forskellige sammenhænge, fra udvikling af mobile applikationer og webapplikationer til automatisering af forretningsprocesser og datamanagement. Disse platforme kan også øge samarbejdet og samarbejdet på tværs af forskellige afdelinger og teams, da de tillader ikke-tekniske brugere at oprette og implementere applikationer med minimal eller ingen hjælp fra IT-afdelingen.Samlet set kan low-code/zero-code-teknologier give organisationer mulighed for at effektivisere deres digitale udviklingsprocesser og forbedre deres digitale tilstedeværelse og servicelevering på en mere agil og omkostningseffektiv måde.",
       "administrations": {
         "oea": true,
@@ -355,8 +355,8 @@
     },
     {
       "techName": "Computer Vision",
-      "x": 0,
-      "y": 0,
+      "x": -0.5,
+      "y": 1,
       "description": "Computer vision er en teknologi, der giver computere evnen til at genkende og forstå billeder og video. Med computer vision kan computere analysere og forstå den visuelle verden, som mennesker ser den, og bruge denne information til at træffe beslutninger og udføre handlinger.\nComputer vision kan bruges i mange forskellige industrier og anvendelser, fra overvågning og sikkerhed til medicinsk diagnostik og industrielle processer. I sundhedssektoren kan computer vision eksempelvis bruges til at analysere medicinske billeder og finde abnormiteter, mens det i produktion og logistik kan bruges til at overvåge produktionsprocesser og inspicere produkter for kvalitetskontrol.Computer vision kan også bruges i interaktive applikationer og spil, hvor det giver brugerne mulighed for at interagere med virtuelle objekter i realtid og på en mere intuitiv måde. Eksempelvis kan computer vision i smartphones bruges til ansigtsgenkendelse og augmented reality.Samlet set kan computer vision have en bred vifte af anvendelser og kan bidrage til at forbedre produktiviteten, effektiviteten og sikkerheden i mange forskellige industrier og applikationer.",
       "administrations": {
         "oea": false,
