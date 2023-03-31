@@ -51,6 +51,8 @@ This section describes the setup for the development environment of the project.
 The recommended code editor for this project is Visual Studio Code.
 #### Live Server Extension
 Install the Live Server extension for Visual Studio Code. This is used to run a local web server while making changes to the project.
+#### Beautify JSON
+Optional, highly recommended: Extension to make the generated technologies.json file more human friendly.
 ### Python
 Make sure Python is installed on your machine.
 ### Oletools
@@ -61,7 +63,7 @@ pip install -U oletools
 This package is used for a hook that extracts VBA scripts from Excel workbooks pre-commit to ensure proper version control on these files.
 
 ## Deployment
-This project can be deployed to a static web server, for example Azure. However, it is recommended to minify the HTML, CSS, and Javascript before doing so to minimise loading times. There are numerous web-based tools (and probably also a VS Code extension) for doing this.
+This project can be deployed to a static web server, for example Azure. However, it is recommended to minify the HTML, CSS, Javascript, and JSON before doing so to minimise loading times. There are numerous web-based tools (and probably also a VS Code extension) for doing this.
 
 ## Icon Media
 The following icons in this project use low-resolution versions from [Streamline](https://www.streamlinehq.com/icons). Employees at Vejle can find information about how to license the full resolution versions by searching 'piktogrammer' on the Intranet.
