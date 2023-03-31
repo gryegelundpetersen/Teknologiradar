@@ -4,7 +4,7 @@ This technology radar is a tool created in HTML/CSS/JS with a bit of jQuery for 
 ## Technologies
 The technologies featured in this radar are listed in the technologies.json file. To update the list of technologies, an Excel spreadsheet (`GenerateJSON.xslm`) is included in the project that can automatically generate a new JSON file with different technologies. Note that the coordinates for the technologies cannot currently be assigned automatically, so this process involves some manual trial and error.
 
-### Generating technologies.json
+### Generating technologies.json using GenerateJSON.xslm
 This package includes an Excel file that can help you generate a JSON file for future technology radars. Here's a step-by-step guide on how to use it:
 1. Prepare the data: We'll be using the "Overordnet" sheet from the technology radar sheet. Make sure that the rows of each technology line up with the same rows in the sheets for each of the administrations. If there are extra blank rows in the other sheets, the data could be incorrect.
 2. Important note: When opening GenerateJSON.xlsm, make sure to trust macros; otherwise, the file won't be able to generate the JSON file for you.
@@ -25,9 +25,14 @@ The generated JSON file will not be formatted terribly prettily. If you wish, yo
 | Descriptions of the technologies              | K      |
 | Links to read more (FULL LINKS! https://...)  | L      |
 
+### Fine-tuning the generated technologies.json
+At the moment, `GenerateJSON.xslm` is not capable of helping you position the technologies on the radar. Doing this requires you to set your copy of the site up in a development environment (see late section [Development Environment](##-development-environment)). 
+
 ## Development Environment
 This section describes the setup for the development environment of the project.
-### Live Server Extension
+### Visual Studio Code
+The recommended code editor for this project is Visual Studio Code.
+#### Live Server Extension
 Install the Live Server extension for Visual Studio Code. This is used to run a local web server while making changes to the project.
 ### Python
 Make sure Python is installed on your machine.
