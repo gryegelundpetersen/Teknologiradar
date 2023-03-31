@@ -38,6 +38,12 @@ Now you should see the technology radar with all of your data points at the bott
 7. Optional, but highly recommended: Install the `Beautify JSON` extension on VS Code. Press Ctrl/Cmd+Shift+P and search for `Beautify JSON`. Press enter twice (selecting `2` and `keep`)
 8. Now, you can start editing the X and Y values of each of the technologies. Every time you save the technologies.json (or any other file in the project) the page in your browser should reload so you can see how the change affected the document.
 9. Now rinse and repeat for all of the technologies. It may seem like a big task, but it goes quickly once you get the hang of the coordinate system!
+### Technology names running off edges
+If you find that some of the technologies' names run off the edges of the screen/infographic in a way that is less than aesthetically pleasing, there are two options:
+#### For problems when zooming in on the "klar" (ready) field
+In the file `settings.js`, there is a setting `DangerZoneInvert`. Technologies with an X value higher than this value (or lower than `-DangerZoneInvert`) will put their text on the opposite side of the dot when the user zooms in.
+#### For problems with technologies on the edge of "afvent" (wait)
+There an option to have the text drawn on the opposite side of the dot for specific technologies. This is accomplished by adding the value `"inverted-text": false` to the technology in `technologies.json`
 
 ## Development Environment
 This section describes the setup for the development environment of the project.
