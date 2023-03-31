@@ -17,34 +17,64 @@ const yOffset = 10;
 let Zoomed;
 const InfoBox = document.getElementById('infographic-info-box');
 
-/**
- * drawDots()
- * 
- * This function is responsible for drawing the dots on the graph. It gets the data from the TechnologiesData object and uses it to create the dots.
- * It also re-applys the zoom if relevant
- *
- * @param {Object} TechnologiesData - The data used to create the dots.
- * @param {HTMLElement} Loader - The loader element used to show the loading animation.
- * @param {HTMLElement} DotsContainer - The element that holds the dots.
- * @param {Boolean} Zoomed - Flag to indicate if the graph is zoomed in or not.
- */
-function drawDots(){
+// Clears the dots container
+function clearDotsContainer() {
+  while (DotsContainer.firstChild) {
+    DotsContainer.removeChild(DotsContainer.firstChild);
+  }
+}
+
+// Hides and shows loader
+function toggleLoader(show) {
+  const Loader = document.getElementById("loader");
+  Loader.style.display = show ? 'block' : 'none';
+  DotsContainer.style.display = show ? 'none' : 'block';
+}
+
+// Draw all the dots from the TechnologiesData
+function drawDots() {
   if (IsWindowSizeSupported) {
-    const Loader = document.getElementById("loader");
-    Loader.style.display = 'block';
-    DotsContainer.style.display = 'none';
-    while (DotsContainer.firstChild) {
-      DotsContainer.removeChild(DotsContainer.firstChild);
-    }
+    toggleLoader(true);
+    clearDotsContainer();
     TechnologiesData.technologies.forEach((technology, index) => {
       createDot(technology.techName, technology.x, technology.y, technology.administrations, index);
     });
-    if(Zoomed){
+    if (Zoomed) {
       zoomOut();
     }
-    Loader.style.display = 'none';
-    DotsContainer.style.display = 'block';
+    toggleLoader(false);
   }
+}
+
+// Create a single administration square
+function createAdminSquare(squareContainer, administration, value) {
+  const square = createDiv('square', squareContainer);
+  if (value) {
+    square.classList.add(AdministrationColors[administration]);
+  }
+}
+
+// Create squares for each administration in the dot
+function createAdminSquares(squareContainer, administrations) {
+  Object.keys(administrations).forEach(administration => {
+    createAdminSquare(squareContainer, administration, administrations[administration]);
+  });
+}
+
+// Create the dot and add it to the container
+function createDot(dotTextInput, x, y, administrations, id) {
+  const dot = createDiv('dot', DotsContainer);
+  setDotPosition(dot, x, y);
+  if (TechnologiesData.technologies[id]["inverted-text"] && x > 0 || !TechnologiesData.technologies[id]["inverted-text"] && x < 0) {
+    dot.classList.add("reverse-text");
+  }
+  dot.id = `dot-${id.toString()}`;
+  const squareContainer = createDiv('square-container', dot);
+  createAdminSquares(squareContainer, administrations);
+  const maturity = TechnologiesData.technologies[id]["maturity"];
+  dot.classList.add(`maturity-${maturity}`);
+  const dotText = createDiv('dot-text', dot);
+  dotText.innerHTML = dotTextInput;
 }
 
 function setDotPosition(dot, x, y) {
@@ -57,34 +87,6 @@ function setDotPosition(dot, x, y) {
     dot.style.right = 'auto';
   }
 }
-
-/**
- * Function to create a dot
- * @param {string} dotTextInput - The text to display by the dot
- * @param {number} x - The x position of the dot
- * @param {number} y - The y position of the dot
- * @param {object} administrations - An object containing the administrations and their values
- * @param {number} id - The id of the dot
- */
-function createDot(dotTextInput, x, y, administrations, id) {
-  const dot = createDiv('dot', DotsContainer);
-  setDotPosition(dot, x, y);
-  if (TechnologiesData.technologies[id]["inverted-text"] && x > 0 || !TechnologiesData.technologies[id]["inverted-text"] && x < 0) {
-    dot.classList.add("reverse-text");
-  }
-    dot.id = `dot-${id.toString()}`;
-    const squareContainer = createDiv('square-container', dot);
-    Object.keys(administrations).forEach(administration => {
-      const square = createDiv('square', squareContainer);
-      if (administrations[administration] == true){
-        square.classList.add(AdministrationColors[administration]);
-      }
-    });
-    const maturity = TechnologiesData.technologies[id]["maturity"]
-    dot.classList.add(`maturity-${maturity}`);
-    const dotText = createDiv('dot-text', dot);
-    dotText.innerHTML = dotTextInput;
-  }
 
 /**
 * @function createDiv

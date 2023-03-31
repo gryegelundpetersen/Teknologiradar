@@ -1,5 +1,6 @@
 Dim startRow As Integer
 Dim description As String
+Dim outputFileName As String
     
 Sub ConvertExcelToJSON()
 
@@ -8,9 +9,8 @@ Sub ConvertExcelToJSON()
 ' Hvilken række starter teknologierne ved?
  startRow = 5
 
-
-
-
+' Hvad skal filen hedde?
+outputFileName = "technologies.json"
 
 
 
@@ -49,18 +49,13 @@ Sub ConvertExcelToJSON()
     Dim maturity As Integer
     Dim maxAdminValue As Integer
     Dim desktopPath As String
-    Dim outputFileName As String
     Dim outputFilePath As String
     Dim isFirstTech As Boolean
     Dim technologies As String
     Dim response As VbMsgBoxResult
     Dim isFirstDataEntry As Boolean
     
-    isFirstDataEntry = True
     
-    ' Set the output file name and path
-    desktopPath = Environ("USERPROFILE") & "\Desktop\"
-    outputFileName = "technologies.json"
     outputFilePath = desktopPath & outputFileName
     
     ' Initialize the JSON output string
@@ -68,6 +63,9 @@ Sub ConvertExcelToJSON()
     
     ' Find the last row of data in the 1 worksheet
     lastRow = Sheets(1).Cells(Rows.Count, "B").End(xlUp).row
+    
+    ' Specify that the current data entry is the first one in the file, so don't start it with a comma.
+    isFirstDataEntry = True
     
     ' Loop through each row of data starting from row 9
     For i = startRow To lastRow
@@ -90,10 +88,6 @@ Sub ConvertExcelToJSON()
         komstab = Sheets(1).Cells(i, "J").Value
         
         description = EscapeJSONString(Sheets(1).Cells(i, "K").Value)
-        
-        If description <> "" Then
-        MsgBox description
-        End If
 
         link = Sheets(1).Cells(i, "L").Value
         
@@ -131,18 +125,42 @@ NextI:
     response = MsgBox("Følgende teknologier blev fundet. Klar til at generere JSON-fil?" + vbNewLine + technologies, vbYesNo)
 
     If response = vbYes Then
-    ' Write the JSON output to the output file
-    ' Clear any existing content in the output file
         Dim stream As Object
         Set stream = CreateObject("ADODB.Stream")
         stream.Type = 2 'Text
         stream.Charset = "utf-8"
         stream.Open
         stream.WriteText jsonOutput
-        stream.SaveToFile outputFilePath, 2 'Create or overwrite the file
-        stream.Close
-
+        On Error GoTo SaveToLocal
+            desktopPath = Application.ActiveWorkbook.Path + "/"
+            outputFilePath = desktopPath & outputFileName
+            stream.SaveToFile outputFilePath, 2 'Create or overwrite the file
+            GoTo SaveSuccessful
+    Else
+        Exit Sub
     End If
+    
+SaveToLocal:
+    response = MsgBox("Der var et problem med at gemme i følgende placering:" + vbNewLine + outputFilePath + "." + vbNewLine + "Vil du gemme den på skrivebordet i stedet?", vbYesNo)
+
+    If response = vbYes Then
+        On Error GoTo ErrorHandler
+            desktopPath = Environ("USERPROFILE") & "\Desktop\"
+            outputFilePath = desktopPath & outputFileName
+            stream.SaveToFile outputFilePath, 2 'Create or overwrite the file
+    Else
+        Exit Sub
+    End If
+    
+SaveSuccessful:
+        MsgBox "Fil gemt i" & outputFilePath
+        stream.Close
+        Exit Sub
+    
+ErrorHandler:
+        MsgBox "Kunne ikke gemme filen. Tjek dine adgangstilladelser og prøv igen."
+        stream.Close
+        Exit Sub
     
 End Sub
 
