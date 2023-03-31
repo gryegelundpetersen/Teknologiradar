@@ -29,7 +29,7 @@ The generated JSON file will not be formatted terribly prettily. If you wish, yo
 ### Fine-tuning the generated technologies.json
 At the moment, `GenerateJSON.xslm` is not capable of helping you position the technologies on the radar. This must be done by manually editing the file. The recommended procedure for doing this is detailed below.
 
-1. Set up the development environment (see later section [Development Environment](##-development-environment)).
+1. Set up the development environment (see later section [Development Environment](#-development-environment)).
 2. Download a copy of this project if you haven't already and extract it.
 3. In Visual Studio Code, click `File > Open Folder`. Navigate to the folder containing this project and select it.
 4. Replace the existing technologies.json with the one you generated and open it.
