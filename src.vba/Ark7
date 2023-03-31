@@ -104,7 +104,7 @@ outputFileName = "technologies.json"
             jsonOutput = jsonOutput & ","
         End If
         isFirstDataEntry = False
-        jsonOutput = jsonOutput & "{""techName"": """ & techName & """, ""x"": 0, ""y"": 0, ""description"": """ & description & """, ""administrations"": {"
+        jsonOutput = jsonOutput & "{""techName"": """ & techName & """, ""x"": 0, ""y"": 0, ""description"": """ & description & """, ""inverted-text"": false, ""administrations"": {"
         
         ' Add the administrative categories to the JSON object
         jsonOutput = jsonOutput & """oea"": " & IIf(oea = maxAdminValue, "true", "false") & ","
@@ -167,6 +167,8 @@ End Sub
 Function EscapeJSONString(ByVal inputText As String) As String
     Dim escapedText As String
     Dim i As Long
+    Dim lastCharacterWasNewLine As Boolean
+    lastCharacterWasNewLine = False
     
     escapedText = ""
     
@@ -183,12 +185,19 @@ Function EscapeJSONString(ByVal inputText As String) As String
             Case vbFormFeed
                 escapedText = escapedText & "\f"
             Case vbNewLine, vbLf, vbCr
-                escapedText = escapedText & "\n"
+                If lastChracterWasNewLine <> True Then
+                    escapedText = escapedText & "\n"
+                    lastChracterWasNewLine = True
+                    GoTo NextChar
+                End If
             Case vbTab
                 escapedText = escapedText & "\t"
             Case Else
                 escapedText = escapedText & Mid(inputText, i, 1)
         End Select
+        
+        lastCharacterWasNewLine = False
+NextChar:
     Next i
     
     EscapeJSONString = escapedText

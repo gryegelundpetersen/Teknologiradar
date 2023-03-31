@@ -1,4 +1,4 @@
-import { drawDots } from './infographic.js';
+import { drawDots, AreZeroDotsPresent, DoneDrawingDots } from './infographic.js';
 import { SVG, SVGOverlay } from './main.js';
 
 const MIN_RADAR_WIDTH = 667;
@@ -43,12 +43,19 @@ function changeClickIcon() {
 }
 
 function showTouchMessage() {
-  if (!TouchMessageShown) {
+  if (!DoneDrawingDots) {
+    window.setTimeout(showTouchMessage, 100); /* Check every 100 ms */
+  }
+  else if (!TouchMessageShown && !AreZeroDotsPresent) { 
+  // If the touch message hasn't already been shown and there are no dots with an x/y value of zero, show the message encouraging the user to touch/click on dots
     $("#touch").show();
     TouchMessageShown = true;
     setTimeout(function() {
       $("#touch").hide();
     }, 2400);
+  }
+  else {
+    $("#touch").hide();
   }
 }
 

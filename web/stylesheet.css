@@ -111,12 +111,11 @@ body {
     }
 }
 
-
-.reverse-text {
+ .reverse-text {
     flex-direction: row-reverse;
     text-align: right;
     left: auto;
-}
+} 
 
 .square {
     height: 0.67em;
