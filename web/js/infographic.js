@@ -1,8 +1,13 @@
+import { DangerZoneInvert, xOffset, yOffset } from './settings.js';
 import { IsWindowSizeSupported } from './responsive-design.js';
 import { TechnologiesData } from './data.js';
 import { SVGOverlay } from './main.js';
 
+const InfoBox = document.getElementById('infographic-info-box');
 const DotsContainer = document.getElementById('dots');
+let Zoomed;
+let AreZeroDotsPresent; // This marks if there are any dots present with a x/y value of zero. If so, a debug mode is activated, making things a bit easier for dialing the values in.
+let DoneDrawingDots = false;
 const AdministrationColors = {
   "bu": "bu-color",
   "velfaerd": "velfaerd-color",
@@ -11,11 +16,6 @@ const AdministrationColors = {
   "tm": "tm-color",
   "komstab": "komstab-color"
 };
-
-const xOffset = 50;
-const yOffset = 10;
-let Zoomed;
-const InfoBox = document.getElementById('infographic-info-box');
 
 // Clears the dots container
 function clearDotsContainer() {
@@ -33,6 +33,7 @@ function toggleLoader(show) {
 
 // Draw all the dots from the TechnologiesData
 function drawDots() {
+  DoneDrawingDots = false;
   if (IsWindowSizeSupported) {
     toggleLoader(true);
     clearDotsContainer();
@@ -44,6 +45,7 @@ function drawDots() {
     }
     toggleLoader(false);
   }
+  DoneDrawingDots = true;
 }
 
 // Create a single administration square
@@ -65,6 +67,11 @@ function createAdminSquares(squareContainer, administrations) {
 function createDot(dotTextInput, x, y, administrations, id) {
   const dot = createDiv('dot', DotsContainer);
   setDotPosition(dot, x, y);
+
+  if (x == 0 || y == 0) {
+    AreZeroDotsPresent = true;
+  }
+
   if (TechnologiesData.technologies[id]["inverted-text"] && x > 0 || !TechnologiesData.technologies[id]["inverted-text"] && x < 0) {
     dot.classList.add("reverse-text");
   }
@@ -121,11 +128,11 @@ function zoomIn() {
       let NewY = -OldY * heightFactor;
       console.log(heightFactor);
 
-      if (Dot.classList.contains('reverse-text') && OldX < -9) {
+      if (Dot.classList.contains('reverse-text') && OldX < -DangerZoneInvert) {
         Dot.classList.remove('reverse-text');
         NewX += 50;
       }
-      else if (!Dot.classList.contains('reverse-text') && OldX > 9) {
+      else if (!Dot.classList.contains('reverse-text') && OldX > DangerZoneInvert) {
         Dot.classList.add('reverse-text');
         NewX -= 50;
       }
@@ -170,10 +177,10 @@ function zoomOut() {
 
       let Dot = document.getElementById('dot-' +i); 
       let OldX = TechnologiesData.technologies[i].x; 
-      if (!Dot.classList.contains('reverse-text') && OldX < -9 && !TechnologiesData.technologies[i]["inverted-text"]) {
+      if (!Dot.classList.contains('reverse-text') && OldX < -DangerZoneInvert && !TechnologiesData.technologies[i]["inverted-text"]) {
         Dot.classList.add('reverse-text');
       }
-      else if (Dot.classList.contains('reverse-text') && OldX > 9 && !TechnologiesData.technologies[i]["inverted-text"]) {
+      else if (Dot.classList.contains('reverse-text') && OldX > DangerZoneInvert && !TechnologiesData.technologies[i]["inverted-text"]) {
         Dot.classList.remove('reverse-text');
       }
       if (Dot.className.includes("maturity-3")) {
@@ -245,4 +252,4 @@ function closeInfo() {
   
 }
 
-  export { drawDots, createDot, zoomIn, zoomOut, openInfo, DotsContainer, closeInfo };
+  export { drawDots, createDot, zoomIn, zoomOut, openInfo, DotsContainer, closeInfo, AreZeroDotsPresent, DoneDrawingDots };
