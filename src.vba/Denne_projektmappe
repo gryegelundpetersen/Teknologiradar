@@ -1,0 +1,78 @@
+Option Explicit
+
+Sub ConvertToJSON()
+    
+    'Define variables
+    Dim jsonFile As Object
+    Set jsonFile = CreateObject("Scripting.FileSystemObject").CreateTextFile("output.json", True)
+    
+    Dim ws As Worksheet
+    Set ws = ThisWorkbook.Worksheets("Overordnet")
+    
+    Dim techName As String
+    Dim oea As Double
+    Dim tm As Double
+    Dim bu As Double
+    Dim velfaerd As Double
+    Dim ks As Double
+    Dim komstab As Double
+    
+    Dim rowCounter As Long
+    Dim emptyRowCount As Long
+    
+    'Write beginning of JSON file
+    jsonFile.Write "{""technologies"": ["
+    
+    'Loop through rows
+    For rowCounter = 9 To ws.Cells(ws.Rows.Count, "B").End(xlUp).row
+        
+        'Get values from cells
+        techName = ws.Cells(rowCounter, "B").Value
+        oea = ws.Cells(rowCounter, "E").Value
+        tm = ws.Cells(rowCounter, "F").Value
+        bu = ws.Cells(rowCounter, "G").Value
+        velfaerd = ws.Cells(rowCounter, "H").Value
+        ks = ws.Cells(rowCounter, "I").Value
+        komstab = ws.Cells(rowCounter, "J").Value
+        
+        'Check if techName is empty
+        If techName = "" Then
+            emptyRowCount = emptyRowCount + 1
+        Else
+            'Write technology to JSON file
+            If emptyRowCount > 5 Then
+                'Assume we have gone through all the data
+                Exit For
+            End If
+            If emptyRowCount > 0 Then
+                'Add empty rows to JSON file
+                Dim i
+                For i = 1 To emptyRowCount
+                    jsonFile.Write ","
+                    jsonFile.Write vbCrLf & "{}"
+                Next i
+                emptyRowCount = 0
+            End If
+            jsonFile.Write ","
+            jsonFile.Write vbCrLf & "{""techName"": """ & techName & ""","
+            jsonFile.Write """administrations"": {""oea"": " & oea & ","
+            jsonFile.Write """tm"": " & tm & ","
+            jsonFile.Write """bu"": " & bu & ","
+            jsonFile.Write """velfaerd"": " & velfaerd & ","
+            jsonFile.Write """ks"": " & ks & ","
+            jsonFile.Write """komstab"": " & komstab & "}"
+            jsonFile.Write "}"
+        End If
+    Next rowCounter
+    
+    'Write end of JSON file
+    jsonFile.Write vbCrLf & "]}"
+        
+    'Close file
+    jsonFile.Close
+        
+    'Message box to inform user that the JSON file has been generated
+    MsgBox "JSON file has been generated successfully!", vbInformation
+    
+End Sub
+
