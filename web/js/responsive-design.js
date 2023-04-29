@@ -120,13 +120,13 @@ function changeFeedback(WindowID) {
 const SVG_ASPECT_RATIO = 1360.161 / 773.057;
 function adjustOverlayToSVGSize() {
   const rect = SVG.getBoundingClientRect();
-  const computedStyle = window.getComputedStyle(SVG);
+  /*const computedStyle = window.getComputedStyle(SVG);
   const transform = computedStyle.transform || computedStyle.webkitTransform;
   const transformMatrix = new DOMMatrix(transform);
   const translateX = transformMatrix.m41;
   const translateY = transformMatrix.m42;
   SVGOverlay.style.top = `${rect.top + translateY}px`;
-  SVGOverlay.style.left = `${rect.left + translateX}px`;
+  SVGOverlay.style.left = `${rect.left + translateX}px`;*/
   const { screenWidth, screenHeight } = getScreenSize();
   const screenAspectRatio = screenWidth / screenHeight;
   if (screenAspectRatio > SVG_ASPECT_RATIO) {
