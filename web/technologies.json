@@ -18,15 +18,15 @@
     },
     {
       "techName": "Blockchain",
-      "x": -35,
+      "x": -37,
       "y": 25,
       "description": "Blockchain består af en kæde af blokke, som kan registrere og verificere transaktioner mellem to parter.",
       "administrations": {
-        "oea": false,
-        "tm": false,
-        "bu": false,
-        "velfaerd": false,
-        "ks": false,
+        "oea": true,
+        "tm": true,
+        "bu": true,
+        "velfaerd": true,
+        "ks": true,
         "komstab": true
       },
       "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/blockchain",
@@ -340,7 +340,7 @@
     {
       "techName": "Low code / zero code",
       "x": 3,
-      "y": 19,
+      "y": 35,
       "description": "Low-code/zero-code er en teknologi, der gør det muligt at udvikle applikationer og software med minimal eller ingen kodning. Med low-code/zero-code-platforme kan brugere bygge og implementere applikationer ved hjælp af visuelle interface og trække-og-slip-funktioner i stedet for traditionel kodeudvikling.\nLow-code/zero-code-platforme er designet til at være mere brugervenlige og effektive end traditionelle kodningsmetoder, da de giver brugerne mulighed for at oprette applikationer hurtigere og med mindre teknisk ekspertise. Dette gør det muligt for organisationer at opnå digital transformation og innovation hurtigere og mere omkostningseffektivt.Low-code/zero-code-teknologier kan anvendes i en række forskellige sammenhænge, fra udvikling af mobile applikationer og webapplikationer til automatisering af forretningsprocesser og datamanagement. Disse platforme kan også øge samarbejdet og samarbejdet på tværs af forskellige afdelinger og teams, da de tillader ikke-tekniske brugere at oprette og implementere applikationer med minimal eller ingen hjælp fra IT-afdelingen.Samlet set kan low-code/zero-code-teknologier give organisationer mulighed for at effektivisere deres digitale udviklingsprocesser og forbedre deres digitale tilstedeværelse og servicelevering på en mere agil og omkostningseffektiv måde.",
       "administrations": {
         "oea": true,
