@@ -324,7 +324,7 @@
     {
       "techName": "Metaverset",
       "x": 8,
-      "y": 60,
+      "y": 75,
       "description": "Metaverset er en virtuel verden, der kan sammenlignes med en udvidet version af den virkelige verden. Det er en simuleret, 3D-verden, hvor brugere kan skabe deres egne avatarer og interagere med andre brugere og digitale objekter i realtid. Metaverset kan anvendes til forskellige formål, såsom gaming, virtuelle møder, online handel og sociale interaktioner. Det kan give mulighed for en mere interaktiv og realistisk oplevelse end traditionelle onlineplatforme, og det kan have anvendelser i en lang række industrier.",
       "administrations": {
         "oea": true,
