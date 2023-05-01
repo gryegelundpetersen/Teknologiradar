@@ -377,7 +377,7 @@ p {
 
 .info-box {
     background-color: rgb(255, 255, 255);
-    height:33vw;
+    height: 45%;
     position: fixed;
     width: 50vw;
     padding: 5%;
@@ -418,9 +418,9 @@ p {
 }
 
 .read-more:hover {
-    box-shadow: inset 0px 0px 0px 3px #000;
+    box-shadow: inset 0px 0px 0px 3px #D8C5AF;
     box-sizing: border-box;
-    color: #000;
+    color:#D8C5AF;
     box-sizing: border-box;
     background-color: #FFF;
     border-color: #FFF;
