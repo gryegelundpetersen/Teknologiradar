@@ -82,7 +82,7 @@
     },
     {
       "techName": "AI / Machine Learning",
-      "x": -13,
+      "x": -14,
       "y": 1,
       "description": "AI (kunstig intelligens) og Machine Learning (maskinlæring) er teknologier, der anvender algoritmer og datamodeller til at lære af data og forbedre deres præstation over tid. Disse teknologier kan bruges til at analysere store mængder af data, identificere mønstre og træffe automatiske beslutninger baseret på disse mønstre.\nAI og Machine Learning bruges i dag på mange forskellige områder, herunder i sundhedsvæsenet, finanssektoren og produktionsindustrien. I sundhedsvæsenet kan AI og Machine Learning bruges til at analysere store mængder af patientdata og identificere risikofaktorer for sygdom, mens det i finanssektoren kan bruges til at analysere data omkring markedsudviklingen og træffe beslutninger om investeringer.",
       "administrations": {
@@ -146,7 +146,7 @@
       "maturity": 1
     },
     {
-      "techName": "Augmented Reality",
+      "techName": "AR / Augmented Reality",
       "x": 13,
       "y": 16,
       "description": "Augmented Reality (AR) er et digitalt virtuelt lag på virkeligheden (modsat VR, der udelukkende beskæftiger sig med den virtuelle verden), som opnås gennem et display, eksempelvis via din mobiltelefons kamera. I Augmented Reality kombineres data fra den fysiske verden med det virtuelle. På denne måde kan, eksempelvis grafik eller lyd, opleves som et ekstra lag af information der findes ovenpå det virkelige. ",
@@ -163,8 +163,8 @@
     },
     {
       "techName": "Virtuelle Digitale Assistenter",
-      "x": 15,
-      "y": 8,
+      "x": 15.5,
+      "y": 9,
       "description": "Virtuelle digitale assistenter løser simple og avancerede opgaver gennem samtale med brugeren, fx via smartphones.",
       "administrations": {
         "oea": false,
@@ -194,9 +194,9 @@
       "maturity": 3
     },
     {
-      "techName": "VR",
+      "techName": "VR / Virtual Reality",
       "x": 11,
-      "y": 6,
+      "y": 5.5,
       "description": "Virtuel Reality (VR) fører brugeren ind i en virtuel, digital verden ved hjælp af fx briller/skærme.",
       "administrations": {
         "oea": true,
@@ -210,7 +210,7 @@
       "maturity": 3
     },
     {
-      "techName": "Wearables/Tracking",
+      "techName": "Wearables / Tracking",
       "x": 4,
       "y": 26,
       "description": "Wearables er små kropbårne enheder, fx et smart-ur, der vha. sensorer kan monitorere og analysere fx sundhed.",
