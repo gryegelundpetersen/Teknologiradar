@@ -4,7 +4,7 @@
       "techName": "Digital twin",
       "x": -12,
       "y": 12,
-      "pictogram":"media/digital-transformation.png",
+      "pictogram":"media/tech_pic/digital_twin.jpg",
       "description": "Digital twin – digital tvillling, er en teknologi hvor der bygges en digital kopi af et fysisk objekt, system eller miljø for at simulere hvordan forandringer kan påvirke for eksempel en by, bygning eller sagsproces. Dermed kan den digitale tvilling give viden om hvilke konsekvenser en række hypotetiske ændringer har på et givent objekt eller system. Et eksempel kan være en flysimulator, hvor der i et digitalt miljø kan foretages tests og simuleringer af hvordan flyet opfører sig ved ændringer i vejrforhold, flyets opsætning etc.  ",
       "administrations": {
         "oea": false,
@@ -21,6 +21,7 @@
       "techName": "Blockchain",
       "x": -37,
       "y": 25,
+      "pictogram":"media/tech_pic/blockchain.jpg",
       "description": "Blockchain er af en kæde af datablokke, der kan registrere og verificere transaktioner mellem to parter. Hver blok viser transaktioner og informationer som er forbundet med de forrige og efterfølgende blokke af information. Det gør det muligt at handle uden mellemmand, som fx en bank eller myndighed. Blockchain kan dermed skabe transparens i forhold til historik og transaktioner, idet alle transaktioner er synlige og historikken ikke kan ændres, når først hele blockchain-netværket har godkendt den.",
       "administrations": {
         "oea": true,
@@ -37,6 +38,7 @@
       "techName": "Edge Computing",
       "x": -5,
       "y": 22,
+      "pictogram":"media/tech_pic/edge.jpg",
       "description": "Edge computing er et begreb der dækker decentralisering af beregninger og datalagring. På denne måde sker beregninger og lagring af data fortrinsvist i det apparat (for eksempel sensorer eller kameraer) som behøver det pågældende data og beregninger, i stedet for at det sker på centrale servere. Det kan i mange tilfælde minimere responstid og den nødvendige båndbredde, fordi data og beregninger ikke skal sendes igennem et centralnetvæk og tilbage igen.",
       "administrations": {
         "oea": false,
@@ -53,6 +55,7 @@
       "techName": "Natural Language Processing",
       "x": -8,
       "y": 6,
+      "pictogram":"media/tech_pic/NLP.webp",
       "description": "Natural Language Processing (NLP) er en gren af kunstig intelligens, der fokuserer på at lære computere at forstå og behandle naturligt sprog. Dette kan omfatte alt fra at identificere og analysere forskellige sprogstrukturer, som grammatik og semantik, til at oversætte sprog og generere tekst eller tale. NLP spiller en stadig større rolle i vores hverdag, fra chatbots og personlige assistenter til automatisk oversættelse og talegenkendelsesteknologi. NLP kan også anvendes inden for videnskabelig forskning og lægemiddeludvikling, hvor det kan hjælpe med at analysere store mængder af tekstbaseret data og finde mønstre eller sammenhænge.",
       "administrations": {
         "oea": true,
@@ -66,10 +69,11 @@
       "maturity": 3
     },
     {
-      "techName": "Proces Mining",
+      "techName": "Process Mining",
       "x": -15,
       "y": 30,
-      "description": "Proces mining er en metode til at analysere og forbedre arbejdsprocesser i en organisation. Det indebærer at undersøge data, der genereres af forskellige systemer og applikationer i kommunen, for at identificere ineffektive trin, flaskehalse og andre problemer i arbejdsprocesserne. I kommunen kan proces mining bruges til at optimere en lang række opgaver og processer, såsom sagsbehandling, budgetplanlægning, kommunikation med borgere og samarbejde med andre afdelinger. Ved at analysere data omkring disse processer, kan man identificere områder, hvor der er potentiale for forbedring og effektivisering.",
+      "pictogram":"media/tech_pic/process.jpg",
+      "description": "Process mining er en metode til at analysere og forbedre arbejdsprocesser i en organisation. Det indebærer at undersøge data, der genereres af forskellige systemer og applikationer i kommunen, for at identificere ineffektive trin, flaskehalse og andre problemer i arbejdsprocesserne. I kommunen kan process mining bruges til at optimere en lang række opgaver og processer, såsom sagsbehandling, budgetplanlægning, kommunikation med borgere og samarbejde med andre afdelinger. Ved at analysere data omkring disse processer, kan man identificere områder, hvor der er potentiale for forbedring og effektivisering.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -85,6 +89,7 @@
       "techName": "AI / Machine Learning",
       "x": -14,
       "y": 1,
+      "pictogram":"media/tech_pic/AI.jpg",
       "description": "AI (kunstig intelligens) og Machine Learning (maskinlæring) er teknologier, der anvender algoritmer og datamodeller til at lære af data og forbedre deres præstation over tid. Disse teknologier kan bruges til at analysere store mængder af data, identificere mønstre og træffe automatiske beslutninger baseret på disse mønstre. AI og Machine Learning kan bruges på mange forskellige områder i dag - for eksempel i sundhedsvæsenet hvor AI og Machine Learning kan bruges til at analysere store mængder af patientdata og identificere risikofaktorer for sygdom.",
       "administrations": {
         "oea": true,
@@ -101,6 +106,7 @@
       "techName": "IoT og sensorer",
       "x": -2,
       "y": 1,
+      "pictogram":"media/tech_pic/sensorIOT.jpg",
       "description": "IoT (Internet of Things) og sensorer er teknologier, der anvendes til at samle og analysere data fra forskellige enheder og sensorer, som er forbundet til internettet. Dette kan omfatte alt fra smart home-enheder og bærbare enheder til industrielle sensorer og overvågningskameraer. IoT og sensorer kan anvendes i mange forskellige sammenhænge, herunder hjemmeautomation, landbrugsproduktion, transport og overvågning af miljøet. Disse teknologier kan bruges til at indsamle data i realtid, analysere dataene og træffe automatiske beslutninger baseret på dem.",
       "administrations": {
         "oea": false,
@@ -118,7 +124,8 @@
       "techName": "RPA",
       "x": -2,
       "y": 12,
-      "description": "RPA (Robotic Process Automation) er en type software, der kan automatisere simple og rutineprægede arbejdsopgaver, som er tidskrævende og ressourcekrævende i en organisation. RPA fungerer som en softwarerobot, som kan navigere og betjene it-systemer og brugergrænseflader. I kommunen kan RPA anvendes til at automatisere en lang række administrative arbejdsgange og opgaver, såsom håndtering af fakturaer, registrering af ansøgninger og kundebehandling. I afdelingen for Digitalisering & Data i kommunen er der oprettet et team, som understøtter forvaltningerne i hele processen med at introducere, screene og beslutte om igangsætning, samt udvikle og følge op på RPA-løsninger i kommunen.",
+      "pictogram":"media/tech_pic/RPA.jpg",
+      "description": "RPA (Robotic Process Automation) er en type software, der kan automatisere simple og rutineprægede arbejdsopgaver, som er tidskrævende og ressourcekrævende i en organisation. RPA fungerer som en softwarerobot, som kan navigere og betjene it-systemer og brugergrænseflader. I kommunen kan RPA anvendes til at automatisere en lang række administrative arbejdsgange og opgaver, såsom håndtering af fakturaer, registrering af ansøgninger og kundebehandling.  ",
       "administrations": {
         "oea": true,
         "tm": true,
@@ -134,6 +141,7 @@
       "techName": "Autonome Køretøjer",
       "x": 2.5,
       "y": 65,
+      "pictogram":"media/tech_pic/autonomekore.jpg",
       "description": "Autonome køretøjer er transportmidler, der kan navigere og køre selv uden behov for en fører. Disse køretøjer anvender avancerede sensorer, machine learning og AI-teknologi til at opfange og forstå omgivelserne og træffe beslutninger om kørsel og navigation. Selvom autonome køretøjer ikke bruges i kommunen lige nu, kan teknologien potentielt revolutionere transportsektoren og forbedre trafiksikkerheden og mobiliteten på tværs af byen. Autonome køretøjer kan bruges til at transportere borgere og gods på en mere effektiv og bæredygtig måde og reducere behovet for biler og transportinfrastruktur.",
       "administrations": {
         "oea": false,
@@ -150,7 +158,7 @@
       "techName": "AR / Augmented Reality",
       "x": 13,
       "y": 16,
-      "pictogram":"media/AR.webp",
+      "pictogram":"media/tech_pic/AR.jpg",
       "description": "Augmented Reality (AR) er et digitalt virtuelt lag på virkeligheden (modsat VR, der udelukkende beskæftiger sig med den virtuelle verden), som opnås gennem et display, eksempelvis via din mobiltelefons kamera. I Augmented Reality kombineres data fra den fysiske verden med det virtuelle. På denne måde kan, eksempelvis grafik eller lyd, opleves som et ekstra lag af information der findes ovenpå det virkelige. ",
       "administrations": {
         "oea": false,
@@ -167,6 +175,7 @@
       "techName": "Virtuelle Digitale Assistenter",
       "x": 15.5,
       "y": 9,
+      "pictogram":"media/tech_pic/VDA.jpg",
       "description": "Virtuelle digitale assistenter (VDA) kendes i dag fra smartphones (fx Siri på iPhones), hvor de gennem en samtale kan løse alt fra simple til mere avancerede opgaver. VDA’er også fundet vej til andre apparater i de seneste år, blandt andet i hjemmet til smarte højttalere eller styring af belysning i hjemmet. VDA’er baserer sig på flere teknologier, så som tale- og stemmegenkendelse, tekst-til-tale og deep-learning for at kunne omsætte brugerens tale til et konkret ønske og efterfølgende handling. VDA’ers funktionalitet på dansk er pt. begrænset af deres evne til at forstå og tale dansk.",
       "administrations": {
         "oea": false,
@@ -183,6 +192,7 @@
       "techName": "Chatbot",
       "x": 9,
       "y": 9.5,
+      "pictogram":"media/tech_pic/chatbot.jpg",
       "description": "Chatbots er baseret på AI, og svarer på spørgsmål stillet i talesprog. De er baseret på kunstig intelligens, som fortolker brugerens spørgsmål og forsøger at matche disse spørgsmål med de svar, som chatbotten er programmeret med. Spørgsmål, som chatbotten ikke kan matche til relevante svar, viderestilles til fysiske medarbejdere via fx mail, telefon eller sociale medier. Inden for fagområder med stor borgerkontakt med ens type henvendelser kan chatbots aflaste de medarbejdere, som håndterer telefonopkald og skriftlige henvendelser fra borgere.",
       "administrations": {
         "oea": true,
@@ -199,6 +209,7 @@
       "techName": "VR / Virtual Reality",
       "x": 11,
       "y": 5.5,
+      "pictogram":"media/tech_pic/vr.jpg",
       "description": "Virtual reality (VR) fører brugeren ind i en virtuel, digital verden ved hjælp af fx skærme eller elektroniske briller. Man kan opbygge virkelighedsnære verdener med formålet at simulere reelle situationer i et sikkert miljø, og hvor der kan skabes fantasiverdener med underholdning som fokus. VR kræver sikrede omgivelser, da brugeren ikke kan se sine fysiske omgivelser – og det er væsentligt da VR kan foregå stående, gående eller siddende. VR har i mange år været brugt til for eksempel flysimulatorer og i spilleverdenen.",
       "administrations": {
         "oea": true,
@@ -215,6 +226,7 @@
       "techName": "Wearables / Tracking",
       "x": 4,
       "y": 26,
+      "pictogram":"media/tech_pic/wearables.jpg",
       "description": "Wearables/Tracking er intelligente computerbaserede enheder (for eksempel smart watches), der bæres tæt på eller på hudens overflade, hvor de igennem sensorer registrerer, analyserer og overfører oplysninger. Det kan f.eks. være oplysninger om kropssignaler såsom vitale signaler og/eller data fra omgivelserne - som i nogle tilfælde gør det muligt at få biofeedback kontinuerligt i realtid.  Wearables er et eksempel på Internet of Things.",
       "administrations": {
         "oea": false,
@@ -231,6 +243,7 @@
       "techName": "Fysiske robotter",
       "x": 9,
       "y": 22,
+      "pictogram":"media/tech_pic/robot.png",
       "description": "Fysiske robotter kan assistere, aflaste eller overtage en række opgaver som i dag varetages af mennesker, fx inden for pleje, omsorg eller læring. Robotter er typisk designet med meget specifikke funktioner og formål og dækker også over velfærdsteknologiske løsninger som spise/måltidsrobotter, mobilitetsrobotter, hygiejnerobotter og medicinhåndteringsmaskiner. Fysiske robotter er særligt udbredt inden for velfærdsteknologi, fx ifm. tunge løft, rengøring, assistance til spisning med mere.",
       "administrations": {
         "oea": false,
@@ -247,7 +260,8 @@
       "techName": "Droner",
       "x": 16,
       "y": 0,
-      "description": "En drone er en fjernstyret enhed, der kan flyve og ofte bruges til at tage billeder eller video fra luften. Droner findes i forskellige størrelser og designs, men de fleste består af en ramme, en motor og en propeller.\n Drone teknologi er stadig blevet mere avanceret i de senere år, og det er nu muligt at bygge droner med avancerede sensorer og kameraer, GPS-systemer og andre funktioner. Drone teknologi anvendes i dag på mange forskellige måder, fra militær overvågning og redningsoperationer til filmoptagelser og landbrugsovervågning. Nogle virksomheder bruger også droner til levering af varer til deres kunder.",
+      "pictogram":"media/tech_pic/drone.webp",
+      "description": "En drone er en fjernstyret enhed, der kan flyve og ofte bruges til at tage billeder eller video fra luften. Droner findes i forskellige størrelser og designs, men de fleste består af en ramme, en motor og en propeller. Drone teknologi er stadig blevet mere avanceret i de senere år, og det er nu muligt at bygge droner med avancerede sensorer og kameraer, GPS-systemer og andre funktioner. Drone teknologi anvendes i dag på mange forskellige måder, fra militær overvågning og redningsoperationer til filmoptagelser, landbrugsovervågning og levering af varer til kunder.",
       "administrations": {
         "oea": false,
         "tm": true,
@@ -263,6 +277,7 @@
       "techName": "3D print",
       "x": 2.5,
       "y": 7,
+      "pictogram":"media/tech_pic/3d.webp",
       "description": "3D-print er en måde at fremstille fysiske objekter (som for eksempel smykker og legetøj) på ved hjælp af en speciel type printer. I stedet for at printe på papir eller andre flade overflader, bruger en 3D-printer et specialiseret materiale som den gradvist bygger op i lag for at skabe et tredimensionelt objekt. Processen starter typisk med en digital model af det ønskede objekt, som kan oprettes ved hjælp af 3D-modelleringssoftwarer. Derefter bruger 3D-printeren en række komplekse teknologier til at omdanne den digitale model til et fysisk objekt ved at skabe lag på lag af det valgte materiale.",
       "administrations": {
         "oea": false,
@@ -279,6 +294,7 @@
       "techName": "Skærme og selvbetjening",
       "x": 3,
       "y": 3,
+      "pictogram":"media/tech_pic/skaerme.png",
       "description": "Skærme og selvbetjening er en teknologi, der gør det muligt for borgere at interagere med kommunen og dens tjenester gennem digitale skærme og selvbetjeningsløsninger. Digitale skærme kan bruges til visning af information og interaktive selvbetjeningsløsninger, som for eksempel brug af touchskærme eller QR-koder til at give borgere adgang til information om kommende arrangementer, tilbud og tjenester. Selvbetjeningsløsninger kan også give borgerne mulighed for at betjene sig selv og udføre opgaver, som ellers ville kræve personlig betjening, for eksempel tjenester som at booke møder eller at registrere sin ankomst.",
       "administrations": {
         "oea": true,
@@ -295,6 +311,7 @@
       "techName": "Sociale teknologier",
       "x": 3,
       "y": 13,
+      "pictogram":"media/tech_pic/socialetek.jpg",
       "description": "Sociale teknologier er online platforme, som sociale medier og AULA, der giver brugerne mulighed for at kommunikere og samarbejde på tværs af geografiske grænser og skabe virtuelle fællesskaber. Disse teknologier kan bruges til at engagere og kommunikere med borgerne, drive online dialog og debat, samt sprede information om kommunens tjenester og kampagner.",
       "administrations": {
         "oea": true,
@@ -311,7 +328,8 @@
       "techName": "Apps",
       "x": 7,
       "y": 0,
-      "description": "Apps er en forkortelse for \"applikation\" og betegner software, som er specielt designet til at kommunikere med en bruger eller hjælpe en bruger med at udføre en specifik opgave. Den pågældende app er desuden designet til at virke på smartphones, tablets, PC'er eller en anden form for computerenhed, hvor app'en hentes fra en distributionsplatform, eksempelvis App Store, Google Play Store eller Microsoft Store. \nTypisk skal brugeren have adgang til internettet på sin enhed før en app virker, men i dag ses flere og flere tilfælde af, at der godt kan udføres arbejde i app'en, mens brugeren er offline. Når brugeren igen får internet på sin enhed vil alt det udførte arbejde, der skete mens enheden var offline, automatisk opdateres.\n I Vejle Kommune bruger vi langt række af apps i vores opgaveløsning, og vi vil i fremtiden formentlig se endnu flere i takt med at leverandørerne benytter sig af mere cloudbaseret IT-infrastruktur til deres fagsystemer.",
+      "pictogram":"media/tech_pic/apps.jpg",
+      "description": "Apps er en forkortelse for \"applikation\" og betegner software, som er specielt designet til at kommunikere med en bruger eller hjælpe en bruger med at udføre en specifik opgave. Den pågældende app er desuden designet til at virke på smartphones, tablets, PC'er eller en anden form for computerenhed. Typisk skal brugeren have adgang til internettet på sin enhed før en app virker, men i dag ses flere og flere tilfælde af, at der godt kan udføres arbejde i app'en, mens brugeren er offline. Når brugeren igen får internet på sin enhed, vil alt det udførte arbejde, der skete mens enheden var offline, automatisk opdateres.",
       "administrations": {
         "oea": true,
         "tm": true,
@@ -327,6 +345,7 @@
       "techName": "Metaverset",
       "x": 8,
       "y": 75,
+      "pictogram":"media/tech_pic/metavers.png",
       "description": "Metaverset er en virtuel verden, der kan sammenlignes med en udvidet version af den virkelige verden. Det er en simuleret, 3D-verden, hvor brugere kan skabe deres egne avatarer og interagere med andre brugere og digitale objekter i realtid. Metaverset kan anvendes til forskellige formål, såsom gaming, virtuelle møder, online handel og sociale interaktioner. Det kan give mulighed for en mere interaktiv og realistisk oplevelse end traditionelle onlineplatforme, og det kan have anvendelser i en lang række industrier.",
       "administrations": {
         "oea": true,
@@ -343,6 +362,7 @@
       "techName": "Low code / zero code",
       "x": 3,
       "y": 35,
+      "pictogram":"media/tech_pic/low_nocode_puzzle.webp",
       "description": "Low-code/zero-code er en teknologi, der gør det muligt at udvikle applikationer og software med minimal eller ingen kodning. Med low-code/zero-code-platforme kan brugere bygge og implementere applikationer ved hjælp af visuelle interface og trække-og-slip-funktioner i stedet for traditionel kodeudvikling. Low-code/zero-code-platforme er designet til at være mere brugervenlige og effektive end traditionelle kodningsmetoder, da de giver brugerne mulighed for at oprette applikationer hurtigere og med mindre teknisk ekspertise. Dette gør det muligt for organisationer at opnå digital transformation og innovation hurtigere og mere omkostningseffektivt.",
       "administrations": {
         "oea": true,
@@ -359,6 +379,7 @@
       "techName": "Computer Vision",
       "x": -14,
       "y": 16,
+      "pictogram":"media/tech_pic/computervision.png",
       "description": "Computer vision er en teknologi, der giver computere evnen til at genkende og forstå billeder og video. Med computer vision kan computere analysere og forstå den visuelle verden, som mennesker ser den, og bruge denne information til at træffe beslutninger og udføre handlinger. Computer vision kan bruges i mange forskellige industrier og anvendelser, fra overvågning og sikkerhed til medicinsk diagnostik og industrielle processer. I sundhedssektoren kan computer vision eksempelvis bruges til at analysere medicinske billeder og finde abnormiteter, mens det i produktion og logistik kan bruges til at overvåge produktionsprocesser og inspicere produkter for kvalitetskontrol.",
       "administrations": {
         "oea": false,
