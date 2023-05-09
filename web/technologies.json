@@ -4,7 +4,8 @@
       "techName": "Digital twin",
       "x": -12,
       "y": 12,
-      "description": "Digital Twin er en teknologi, hvor der opbygges en digital kopi af et fysisk objekt, system eller miljø. ",
+      "pictogram":"media/digital-transformation.png",
+      "description": "Digital twin – digital tvillling, er en teknologi hvor der bygges en digital kopi af et fysisk objekt, system eller miljø for at simulere hvordan forandringer kan påvirke for eksempel en by, bygning eller sagsproces. Dermed kan den digitale tvilling give viden om hvilke konsekvenser en række hypotetiske ændringer har på et givent objekt eller system. Et eksempel kan være en flysimulator, hvor der i et digitalt miljø kan foretages tests og simuleringer af hvordan flyet opfører sig ved ændringer i vejrforhold, flyets opsætning etc.  ",
       "administrations": {
         "oea": false,
         "tm": true,
@@ -20,7 +21,7 @@
       "techName": "Blockchain",
       "x": -37,
       "y": 25,
-      "description": "Blockchain består af en kæde af blokke, som kan registrere og verificere transaktioner mellem to parter.",
+      "description": "Blockchain er af en kæde af datablokke, der kan registrere og verificere transaktioner mellem to parter. Hver blok viser transaktioner og informationer som er forbundet med de forrige og efterfølgende blokke af information. Det gør det muligt at handle uden mellemmand, som fx en bank eller myndighed. Blockchain kan dermed skabe transparens i forhold til historik og transaktioner, idet alle transaktioner er synlige og historikken ikke kan ændres, når først hele blockchain-netværket har godkendt den.",
       "administrations": {
         "oea": true,
         "tm": true,
@@ -36,7 +37,7 @@
       "techName": "Edge Computing",
       "x": -5,
       "y": 22,
-      "description": "Edge Computing er et begreb for en decentralisering af beregninger og datalagring. ",
+      "description": "Edge computing er et begreb der dækker decentralisering af beregninger og datalagring. På denne måde sker beregninger og lagring af data fortrinsvist i det apparat (for eksempel sensorer eller kameraer) som behøver det pågældende data og beregninger, i stedet for at det sker på centrale servere. Det kan i mange tilfælde minimere responstid og den nødvendige båndbredde, fordi data og beregninger ikke skal sendes igennem et centralnetvæk og tilbage igen.",
       "administrations": {
         "oea": false,
         "tm": true,
@@ -52,7 +53,7 @@
       "techName": "Natural Language Processing",
       "x": -8,
       "y": 6,
-      "description": "Natural Language Processing (NLP) er en gren af kunstig intelligens, der fokuserer på at lære computere at forstå og behandle naturligt sprog. Dette kan omfatte alt fra at identificere og analysere forskellige sprogstrukturer, som grammatik og semantik, til at oversætte sprog og generere tekst eller tale.\nNLP spiller en stadig større rolle i vores hverdag, fra chatbots og personlige assistenter til automatisk oversættelse og talegenkendelsesteknologi. NLP kan også anvendes inden for videnskabelig forskning og lægemiddeludvikling, hvor det kan hjælpe med at analysere store mængder af tekstbaseret data og finde mønstre eller sammenhænge.NLP er stadig en udfordring, da naturligt sprog er komplekst og varieret, og det kan være svært at lære computere at forstå den kontekstuelle betydning af ord og sætninger. Men med stadig mere avancerede teknologier og datadrevne tilgange, fortsætter NLP med at udvikle sig og give muligheder for at forbedre vores kommunikation og forståelse på tværs af sprog og kulturer.",
+      "description": "Natural Language Processing (NLP) er en gren af kunstig intelligens, der fokuserer på at lære computere at forstå og behandle naturligt sprog. Dette kan omfatte alt fra at identificere og analysere forskellige sprogstrukturer, som grammatik og semantik, til at oversætte sprog og generere tekst eller tale. NLP spiller en stadig større rolle i vores hverdag, fra chatbots og personlige assistenter til automatisk oversættelse og talegenkendelsesteknologi. NLP kan også anvendes inden for videnskabelig forskning og lægemiddeludvikling, hvor det kan hjælpe med at analysere store mængder af tekstbaseret data og finde mønstre eller sammenhænge.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -68,7 +69,7 @@
       "techName": "Proces Mining",
       "x": -15,
       "y": 30,
-      "description": "Proces mining er en metode til at analysere og forbedre arbejdsprocesser i en organisation. Det indebærer at undersøge data, der genereres af forskellige systemer og applikationer i kommunen, for at identificere ineffektive trin, flaskehalse og andre problemer i arbejdsprocesserne.\nI kommunen kan proces mining bruges til at optimere en lang række opgaver og processer, såsom sagsbehandling, budgetplanlægning, kommunikation med borgere og samarbejde med andre afdelinger. Ved at analysere data omkring disse processer, kan man identificere områder, hvor der er potentiale for forbedring og effektivisering.\n For eksempel kan proces mining bruges til at analysere data om sagsbehandling, hvor man kan identificere flaskehalse i sagsbehandlingen og identificere områder, hvor processen kan optimeres og tidsforbruget kan reduceres. På samme måde kan proces mining bruges til at analysere data omkring kommunikation med borgere, hvor man kan finde mønstre i borgernes behov og ønsker, og derved forbedre kommunikationen og servicen over for borgerne.",
+      "description": "Proces mining er en metode til at analysere og forbedre arbejdsprocesser i en organisation. Det indebærer at undersøge data, der genereres af forskellige systemer og applikationer i kommunen, for at identificere ineffektive trin, flaskehalse og andre problemer i arbejdsprocesserne. I kommunen kan proces mining bruges til at optimere en lang række opgaver og processer, såsom sagsbehandling, budgetplanlægning, kommunikation med borgere og samarbejde med andre afdelinger. Ved at analysere data omkring disse processer, kan man identificere områder, hvor der er potentiale for forbedring og effektivisering.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -84,7 +85,7 @@
       "techName": "AI / Machine Learning",
       "x": -14,
       "y": 1,
-      "description": "AI (kunstig intelligens) og Machine Learning (maskinlæring) er teknologier, der anvender algoritmer og datamodeller til at lære af data og forbedre deres præstation over tid. Disse teknologier kan bruges til at analysere store mængder af data, identificere mønstre og træffe automatiske beslutninger baseret på disse mønstre.\nAI og Machine Learning bruges i dag på mange forskellige områder, herunder i sundhedsvæsenet, finanssektoren og produktionsindustrien. I sundhedsvæsenet kan AI og Machine Learning bruges til at analysere store mængder af patientdata og identificere risikofaktorer for sygdom, mens det i finanssektoren kan bruges til at analysere data omkring markedsudviklingen og træffe beslutninger om investeringer.",
+      "description": "AI (kunstig intelligens) og Machine Learning (maskinlæring) er teknologier, der anvender algoritmer og datamodeller til at lære af data og forbedre deres præstation over tid. Disse teknologier kan bruges til at analysere store mængder af data, identificere mønstre og træffe automatiske beslutninger baseret på disse mønstre. AI og Machine Learning kan bruges på mange forskellige områder i dag - for eksempel i sundhedsvæsenet hvor AI og Machine Learning kan bruges til at analysere store mængder af patientdata og identificere risikofaktorer for sygdom.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -98,9 +99,9 @@
     },
     {
       "techName": "IoT og sensorer",
-      "x": -10,
-      "y": 17,
-      "description": "IoT (Internet of Things) og sensorer er teknologier, der anvendes til at samle og analysere data fra forskellige enheder og sensorer, som er forbundet til internettet. Dette kan omfatte alt fra smart home-enheder og bærbare enheder til industrielle sensorer og overvågningskameraer.\nIoT og sensorer kan anvendes i mange forskellige sammenhænge, herunder hjemmeautomation, landbrugsproduktion, transport og overvågning af miljøet. Disse teknologier kan bruges til at indsamle data i realtid, analysere dataene og træffe automatiske beslutninger baseret på dataene.",
+      "x": -2,
+      "y": 1,
+      "description": "IoT (Internet of Things) og sensorer er teknologier, der anvendes til at samle og analysere data fra forskellige enheder og sensorer, som er forbundet til internettet. Dette kan omfatte alt fra smart home-enheder og bærbare enheder til industrielle sensorer og overvågningskameraer. IoT og sensorer kan anvendes i mange forskellige sammenhænge, herunder hjemmeautomation, landbrugsproduktion, transport og overvågning af miljøet. Disse teknologier kan bruges til at indsamle data i realtid, analysere dataene og træffe automatiske beslutninger baseret på dem.",
       "administrations": {
         "oea": false,
         "tm": true,
@@ -117,7 +118,7 @@
       "techName": "RPA",
       "x": -2,
       "y": 12,
-      "description": "RPA (Robotic Process Automation) er en type software, der kan automatisere simple og rutineprægede arbejdsopgaver, som er tidskrævende og ressourcekrævende i en organisation. RPA fungerer som en softwarerobot, som kan navigere og betjene it-systemer og brugergrænseflader.\nI kommunen kan RPA anvendes til at automatisere en lang række administrative arbejdsgange og opgaver, såsom håndtering af fakturaer, registrering af ansøgninger og kundebehandling. RPA er især nyttigt i forbindelse med opgaver, der er ensformige, regelbundne og repetitive, da RPA kan udføre disse opgaver hurtigt og præcist, uden risiko for fejl.\n RPA kan også bruges til at håndtere opgaver med stor volumen og mange gentagelser, hvilket kan frigive medarbejderes tid til mere komplekse opgaver, der kræver fagligt skøn og kreativitet.I afdelingen for Digitalisering & Data i kommunen er der oprettet et team, som understøtter forvaltningerne i hele processen med at introducere, screene og beslutte om igangsætning, samt udvikle og følge op på RPA-løsninger i kommunen. Dette vil bidrage til at sikre en effektiv implementering og anvendelse af RPA-teknologi i kommunens arbejdsprocesser.",
+      "description": "RPA (Robotic Process Automation) er en type software, der kan automatisere simple og rutineprægede arbejdsopgaver, som er tidskrævende og ressourcekrævende i en organisation. RPA fungerer som en softwarerobot, som kan navigere og betjene it-systemer og brugergrænseflader. I kommunen kan RPA anvendes til at automatisere en lang række administrative arbejdsgange og opgaver, såsom håndtering af fakturaer, registrering af ansøgninger og kundebehandling. I afdelingen for Digitalisering & Data i kommunen er der oprettet et team, som understøtter forvaltningerne i hele processen med at introducere, screene og beslutte om igangsætning, samt udvikle og følge op på RPA-løsninger i kommunen.",
       "administrations": {
         "oea": true,
         "tm": true,
@@ -133,7 +134,7 @@
       "techName": "Autonome Køretøjer",
       "x": 2.5,
       "y": 65,
-      "description": "Autonome køretøjer er transportmidler, der kan navigere og køre selv uden behov for en fører. Disse køretøjer anvender avancerede sensorer, machine learning og AI-teknologi til at opfange og forstå omgivelserne og træffe beslutninger om kørsel og navigation.\nSelvom autonome køretøjer ikke bruges i kommunen lige nu, kan teknologien potentielt revolutionere transportsektoren og forbedre trafiksikkerheden og mobiliteten på tværs af byen. Autonome køretøjer kan bruges til at transportere borgere og gods på en mere effektiv og bæredygtig måde og reducere behovet for biler og transportinfrastruktur.",
+      "description": "Autonome køretøjer er transportmidler, der kan navigere og køre selv uden behov for en fører. Disse køretøjer anvender avancerede sensorer, machine learning og AI-teknologi til at opfange og forstå omgivelserne og træffe beslutninger om kørsel og navigation. Selvom autonome køretøjer ikke bruges i kommunen lige nu, kan teknologien potentielt revolutionere transportsektoren og forbedre trafiksikkerheden og mobiliteten på tværs af byen. Autonome køretøjer kan bruges til at transportere borgere og gods på en mere effektiv og bæredygtig måde og reducere behovet for biler og transportinfrastruktur.",
       "administrations": {
         "oea": false,
         "tm": true,
@@ -149,6 +150,7 @@
       "techName": "AR / Augmented Reality",
       "x": 13,
       "y": 16,
+      "pictogram":"media/AR.webp",
       "description": "Augmented Reality (AR) er et digitalt virtuelt lag på virkeligheden (modsat VR, der udelukkende beskæftiger sig med den virtuelle verden), som opnås gennem et display, eksempelvis via din mobiltelefons kamera. I Augmented Reality kombineres data fra den fysiske verden med det virtuelle. På denne måde kan, eksempelvis grafik eller lyd, opleves som et ekstra lag af information der findes ovenpå det virkelige. ",
       "administrations": {
         "oea": false,
@@ -165,7 +167,7 @@
       "techName": "Virtuelle Digitale Assistenter",
       "x": 15.5,
       "y": 9,
-      "description": "Virtuelle digitale assistenter løser simple og avancerede opgaver gennem samtale med brugeren, fx via smartphones.",
+      "description": "Virtuelle digitale assistenter (VDA) kendes i dag fra smartphones (fx Siri på iPhones), hvor de gennem en samtale kan løse alt fra simple til mere avancerede opgaver. VDA’er også fundet vej til andre apparater i de seneste år, blandt andet i hjemmet til smarte højttalere eller styring af belysning i hjemmet. VDA’er baserer sig på flere teknologier, så som tale- og stemmegenkendelse, tekst-til-tale og deep-learning for at kunne omsætte brugerens tale til et konkret ønske og efterfølgende handling. VDA’ers funktionalitet på dansk er pt. begrænset af deres evne til at forstå og tale dansk.",
       "administrations": {
         "oea": false,
         "tm": false,
@@ -181,7 +183,7 @@
       "techName": "Chatbot",
       "x": 9,
       "y": 9.5,
-      "description": "Chatbots er baseret på AI, og svarer på spørgsmål stillet i talesprog. Chatbots benytter sig dog også af en række andre teknologiområder, som eksempelvis Natural Language Processing og Machine Learning. ",
+      "description": "Chatbots er baseret på AI, og svarer på spørgsmål stillet i talesprog. De er baseret på kunstig intelligens, som fortolker brugerens spørgsmål og forsøger at matche disse spørgsmål med de svar, som chatbotten er programmeret med. Spørgsmål, som chatbotten ikke kan matche til relevante svar, viderestilles til fysiske medarbejdere via fx mail, telefon eller sociale medier. Inden for fagområder med stor borgerkontakt med ens type henvendelser kan chatbots aflaste de medarbejdere, som håndterer telefonopkald og skriftlige henvendelser fra borgere.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -213,7 +215,7 @@
       "techName": "Wearables / Tracking",
       "x": 4,
       "y": 26,
-      "description": "Wearables er små kropbårne enheder, fx et smart-ur, der vha. sensorer kan monitorere og analysere fx sundhed.",
+      "description": "Wearables/Tracking er intelligente computerbaserede enheder (for eksempel smart watches), der bæres tæt på eller på hudens overflade, hvor de igennem sensorer registrerer, analyserer og overfører oplysninger. Det kan f.eks. være oplysninger om kropssignaler såsom vitale signaler og/eller data fra omgivelserne - som i nogle tilfælde gør det muligt at få biofeedback kontinuerligt i realtid.  Wearables er et eksempel på Internet of Things.",
       "administrations": {
         "oea": false,
         "tm": true,
@@ -229,7 +231,7 @@
       "techName": "Fysiske robotter",
       "x": 9,
       "y": 22,
-      "description": "Fysiske robotter kan assistere, aflaste eller overtage en række opgaver, som i dag varetages af mennesker.",
+      "description": "Fysiske robotter kan assistere, aflaste eller overtage en række opgaver som i dag varetages af mennesker, fx inden for pleje, omsorg eller læring. Robotter er typisk designet med meget specifikke funktioner og formål og dækker også over velfærdsteknologiske løsninger som spise/måltidsrobotter, mobilitetsrobotter, hygiejnerobotter og medicinhåndteringsmaskiner. Fysiske robotter er særligt udbredt inden for velfærdsteknologi, fx ifm. tunge løft, rengøring, assistance til spisning med mere.",
       "administrations": {
         "oea": false,
         "tm": true,
@@ -341,7 +343,7 @@
       "techName": "Low code / zero code",
       "x": 3,
       "y": 35,
-      "description": "Low-code/zero-code er en teknologi, der gør det muligt at udvikle applikationer og software med minimal eller ingen kodning. Med low-code/zero-code-platforme kan brugere bygge og implementere applikationer ved hjælp af visuelle interface og trække-og-slip-funktioner i stedet for traditionel kodeudvikling.\nLow-code/zero-code-platforme er designet til at være mere brugervenlige og effektive end traditionelle kodningsmetoder, da de giver brugerne mulighed for at oprette applikationer hurtigere og med mindre teknisk ekspertise. Dette gør det muligt for organisationer at opnå digital transformation og innovation hurtigere og mere omkostningseffektivt.Low-code/zero-code-teknologier kan anvendes i en række forskellige sammenhænge, fra udvikling af mobile applikationer og webapplikationer til automatisering af forretningsprocesser og datamanagement. Disse platforme kan også øge samarbejdet og samarbejdet på tværs af forskellige afdelinger og teams, da de tillader ikke-tekniske brugere at oprette og implementere applikationer med minimal eller ingen hjælp fra IT-afdelingen.Samlet set kan low-code/zero-code-teknologier give organisationer mulighed for at effektivisere deres digitale udviklingsprocesser og forbedre deres digitale tilstedeværelse og servicelevering på en mere agil og omkostningseffektiv måde.",
+      "description": "Low-code/zero-code er en teknologi, der gør det muligt at udvikle applikationer og software med minimal eller ingen kodning. Med low-code/zero-code-platforme kan brugere bygge og implementere applikationer ved hjælp af visuelle interface og trække-og-slip-funktioner i stedet for traditionel kodeudvikling. Low-code/zero-code-platforme er designet til at være mere brugervenlige og effektive end traditionelle kodningsmetoder, da de giver brugerne mulighed for at oprette applikationer hurtigere og med mindre teknisk ekspertise. Dette gør det muligt for organisationer at opnå digital transformation og innovation hurtigere og mere omkostningseffektivt.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -355,9 +357,9 @@
     },
     {
       "techName": "Computer Vision",
-      "x": -0.5,
-      "y": 1,
-      "description": "Computer vision er en teknologi, der giver computere evnen til at genkende og forstå billeder og video. Med computer vision kan computere analysere og forstå den visuelle verden, som mennesker ser den, og bruge denne information til at træffe beslutninger og udføre handlinger.\nComputer vision kan bruges i mange forskellige industrier og anvendelser, fra overvågning og sikkerhed til medicinsk diagnostik og industrielle processer. I sundhedssektoren kan computer vision eksempelvis bruges til at analysere medicinske billeder og finde abnormiteter, mens det i produktion og logistik kan bruges til at overvåge produktionsprocesser og inspicere produkter for kvalitetskontrol.\nComputer vision kan også bruges i interaktive applikationer og spil, hvor det giver brugerne mulighed for at interagere med virtuelle objekter i realtid og på en mere intuitiv måde. Eksempelvis kan computer vision i smartphones bruges til ansigtsgenkendelse og augmented reality. Samlet set kan computer vision have en bred vifte af anvendelser og kan bidrage til at forbedre produktiviteten, effektiviteten og sikkerheden i mange forskellige industrier og applikationer.",
+      "x": -14,
+      "y": 16,
+      "description": "Computer vision er en teknologi, der giver computere evnen til at genkende og forstå billeder og video. Med computer vision kan computere analysere og forstå den visuelle verden, som mennesker ser den, og bruge denne information til at træffe beslutninger og udføre handlinger. Computer vision kan bruges i mange forskellige industrier og anvendelser, fra overvågning og sikkerhed til medicinsk diagnostik og industrielle processer. I sundhedssektoren kan computer vision eksempelvis bruges til at analysere medicinske billeder og finde abnormiteter, mens det i produktion og logistik kan bruges til at overvåge produktionsprocesser og inspicere produkter for kvalitetskontrol.",
       "administrations": {
         "oea": false,
         "tm": true,
