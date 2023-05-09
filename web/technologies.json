@@ -199,7 +199,7 @@
       "techName": "VR / Virtual Reality",
       "x": 11,
       "y": 5.5,
-      "description": "Virtuel Reality (VR) fører brugeren ind i en virtuel, digital verden ved hjælp af fx briller/skærme.",
+      "description": "Virtual reality (VR) fører brugeren ind i en virtuel, digital verden ved hjælp af fx skærme eller elektroniske briller. Man kan opbygge virkelighedsnære verdener med formålet at simulere reelle situationer i et sikkert miljø, og hvor der kan skabes fantasiverdener med underholdning som fokus. VR kræver sikrede omgivelser, da brugeren ikke kan se sine fysiske omgivelser – og det er væsentligt da VR kan foregå stående, gående eller siddende. VR har i mange år været brugt til for eksempel flysimulatorer og i spilleverdenen.",
       "administrations": {
         "oea": true,
         "tm": true,
@@ -263,7 +263,7 @@
       "techName": "3D print",
       "x": 2.5,
       "y": 7,
-      "description": "3D-print er en måde at fremstille fysiske objekter på ved hjælp af en speciel type printer. I stedet for at printe på papir eller andre flade overflader, bruger en 3D-printer et specialiseret materiale (typisk plastik eller metal), som den gradvist bygger op i lag for at skabe et tredimensionelt objekt.\n Processen starter typisk med en digital model af det ønskede objekt, som kan oprettes ved hjælp af 3D-modelleringssoftware eller ved at scanne et eksisterende objekt med en 3D-scanner. Derefter bruger 3D-printeren en række komplekse teknologier til at omdanne den digitale model til et fysisk objekt ved at skabe lag på lag af det valgte materiale. 3D-printere kan bruges til at fremstille alt fra legetøj og smykker til prototyper af maskindele og endda hele bygninger. Fordi 3D-printere giver mulighed for hurtig og præcis fremstilling af komplekse designs, er de blevet stadig mere populære inden for industrien, medicinsk teknologi og mange andre områder.",
+      "description": "3D-print er en måde at fremstille fysiske objekter (som for eksempel smykker og legetøj) på ved hjælp af en speciel type printer. I stedet for at printe på papir eller andre flade overflader, bruger en 3D-printer et specialiseret materiale som den gradvist bygger op i lag for at skabe et tredimensionelt objekt. Processen starter typisk med en digital model af det ønskede objekt, som kan oprettes ved hjælp af 3D-modelleringssoftwarer. Derefter bruger 3D-printeren en række komplekse teknologier til at omdanne den digitale model til et fysisk objekt ved at skabe lag på lag af det valgte materiale.",
       "administrations": {
         "oea": false,
         "tm": false,
@@ -279,7 +279,7 @@
       "techName": "Skærme og selvbetjening",
       "x": 3,
       "y": 3,
-      "description": "Skærme og selvbetjening er en teknologi, der gør det muligt for borgere at interagere med kommunen og dens tjenester gennem digitale skærme og selvbetjeningsløsninger. Digitale skærme kan bruges til visning af information og interaktive selvbetjeningsløsninger, som for eksempel brug af touchskærme eller QR-koder til at give borgere adgang til information om kommende arrangementer, tilbud og tjenester.\nSelvbetjeningsløsninger kan også give borgerne mulighed for at betjene sig selv og udføre opgaver, som ellers ville kræve personlig betjening. Dette kan inkludere tjenester som eksempelvis at booke møder eller at registrere sin ankomst.Skærme og selvbetjening hjælper med at reducere ventetid for borgerne og frigøre personale ressourcer til mere komplekse opgaver. Samtidig kan teknologien give borgerne mere fleksibilitet og adgang til kommunale tjenester på en måde, der er mere bekvem og effektiv.",
+      "description": "Skærme og selvbetjening er en teknologi, der gør det muligt for borgere at interagere med kommunen og dens tjenester gennem digitale skærme og selvbetjeningsløsninger. Digitale skærme kan bruges til visning af information og interaktive selvbetjeningsløsninger, som for eksempel brug af touchskærme eller QR-koder til at give borgere adgang til information om kommende arrangementer, tilbud og tjenester. Selvbetjeningsløsninger kan også give borgerne mulighed for at betjene sig selv og udføre opgaver, som ellers ville kræve personlig betjening, for eksempel tjenester som at booke møder eller at registrere sin ankomst.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -346,7 +346,7 @@
       "description": "Low-code/zero-code er en teknologi, der gør det muligt at udvikle applikationer og software med minimal eller ingen kodning. Med low-code/zero-code-platforme kan brugere bygge og implementere applikationer ved hjælp af visuelle interface og trække-og-slip-funktioner i stedet for traditionel kodeudvikling. Low-code/zero-code-platforme er designet til at være mere brugervenlige og effektive end traditionelle kodningsmetoder, da de giver brugerne mulighed for at oprette applikationer hurtigere og med mindre teknisk ekspertise. Dette gør det muligt for organisationer at opnå digital transformation og innovation hurtigere og mere omkostningseffektivt.",
       "administrations": {
         "oea": true,
-        "tm": false,
+        "tm": true,
         "bu": false,
         "velfaerd": false,
         "ks": false,
