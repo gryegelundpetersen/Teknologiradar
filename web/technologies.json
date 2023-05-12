@@ -4,7 +4,7 @@
       "techName": "Digital twin",
       "x": -12,
       "y": 12,
-      "pictogram":"media/tech_pic/digital_twin.jpg",
+      "pictogram":"media/tech_pic/digital_twin.png",
       "description": "Digital twin (digital tvillling) er en teknologi hvor der bygges en digital kopi af et fysisk objekt, system eller miljø for at simulere hvordan forandringer kan påvirke for eksempel en by, bygning eller sagsproces. Dermed kan den digitale tvilling give viden om hvilke konsekvenser en række hypotetiske ændringer har på et givent objekt eller system. Et eksempel kan være en flysimulator, hvor der i et digitalt miljø kan foretages tests og simuleringer af hvordan flyet opfører sig ved ændringer i vejrforhold, flyets opsætning etc.  ",
       "administrations": {
         "oea": false,
@@ -106,7 +106,7 @@
       "techName": "IoT og sensorer",
       "x": -2,
       "y": 1,
-      "pictogram":"media/tech_pic/sensorIOT.jpg",
+      "pictogram":"media/tech_pic/iot.png",
       "description": "IoT (Internet of Things) og sensorer er teknologier, der anvendes til at samle og analysere data fra forskellige enheder og sensorer, som er forbundet til internettet. Dette kan omfatte alt fra smart home-enheder og bærbare enheder til industrielle sensorer og overvågningskameraer. IoT og sensorer kan anvendes i mange forskellige sammenhænge, herunder hjemmeautomation, landbrugsproduktion, transport og overvågning af miljøet. Disse teknologier kan bruges til at indsamle data i realtid, analysere dataene og træffe automatiske beslutninger baseret på dem.",
       "administrations": {
         "oea": false,
@@ -158,7 +158,7 @@
       "techName": "AR / Augmented Reality",
       "x": 13,
       "y": 16,
-      "pictogram":"media/tech_pic/AR.jpg",
+      "pictogram":"media/tech_pic/AR.png",
       "description": "Augmented Reality (AR) er et digitalt virtuelt lag på virkeligheden (modsat VR, der udelukkende beskæftiger sig med den virtuelle verden), som opnås gennem et display, eksempelvis via din mobiltelefons kamera. I Augmented Reality kombineres data fra den fysiske verden med det virtuelle. På denne måde kan, eksempelvis grafik eller lyd, opleves som et ekstra lag af information der findes ovenpå det virkelige. ",
       "administrations": {
         "oea": false,
@@ -209,7 +209,7 @@
       "techName": "VR / Virtual Reality",
       "x": 11,
       "y": 5.5,
-      "pictogram":"media/tech_pic/vr.jpg",
+      "pictogram":"media/tech_pic/VR.png",
       "description": "Virtual reality (VR) fører brugeren ind i en virtuel, digital verden ved hjælp af fx skærme eller elektroniske briller. Man kan opbygge virkelighedsnære verdener med formålet at simulere reelle situationer i et sikkert miljø, og hvor der kan skabes fantasiverdener med underholdning som fokus. VR kræver sikrede omgivelser, da brugeren ikke kan se sine fysiske omgivelser – og det er væsentligt da VR kan foregå stående, gående eller siddende. VR har i mange år været brugt til for eksempel flysimulatorer og i spilleverdenen.",
       "administrations": {
         "oea": true,
@@ -243,7 +243,7 @@
       "techName": "Fysiske robotter",
       "x": 9,
       "y": 22,
-      "pictogram":"media/tech_pic/robot.png",
+      "pictogram":"media/tech_pic/Fysisk_robot.png",
       "description": "Fysiske robotter kan assistere, aflaste eller overtage en række opgaver som i dag varetages af mennesker, fx inden for pleje, omsorg eller læring. Robotter er typisk designet med meget specifikke funktioner og formål og dækker også over velfærdsteknologiske løsninger som spise/måltidsrobotter, mobilitetsrobotter, hygiejnerobotter og medicinhåndteringsmaskiner. Fysiske robotter er særligt udbredt inden for velfærdsteknologi, fx ifm. tunge løft, rengøring, assistance til spisning med mere.",
       "administrations": {
         "oea": false,
@@ -277,7 +277,7 @@
       "techName": "3D print",
       "x": 2.5,
       "y": 7,
-      "pictogram":"media/tech_pic/3d.webp",
+      "pictogram":"media/tech_pic/3d.png",
       "description": "3D-print er en måde at fremstille fysiske objekter (som for eksempel smykker og legetøj) på ved hjælp af en speciel type printer. I stedet for at printe på papir eller andre flade overflader, bruger en 3D-printer et specialiseret materiale som den gradvist bygger op i lag for at skabe et tredimensionelt objekt. Processen starter typisk med en digital model af det ønskede objekt, som kan oprettes ved hjælp af 3D-modelleringssoftwarer. Derefter bruger 3D-printeren en række komplekse teknologier til at omdanne den digitale model til et fysisk objekt ved at skabe lag på lag af det valgte materiale.",
       "administrations": {
         "oea": false,
