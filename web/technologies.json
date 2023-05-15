@@ -5,7 +5,7 @@
       "x": -12,
       "y": 12,
       "pictogram":"media/tech_pic/digital_twin.png",
-      "description": "Digital twin (digital tvillling) er en teknologi hvor der bygges en digital kopi af et fysisk objekt, system eller miljø for at simulere hvordan forandringer kan påvirke for eksempel en by, bygning eller sagsproces. Dermed kan den digitale tvilling give viden om hvilke konsekvenser en række hypotetiske ændringer har på et givent objekt eller system. Et eksempel kan være en flysimulator, hvor der i et digitalt miljø kan foretages tests og simuleringer af hvordan flyet opfører sig ved ændringer i vejrforhold, flyets opsætning etc.  ",
+      "description": "Digital tvilling er en teknologi hvor der bygges en digital kopi af et fysisk objekt, system eller miljø for at simulere hvordan forandringer kan påvirke for eksempel en by, bygning eller sagsproces. Dermed kan den digitale tvilling give viden om hvilke konsekvenser en række hypotetiske ændringer har på et givent objekt eller system. Et eksempel kan være en flysimulator, hvor der i et digitalt miljø kan foretages tests og simuleringer af hvordan flyet opfører sig ved ændringer i vejrforhold, flyets opsætning etc.",
       "administrations": {
         "oea": false,
         "tm": true,
@@ -56,7 +56,7 @@
       "x": -8,
       "y": 6,
       "pictogram":"media/tech_pic/NLP.webp",
-      "description": "Natural Language Processing (NLP) er en gren af kunstig intelligens, der fokuserer på at lære computere at forstå og behandle naturligt sprog. Dette kan omfatte alt fra at identificere og analysere forskellige sprogstrukturer, som grammatik og semantik, til at oversætte sprog og generere tekst eller tale. NLP spiller en stadig større rolle i vores hverdag, fra chatbots og personlige assistenter til automatisk oversættelse og talegenkendelsesteknologi. NLP kan også anvendes inden for videnskabelig forskning og lægemiddeludvikling, hvor det kan hjælpe med at analysere store mængder af tekstbaseret data og finde mønstre eller sammenhænge.",
+      "description": "Natural Language Processing (NLP) er en gren af kunstig intelligens, der fokuserer på at lære computere at forstå og behandle naturligt sprog. Dette kan omfatte alt fra at identificere og analysere forskellige sprogstrukturer, som grammatik og semantik, til at oversætte sprog og generere tekst eller tale. NLP spiller en stadig større rolle i vores hverdag, fra chatbots og personlige assistenter til automatisk oversættelse og talegenkendelsesteknologi.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -73,7 +73,7 @@
       "x": -15,
       "y": 30,
       "pictogram":"media/tech_pic/process.jpg",
-      "description": "Process mining er en metode til at analysere og forbedre arbejdsprocesser i en organisation. Det indebærer at undersøge data, der genereres af forskellige systemer og applikationer i kommunen, for at identificere ineffektive trin, flaskehalse og andre problemer i arbejdsprocesserne. I kommunen kan process mining bruges til at optimere en lang række opgaver og processer, såsom sagsbehandling, budgetplanlægning, kommunikation med borgere og samarbejde med andre afdelinger. Ved at analysere data omkring disse processer, kan man identificere områder, hvor der er potentiale for forbedring og effektivisering.",
+      "description": "Proces mining er en metode til at analysere og forbedre arbejdsprocesser i en organisation. Det indebærer at undersøge data, der genereres af forskellige systemer og applikationer i kommunen, for at identificere ineffektive trin, flaskehalse og andre problemer i arbejdsprocesserne. I kommunen kan proces mining bruges til at optimere en lang række opgaver og processer, såsom sagsbehandling, budgetplanlægning, kommunikation med borgere og samarbejde med andre afdelinger.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -90,7 +90,7 @@
       "x": -14,
       "y": 1,
       "pictogram":"media/tech_pic/AI.jpg",
-      "description": "AI (kunstig intelligens) og Machine Learning (maskinlæring) er teknologier, der anvender algoritmer og datamodeller til at lære af data og forbedre deres præstation over tid. Disse teknologier kan bruges til at analysere store mængder af data, identificere mønstre og træffe automatiske beslutninger baseret på disse mønstre. AI og Machine Learning kan bruges på mange forskellige områder i dag - for eksempel i sundhedsvæsenet hvor AI og Machine Learning kan bruges til at analysere store mængder af patientdata og identificere risikofaktorer for sygdom.",
+      "description": "AI (kunstig intelligens) og Machine Learning (maskinlæring) er teknologier, der anvender algoritmer og datamodeller til at lære af data og forbedre deres præstation over tid. Disse teknologier kan bruges til at analysere store mængder af data, identificere mønstre og træffe automatiske beslutninger baseret på disse mønstre.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -107,7 +107,7 @@
       "x": -2,
       "y": 1,
       "pictogram":"media/tech_pic/iot.png",
-      "description": "IoT (Internet of Things) og sensorer er teknologier, der anvendes til at samle og analysere data fra forskellige enheder og sensorer, som er forbundet til internettet. Dette kan omfatte alt fra smart home-enheder og bærbare enheder til industrielle sensorer og overvågningskameraer. IoT og sensorer kan anvendes i mange forskellige sammenhænge, herunder hjemmeautomation, landbrugsproduktion, transport og overvågning af miljøet. Disse teknologier kan bruges til at indsamle data i realtid, analysere dataene og træffe automatiske beslutninger baseret på dem.",
+      "description": "IoT (Internet of Things) og sensorer er teknologier, der anvendes til at samle og analysere data fra forskellige enheder og sensorer, som er forbundet til internettet. Dette kan omfatte alt fra smart home-enheder og bærbare enheder til industrielle sensorer og overvågningskameraer. Disse teknologier kan bruges til at indsamle data i realtid, analysere dataene og træffe automatiske beslutninger baseret på dem.",
       "administrations": {
         "oea": false,
         "tm": true,
@@ -176,7 +176,7 @@
       "x": 15.5,
       "y": 9,
       "pictogram":"media/tech_pic/VDA.jpg",
-      "description": "Virtuelle digitale assistenter (VDA) kendes i dag fra smartphones (fx Siri på iPhones), hvor de gennem en samtale kan løse alt fra simple til mere avancerede opgaver. VDA’er også fundet vej til andre apparater i de seneste år, blandt andet i hjemmet til smarte højttalere eller styring af belysning i hjemmet. VDA’er baserer sig på flere teknologier, så som tale- og stemmegenkendelse, tekst-til-tale og deep-learning for at kunne omsætte brugerens tale til et konkret ønske og efterfølgende handling.",
+      "description": "Virtuelle digitale assistenter (VDA) kendes i dag fra smartphones (fx Siri), hvor de gennem en samtale kan løse alt fra simple til mere avancerede opgaver. VDA’er baserer sig på flere teknologier, så som tale- og stemmegenkendelse, tekst-til-tale og deep-learning for at kunne omsætte brugerens tale til et konkret ønske og efterfølgende handling.",
       "administrations": {
         "oea": false,
         "tm": false,
@@ -261,7 +261,7 @@
       "x": 16,
       "y": 0,
       "pictogram":"media/tech_pic/drone.webp",
-      "description": "En drone er en fjernstyret enhed, der kan flyve og ofte bruges til at tage billeder eller video fra luften. Droner findes i forskellige størrelser og designs, men de fleste består af en ramme, en motor og en propeller. Drone teknologi er stadig blevet mere avanceret i de senere år, og det er nu muligt at bygge droner med avancerede sensorer og kameraer, GPS-systemer og andre funktioner. Drone teknologi anvendes i dag på mange forskellige måder, fra militær overvågning og redningsoperationer til filmoptagelser, landbrugsovervågning og levering af varer til kunder.",
+      "description": "En drone er en fjernstyret enhed, der kan flyve og ofte bruges til at tage billeder eller video fra luften. Droner findes i forskellige størrelser og designs, men de fleste består af en ramme, en motor og en propeller. Drone teknologi er stadig blevet mere avanceret i de senere år, og det er nu muligt at bygge droner med avancerede sensorer og kameraer, GPS-systemer og andre funktioner.",
       "administrations": {
         "oea": false,
         "tm": true,
@@ -295,7 +295,7 @@
       "x": 3,
       "y": 3,
       "pictogram":"media/tech_pic/skaerme.png",
-      "description": "Skærme og selvbetjening er en teknologi, der gør det muligt for borgere at interagere med kommunen og dens tjenester gennem digitale skærme og selvbetjeningsløsninger. Digitale skærme kan bruges til visning af information og interaktive selvbetjeningsløsninger, som for eksempel brug af touchskærme eller QR-koder til at give borgere adgang til information om kommende arrangementer, tilbud og tjenester. Selvbetjeningsløsninger kan også give borgerne mulighed for at betjene sig selv og udføre opgaver, som ellers ville kræve personlig betjening, for eksempel tjenester som at booke møder eller at registrere sin ankomst.",
+      "description": "Skærme og selvbetjening er en teknologi, der gør det muligt for borgere at interagere med kommunen og dens tjenester gennem digitale skærme og selvbetjeningsløsninger. Digitale skærme kan bruges til visning af information og interaktive selvbetjeningsløsninger, som for eksempel brug af touchskærme eller QR-koder til at give borgere adgang til information om kommende arrangementer, tilbud og tjenester.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -329,7 +329,7 @@
       "x": 7,
       "y": 0,
       "pictogram":"media/tech_pic/apps.jpg",
-      "description": "Apps er en forkortelse for \"applikation\" og betegner software, som er specielt designet til at kommunikere med en bruger eller hjælpe en bruger med at udføre en specifik opgave. Den pågældende app er desuden designet til at virke på smartphones, tablets, PC'er eller en anden form for computerenhed. Typisk skal brugeren have adgang til internettet på sin enhed før en app virker, men i dag ses flere og flere tilfælde af, at der godt kan udføres arbejde i app'en, mens brugeren er offline. Når brugeren igen får internet på sin enhed, vil alt det udførte arbejde, der skete mens enheden var offline, automatisk opdateres.",
+      "description": "Apps er en forkortelse for \"applikation\" og betegner software, som er specielt designet til at kommunikere med en bruger eller hjælpe en bruger med at udføre en specifik opgave. Den pågældende app er desuden designet til at virke på smartphones, tablets, PC'er eller en anden form for computerenhed. Typisk skal brugeren have adgang til internettet på sin enhed før en app virker, men i dag ses flere og flere tilfælde af, at der godt kan udføres arbejde i app'en, mens brugeren er offline.",
       "administrations": {
         "oea": true,
         "tm": true,
@@ -363,7 +363,7 @@
       "x": 3,
       "y": 35,
       "pictogram":"media/tech_pic/low_nocode_puzzle.webp",
-      "description": "Low-code/zero-code er en teknologi, der gør det muligt at udvikle applikationer og software med minimal eller ingen kodning. Med low-code/zero-code-platforme kan brugere bygge og implementere applikationer ved hjælp af visuelle interface og trække-og-slip-funktioner i stedet for traditionel kodeudvikling. Low-code/zero-code-platforme er designet til at være mere brugervenlige og effektive end traditionelle kodningsmetoder, da de giver brugerne mulighed for at oprette applikationer hurtigere og med mindre teknisk ekspertise. Dette gør det muligt for organisationer at opnå digital transformation og innovation hurtigere og mere omkostningseffektivt.",
+      "description": "Low-code/zero-code er en teknologi, der gør det muligt at udvikle applikationer og software med minimal eller ingen kodning. Med low-code/zero-code-platforme kan brugere bygge og implementere applikationer ved hjælp af visuelle interface og trække-og-slip-funktioner i stedet for traditionel kodeudvikling. Low-code/zero-code-platforme er designet til at være mere brugervenlige og effektive end traditionelle kodningsmetoder.",
       "administrations": {
         "oea": true,
         "tm": true,
@@ -380,7 +380,7 @@
       "x": -14,
       "y": 16,
       "pictogram":"media/tech_pic/computervision.png",
-      "description": "Computer vision er en teknologi, der giver computere evnen til at genkende og forstå billeder og video. Med computer vision kan computere analysere og forstå den visuelle verden, som mennesker ser den, og bruge denne information til at træffe beslutninger og udføre handlinger. Computer vision kan bruges i mange forskellige industrier og anvendelser, fra overvågning og sikkerhed til medicinsk diagnostik og industrielle processer. I sundhedssektoren kan computer vision eksempelvis bruges til at analysere medicinske billeder og finde abnormiteter, mens det i produktion og logistik kan bruges til at overvåge produktionsprocesser og inspicere produkter for kvalitetskontrol.",
+      "description": "Computer vision er en teknologi, der giver computere evnen til at genkende og forstå billeder og video. Med computer vision kan computere analysere og forstå den visuelle verden, som mennesker ser den, og bruge denne information til at træffe beslutninger og udføre handlinger. Computer vision kan bruges i mange forskellige industrier og anvendelser, fra overvågning og sikkerhed til medicinsk diagnostik og industrielle processer.  ",
       "administrations": {
         "oea": false,
         "tm": true,
