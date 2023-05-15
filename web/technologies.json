@@ -176,7 +176,7 @@
       "x": 15.5,
       "y": 9,
       "pictogram":"media/tech_pic/VDA.jpg",
-      "description": "Virtuelle digitale assistenter (VDA) kendes i dag fra smartphones (fx Siri på iPhones), hvor de gennem en samtale kan løse alt fra simple til mere avancerede opgaver. VDA’er også fundet vej til andre apparater i de seneste år, blandt andet i hjemmet til smarte højttalere eller styring af belysning i hjemmet. VDA’er baserer sig på flere teknologier, så som tale- og stemmegenkendelse, tekst-til-tale og deep-learning for at kunne omsætte brugerens tale til et konkret ønske og efterfølgende handling. VDA’ers funktionalitet på dansk er pt. begrænset af deres evne til at forstå og tale dansk.",
+      "description": "Virtuelle digitale assistenter (VDA) kendes i dag fra smartphones (fx Siri på iPhones), hvor de gennem en samtale kan løse alt fra simple til mere avancerede opgaver. VDA’er også fundet vej til andre apparater i de seneste år, blandt andet i hjemmet til smarte højttalere eller styring af belysning i hjemmet. VDA’er baserer sig på flere teknologier, så som tale- og stemmegenkendelse, tekst-til-tale og deep-learning for at kunne omsætte brugerens tale til et konkret ønske og efterfølgende handling.",
       "administrations": {
         "oea": false,
         "tm": false,
