@@ -142,7 +142,7 @@
       "x": 2.5,
       "y": 65,
       "pictogram":"media/tech_pic/autonomekore.jpg",
-      "description": "Autonome køretøjer er transportmidler, der kan navigere og køre selv uden behov for en fører. Disse køretøjer anvender avancerede sensorer, machine learning og AI-teknologi til at opfange og forstå omgivelserne og træffe beslutninger om kørsel og navigation. Selvom autonome køretøjer ikke bruges i kommunen lige nu, kan teknologien potentielt revolutionere transportsektoren og forbedre trafiksikkerheden og mobiliteten på tværs af byen. Autonome køretøjer kan bruges til at transportere borgere og gods på en mere effektiv og bæredygtig måde og reducere behovet for biler og transportinfrastruktur.",
+      "description": "Autonome køretøjer er transportmidler, der kan navigere og køre selv uden behov for en fører. Disse køretøjer anvender avancerede sensorer, machine learning og AI-teknologi til at opfange og forstå omgivelserne og træffe beslutninger om kørsel og navigation. Selvom autonome køretøjer ikke bruges i kommunen lige nu, kan teknologien potentielt revolutionere transportsektoren og forbedre trafiksikkerheden og mobiliteten på tværs af byen.",
       "administrations": {
         "oea": false,
         "tm": true,
