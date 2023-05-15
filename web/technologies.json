@@ -39,7 +39,7 @@
       "x": -5,
       "y": 22,
       "pictogram":"media/tech_pic/edge_.png",
-      "description": "Edge computing er et begreb der dækker decentralisering af beregninger og datalagring. På denne måde sker beregninger og lagring af data fortrinsvist i det apparat (for eksempel sensorer eller kameraer) som behøver det pågældende data og beregninger, i stedet for at det sker på centrale servere. Det kan i mange tilfælde minimere responstid og den nødvendige båndbredde, fordi data og beregninger ikke skal sendes igennem et centralnetvæk og tilbage igen.",
+      "description": "Edge computing er et begreb der dækker decentralisering af beregninger og datalagring. På denne måde sker beregninger og lagring af data fortrinsvist i det apparat (for eksempel sensorer eller kameraer) som behøver det pågældende data og beregninger, i stedet for at det sker på centrale servere. Det kan i mange tilfælde minimere responstid og den nødvendige båndbredde, fordi data og beregninger ikke skal sendes igennem et centralnetværk og tilbage igen.",
       "administrations": {
         "oea": false,
         "tm": true,
