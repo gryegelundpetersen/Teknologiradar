@@ -335,11 +335,12 @@ h1 {
     margin-left: 2%;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1200px) {
     .info-box-right-side{
-        font-size:11px;
+        font-size:12px;
     }
 }
+
 
 .pictogram-overlay{
     position: absolute;
