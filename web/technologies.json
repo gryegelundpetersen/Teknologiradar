@@ -278,7 +278,7 @@
       "x": 2.5,
       "y": 7,
       "pictogram":"media/tech_pic/3d.png",
-      "description": "3D-print er en måde at fremstille fysiske objekter (som for eksempel smykker og legetøj) på ved hjælp af en speciel type printer. I stedet for at printe på papir eller andre flade overflader, bruger en 3D-printer et specialiseret materiale som den gradvist bygger op i lag for at skabe et tredimensionelt objekt. Processen starter typisk med en digital model af det ønskede objekt, som kan oprettes ved hjælp af 3D-modelleringssoftwarer. Derefter bruger 3D-printeren en række komplekse teknologier til at omdanne den digitale model til et fysisk objekt ved at skabe lag på lag af det valgte materiale.",
+      "description": "3D-print er en måde at fremstille fysiske objekter (som for eksempel smykker og legetøj) på ved hjælp af en speciel type printer. I stedet for at printe på papir eller andre flade overflader, bruger en 3D-printer et specialiseret materiale som den gradvist bygger op i lag for at skabe et tredimensionelt objekt.",
       "administrations": {
         "oea": false,
         "tm": false,
