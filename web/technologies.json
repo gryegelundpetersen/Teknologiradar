@@ -2,8 +2,8 @@
   "technologies": [
     {
       "techName": "Digital twin",
-      "x": -12,
-      "y": 12,
+      "x": -13,
+      "y": 9.5,
       "pictogram":"media/tech_pic/digital_twin.png",
       "description": "Digital tvilling er en teknologi hvor der bygges en digital kopi af et fysisk objekt, system eller miljø for at simulere hvordan forandringer kan påvirke for eksempel en by, bygning eller sagsproces. Dermed kan den digitale tvilling give viden om hvilke konsekvenser en række hypotetiske ændringer har på et givent objekt eller system. Et eksempel kan være en flysimulator, hvor der i et digitalt miljø kan foretages tests og simuleringer af hvordan flyet opfører sig ved ændringer i vejrforhold, flyets opsætning etc.",
       "administrations": {
@@ -11,7 +11,7 @@
         "tm": true,
         "bu": false,
         "velfaerd": false,
-        "ks": false,
+        "ks": true,
         "komstab": true
       },
       "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/digital-twin/",
@@ -37,7 +37,7 @@
     {
       "techName": "Edge Computing",
       "x": -5,
-      "y": 22,
+      "y": 19.5,
       "pictogram":"media/tech_pic/edge_.png",
       "description": "Edge computing er et begreb der dækker decentralisering af beregninger og datalagring. På denne måde sker beregninger og lagring af data fortrinsvist i det apparat (for eksempel sensorer eller kameraer) som behøver det pågældende data og beregninger, i stedet for at det sker på centrale servere. Det kan i mange tilfælde minimere responstid og den nødvendige båndbredde, fordi data og beregninger ikke skal sendes igennem et centralnetværk og tilbage igen.",
       "administrations": {
@@ -53,8 +53,8 @@
     },
     {
       "techName": "Natural Language Processing",
-      "x": -8,
-      "y": 6,
+      "x": -4,
+      "y": 24,
       "pictogram":"media/tech_pic/NLP.webp",
       "description": "Natural Language Processing (NLP) er en gren af kunstig intelligens, der fokuserer på at lære computere at forstå og behandle naturligt sprog. Dette kan omfatte alt fra at identificere og analysere forskellige sprogstrukturer, som grammatik og semantik, til at oversætte sprog og generere tekst eller tale. NLP spiller en stadig større rolle i vores hverdag, fra chatbots og personlige assistenter til automatisk oversættelse og talegenkendelsesteknologi.",
       "administrations": {
@@ -86,7 +86,41 @@
       "maturity": 2
     },
     {
-      "techName": "AI / Machine Learning",
+      "techName": "Computer Vision",
+      "x": -10,
+      "y": 15.5,
+      "pictogram":"media/tech_pic/computervision.png",
+      "description": "Computer vision er en teknologi, der giver computere evnen til at genkende og forstå billeder og video. Med computer vision kan computere analysere og forstå den visuelle verden, som mennesker ser den, og bruge denne information til at træffe beslutninger og udføre handlinger. Computer vision kan bruges i mange forskellige industrier og anvendelser, fra overvågning og sikkerhed til medicinsk diagnostik og industrielle processer.  ",
+      "administrations": {
+        "oea": false,
+        "tm": true,
+        "bu": true,
+        "velfaerd": false,
+        "ks": true,
+        "komstab": false
+      },
+      "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/computer-vision",
+      "maturity": 3
+    },
+    {
+      "techName": "Generativ AI",
+      "x": -1.5,
+      "y": 11,
+      "pictogram":"media/tech_pic/BerthA.png",
+      "description": "Generativ AI er en type af kunstig intelligens, der kan skabe nye tekster, billeder, lyd, videoer etc. Dette gøres ved at indtaste en prompt, hvor man giver modellen et input, som modellen reagerer på og bruger til at løse den opgave, man har bedt om.",
+      "administrations": {
+        "oea": true,
+        "tm": true,
+        "bu": false,
+        "velfaerd": false,
+        "ks": true,
+        "komstab": true
+      },
+      "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/generativ-ai",
+      "maturity": 3
+    },
+    {
+      "techName": "AI/Machine Learning",
       "x": -14,
       "y": 1,
       "pictogram":"media/tech_pic/AI.jpg",
@@ -97,24 +131,24 @@
         "bu": false,
         "velfaerd": false,
         "ks": true,
-        "komstab": true
+        "komstab": false
       },
       "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/ai-machine-learning/",
       "maturity": 3
     },
     {
       "techName": "IoT og sensorer",
-      "x": -2,
-      "y": 1,
+      "x": -7,
+      "y": 5,
       "pictogram":"media/tech_pic/iot.png",
       "description": "IoT (Internet of Things) og sensorer er teknologier, der anvendes til at samle og analysere data fra forskellige enheder og sensorer, som er forbundet til internettet. Dette kan omfatte alt fra smart home-enheder og bærbare enheder til industrielle sensorer og overvågningskameraer. Disse teknologier kan bruges til at indsamle data i realtid, analysere dataene og træffe automatiske beslutninger baseret på dem.",
       "administrations": {
         "oea": false,
         "tm": true,
-        "bu": false,
+        "bu": true,
         "velfaerd": true,
         "ks": true,
-        "komstab": true
+        "komstab": false
       },
       "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/iot-og-sensorer/",
       "maturity": 3,
@@ -123,7 +157,7 @@
     {
       "techName": "RPA",
       "x": -2,
-      "y": 12,
+      "y": 1,
       "pictogram":"media/tech_pic/RPA.jpg",
       "description": "RPA (Robotic Process Automation) er en type software, der kan automatisere simple og rutineprægede arbejdsopgaver, som er tidskrævende og ressourcekrævende i en organisation. RPA fungerer som en softwarerobot, som kan navigere og betjene it-systemer og brugergrænseflader. I kommunen kan RPA anvendes til at automatisere en lang række administrative arbejdsgange og opgaver, såsom håndtering af fakturaer, registrering af ansøgninger og kundebehandling.  ",
       "administrations": {
@@ -155,9 +189,9 @@
       "maturity": 1
     },
     {
-      "techName": "AR / Augmented Reality",
-      "x": 13,
-      "y": 16,
+      "techName": "AR",
+      "x": 16,
+      "y": 2,
       "pictogram":"media/tech_pic/AR.png",
       "description": "Augmented Reality (AR) er et digitalt virtuelt lag på virkeligheden (modsat VR, der udelukkende beskæftiger sig med den virtuelle verden), som opnås gennem et display, eksempelvis via din mobiltelefons kamera. I Augmented Reality kombineres data fra den fysiske verden med det virtuelle. På denne måde kan, eksempelvis grafik eller lyd, opleves som et ekstra lag af information der findes ovenpå det virkelige. ",
       "administrations": {
@@ -173,12 +207,12 @@
     },
     {
       "techName": "Virtuelle Digitale Assistenter",
-      "x": 15.5,
-      "y": 9,
+      "x": 5,
+      "y": 17.5,
       "pictogram":"media/tech_pic/VDA.jpg",
       "description": "Virtuelle digitale assistenter (VDA) kendes i dag fra smartphones (fx Siri), hvor de gennem en samtale kan løse alt fra simple til mere avancerede opgaver. VDA’er baserer sig på flere teknologier, så som tale- og stemmegenkendelse, tekst-til-tale og deep-learning for at kunne omsætte brugerens tale til et konkret ønske og efterfølgende handling.",
       "administrations": {
-        "oea": false,
+        "oea": true,
         "tm": false,
         "bu": true,
         "velfaerd": false,
@@ -189,11 +223,11 @@
       "maturity": 3
     },
     {
-      "techName": "Chatbots",
-      "x": 9,
-      "y": 9.5,
+      "techName": "Chat/voicebot",
+      "x": 3,
+      "y": 22.5,
       "pictogram":"media/tech_pic/chatbot.jpg",
-      "description": "Chatbots er baseret på AI, og svarer på spørgsmål stillet i talesprog. De er baseret på kunstig intelligens, som fortolker brugerens spørgsmål og forsøger at matche disse spørgsmål med de svar, som chatbotten er programmeret med. Spørgsmål, som chatbotten ikke kan matche til relevante svar, viderestilles til fysiske medarbejdere via fx mail, telefon eller sociale medier. Inden for fagområder med stor borgerkontakt med ens type henvendelser kan chatbots aflaste de medarbejdere, som håndterer telefonopkald og skriftlige henvendelser fra borgere.",
+      "description": "Chat- og voicebots er baseret på AI, og svarer på spørgsmål stillet i talesprog. De er baseret på kunstig intelligens, som fortolker brugerens spørgsmål og forsøger at matche disse spørgsmål med de svar, som botten er programmeret med. Spørgsmål, som botten ikke kan matche til relevante svar, viderestilles til fysiske medarbejdere via fx mail, telefon eller sociale medier. Inden for fagområder med stor borgerkontakt med ens type henvendelser kan chat- og voicebots aflaste de medarbejdere, som håndterer telefonopkald og skriftlige henvendelser fra borgere.",
       "administrations": {
         "oea": true,
         "tm": false,
@@ -206,9 +240,9 @@
       "maturity": 3
     },
     {
-      "techName": "VR / Virtual Reality",
+      "techName": "VR",
       "x": 11,
-      "y": 5.5,
+      "y": 1,
       "pictogram":"media/tech_pic/VR.png",
       "description": "Virtual reality (VR) fører brugeren ind i en virtuel, digital verden ved hjælp af fx skærme eller elektroniske briller. Man kan opbygge virkelighedsnære verdener med formålet at simulere reelle situationer i et sikkert miljø, og hvor der kan skabes fantasiverdener med underholdning som fokus. VR kræver sikrede omgivelser, da brugeren ikke kan se sine fysiske omgivelser – og det er væsentligt da VR kan foregå stående, gående eller siddende. VR har i mange år været brugt til for eksempel flysimulatorer og i spilleverdenen.",
       "administrations": {
@@ -223,9 +257,9 @@
       "maturity": 3
     },
     {
-      "techName": "Wearables / Tracking",
-      "x": 4,
-      "y": 26,
+      "techName": "Wearables/Tracking",
+      "x": 10,
+      "y": 10,
       "pictogram":"media/tech_pic/wearables.jpg",
       "description": "Wearables/Tracking er intelligente computerbaserede enheder (for eksempel smart watches), der bæres tæt på eller på hudens overflade, hvor de igennem sensorer registrerer, analyserer og overfører oplysninger. Det kan f.eks. være oplysninger om kropssignaler såsom vitale signaler og/eller data fra omgivelserne - som i nogle tilfælde gør det muligt at få biofeedback kontinuerligt i realtid.  Wearables er et eksempel på Internet of Things.",
       "administrations": {
@@ -241,8 +275,8 @@
     },
     {
       "techName": "Fysiske robotter",
-      "x": 9,
-      "y": 22,
+      "x": 4,
+      "y": 13.5,
       "pictogram":"media/tech_pic/Fysisk_robot.png",
       "description": "Fysiske robotter kan assistere, aflaste eller overtage en række opgaver som i dag varetages af mennesker, fx inden for pleje, omsorg eller læring. Robotter er typisk designet med meget specifikke funktioner og formål og dækker også over velfærdsteknologiske løsninger som spise/måltidsrobotter, mobilitetsrobotter, hygiejnerobotter og medicinhåndteringsmaskiner. Fysiske robotter er særligt udbredt inden for velfærdsteknologi, fx ifm. tunge løft, rengøring, assistance til spisning med mere.",
       "administrations": {
@@ -258,8 +292,8 @@
     },
     {
       "techName": "Droner",
-      "x": 16,
-      "y": 0,
+      "x": 11,
+      "y": 20,
       "pictogram":"media/tech_pic/drone.webp",
       "description": "En drone er en fjernstyret enhed, der kan flyve og ofte bruges til at tage billeder eller video fra luften. Droner findes i forskellige størrelser og designs, men de fleste består af en ramme, en motor og en propeller. Drone teknologi er stadig blevet mere avanceret i de senere år, og det er nu muligt at bygge droner med avancerede sensorer og kameraer, GPS-systemer og andre funktioner.",
       "administrations": {
@@ -273,32 +307,16 @@
       "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/droner/",
       "maturity": 3
     },
-    {
-      "techName": "3D print",
-      "x": 2.5,
-      "y": 7,
-      "pictogram":"media/tech_pic/3d.png",
-      "description": "3D-print er en måde at fremstille fysiske objekter (som for eksempel smykker og legetøj) på ved hjælp af en speciel type printer. I stedet for at printe på papir eller andre flade overflader, bruger en 3D-printer et specialiseret materiale som den gradvist bygger op i lag for at skabe et tredimensionelt objekt.",
-      "administrations": {
-        "oea": false,
-        "tm": false,
-        "bu": true,
-        "velfaerd": false,
-        "ks": true,
-        "komstab": true
-      },
-      "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/3d-print",
-      "maturity": 3
-    },
+  
     {
       "techName": "Skærme og selvbetjening",
-      "x": 3,
-      "y": 3,
+      "x": 4,
+      "y": 5.5,
       "pictogram":"media/tech_pic/skaerme.png",
       "description": "Skærme og selvbetjening er en teknologi, der gør det muligt for borgere at interagere med kommunen og dens tjenester gennem digitale skærme og selvbetjeningsløsninger. Digitale skærme kan bruges til visning af information og interaktive selvbetjeningsløsninger, som for eksempel brug af touchskærme eller QR-koder til at give borgere adgang til information om kommende arrangementer, tilbud og tjenester.",
       "administrations": {
         "oea": true,
-        "tm": false,
+        "tm": true,
         "bu": true,
         "velfaerd": true,
         "ks": true,
@@ -308,26 +326,9 @@
       "maturity": 3
     },
     {
-      "techName": "Sociale teknologier",
-      "x": 3,
-      "y": 13,
-      "pictogram":"media/tech_pic/socialetek.jpg",
-      "description": "Sociale teknologier er online platforme, som sociale medier og AULA, der giver brugerne mulighed for at kommunikere og samarbejde på tværs af geografiske grænser og skabe virtuelle fællesskaber. Disse teknologier kan bruges til at engagere og kommunikere med borgerne, drive online dialog og debat, samt sprede information om kommunens tjenester og kampagner.",
-      "administrations": {
-        "oea": true,
-        "tm": true,
-        "bu": true,
-        "velfaerd": true,
-        "ks": true,
-        "komstab": true
-      },
-      "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/sociale-teknologier/",
-      "maturity": 3
-    },
-    {
       "techName": "Apps",
-      "x": 7,
-      "y": 0,
+      "x": 3.5,
+      "y": 1,
       "pictogram":"media/tech_pic/apps.jpg",
       "description": "Apps er en forkortelse for \"applikation\" og betegner software, som er specielt designet til at kommunikere med en bruger eller hjælpe en bruger med at udføre en specifik opgave. Den pågældende app er desuden designet til at virke på smartphones, tablets, PC'er eller en anden form for computerenhed. Typisk skal brugeren have adgang til internettet på sin enhed før en app virker, men i dag ses flere og flere tilfælde af, at der godt kan udføres arbejde i app'en, mens brugeren er offline.",
       "administrations": {
@@ -349,47 +350,30 @@
       "description": "Metaverset er en virtuel verden, der kan sammenlignes med en udvidet version af den virkelige verden. Det er en simuleret, 3D-verden, hvor brugere kan skabe deres egne avatarer og interagere med andre brugere og digitale objekter i realtid. Metaverset kan anvendes til forskellige formål, såsom gaming, virtuelle møder, online handel og sociale interaktioner. Det kan give mulighed for en mere interaktiv og realistisk oplevelse end traditionelle onlineplatforme, og det kan have anvendelser i en lang række industrier.",
       "administrations": {
         "oea": true,
-        "tm": false,
+        "tm": true,
         "bu": true,
-        "velfaerd": true,
+        "velfaerd": false,
         "ks": true,
         "komstab": false
       },
       "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/metaverset",
-      "maturity": 0
+      "maturity": 1
     },
     {
-      "techName": "Low code / zero code",
+      "techName": "Low/zero code",
       "x": 3,
-      "y": 35,
+      "y": 28,
       "pictogram":"media/tech_pic/low_nocode_puzzle.webp",
       "description": "Low-code/zero-code er en teknologi, der gør det muligt at udvikle applikationer og software med minimal eller ingen kodning. Med low-code/zero-code-platforme kan brugere bygge og implementere applikationer ved hjælp af visuelle interface og trække-og-slip-funktioner i stedet for traditionel kodeudvikling. Low-code/zero-code-platforme er designet til at være mere brugervenlige og effektive end traditionelle kodningsmetoder.",
       "administrations": {
-        "oea": true,
+        "oea": false,
         "tm": true,
-        "bu": false,
+        "bu": true,
         "velfaerd": false,
         "ks": false,
         "komstab": false
       },
       "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/low-code-zero-code/",
-      "maturity": 2
-    },
-    {
-      "techName": "Computer Vision",
-      "x": -14,
-      "y": 16,
-      "pictogram":"media/tech_pic/computervision.png",
-      "description": "Computer vision er en teknologi, der giver computere evnen til at genkende og forstå billeder og video. Med computer vision kan computere analysere og forstå den visuelle verden, som mennesker ser den, og bruge denne information til at træffe beslutninger og udføre handlinger. Computer vision kan bruges i mange forskellige industrier og anvendelser, fra overvågning og sikkerhed til medicinsk diagnostik og industrielle processer.  ",
-      "administrations": {
-        "oea": false,
-        "tm": true,
-        "bu": false,
-        "velfaerd": false,
-        "ks": true,
-        "komstab": false
-      },
-      "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/computer-vision",
       "maturity": 3
     }
   ]
