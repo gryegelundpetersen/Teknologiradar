@@ -283,7 +283,7 @@
         "oea": false,
         "tm": true,
         "bu": true,
-        "velfaerd": true,
+        "velfaerd": false,
         "ks": true,
         "komstab": false
       },
@@ -352,9 +352,9 @@
         "oea": true,
         "tm": true,
         "bu": true,
-        "velfaerd": true,
+        "velfaerd": false,
         "ks": true,
-        "komstab": true
+        "komstab": false
       },
       "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/metaverset",
       "maturity": 1
