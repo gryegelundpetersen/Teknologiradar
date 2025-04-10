@@ -59,10 +59,10 @@
       "description": "Natural Language Processing (NLP) er en gren af kunstig intelligens, der fokuserer på at lære computere at forstå og behandle naturligt sprog. Dette kan omfatte alt fra at identificere og analysere forskellige sprogstrukturer, som grammatik og semantik, til at oversætte sprog og generere tekst eller tale. NLP spiller en stadig større rolle i vores hverdag, fra chatbots og personlige assistenter til automatisk oversættelse og talegenkendelsesteknologi.",
       "administrations": {
         "oea": true,
-        "tm": false,
+        "tm": true,
         "bu": true,
         "velfaerd": false,
-        "ks": false,
+        "ks": true,
         "komstab": true
       },
       "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/natural-language-processing",
@@ -111,8 +111,8 @@
       "administrations": {
         "oea": true,
         "tm": true,
-        "bu": false,
-        "velfaerd": false,
+        "bu": true,
+        "velfaerd": true,
         "ks": true,
         "komstab": true
       },
@@ -230,10 +230,10 @@
       "description": "Chat- og voicebots er baseret på AI, og svarer på spørgsmål stillet i talesprog. De er baseret på kunstig intelligens, som fortolker brugerens spørgsmål og forsøger at matche disse spørgsmål med de svar, som botten er programmeret med. Spørgsmål, som botten ikke kan matche til relevante svar, viderestilles til fysiske medarbejdere via fx mail, telefon eller sociale medier. Inden for fagområder med stor borgerkontakt med ens type henvendelser kan chat- og voicebots aflaste de medarbejdere, som håndterer telefonopkald og skriftlige henvendelser fra borgere.",
       "administrations": {
         "oea": true,
-        "tm": false,
+        "tm": true,
         "bu": false,
         "velfaerd": false,
-        "ks": false,
+        "ks": true,
         "komstab": true
       },
       "link": "https://vkintra.vejle.dk/hjaelp-til/digitalisering-og-data/teknologiradar/chatbot/",
